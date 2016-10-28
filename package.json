@@ -1,0 +1,61 @@
+{
+  "name": "ShadowRunMasterTool",
+  "version": "0.1.0",
+  "description": "ShadowRunMasterTool",
+  "main": "index.js",
+  "bin": "./node_modules/.bin",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack --progress --colors",
+    "build:watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salztorte/ShadowRunMasterTool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salztorte/ShadowRunMasterTool/issues"
+  },
+  "jest": {
+    "browser": true
+  },
+  "homepage": "https://github.com/salztorte/ShadowRunMasterTool#readme",
+  "dependencies": {
+    "immutable": "3.7.5",
+    "onsenui": "^2.0.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-onsenui": "^1.0.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
+    "redux": "^3.6.0",
+    "redux-search": "^2.3.1",
+    "redux-thunk": "^2.1.0",
+    "reselect": "2.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-jest": "^16.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "enzyme": "^2.5.1",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "html-webpack-plugin": "^2.22.0",
+    "jest": "^16.0.2",
+    "react-addons-test-utils": "^15.3.2",
+    "redux-mock-store": "^1.2.1",
+    "webpack": "^1.13.2"
+  }
+}
