@@ -6,12 +6,12 @@ import { routing } from './routingReducer';
 import { appReducer } from '../App';
 import { diceReducer, diceInitState } from '../Dice';
 import { createTranslationReducer, translationInitState } from '../translation';
-import { settingsReducer, createSettingsInitState} from '../Settings'
+import { settingsReducer, createSettingsInitState } from '../Settings';
 import languages from './languages';
 
 const defaultDiceCount = localStorage.getItem('defaultDice');
 const curLang = localStorage.getItem('lang');
-settingsInitState = createSettingsInitState(defaultDiceCount, curLang);
+const settingsInitState = createSettingsInitState(defaultDiceCount, curLang);
 
 export const initState = {
     app: undefined,
@@ -19,7 +19,7 @@ export const initState = {
     resources: undefined,
     routing: undefined,
     search: undefined,
-    settings : settingsInitState,
+    setting: settingsInitState,
     translation: undefined,
 };
 
