@@ -9,7 +9,7 @@ import Impressum from './Impressum';
 import Dice from './Dice';
 import Settings from './Settings';
 
-const store = configureStore()
+const store = configureStore();
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
 

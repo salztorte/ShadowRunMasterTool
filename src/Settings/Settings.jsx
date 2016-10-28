@@ -13,6 +13,7 @@ const langArray = ['GER', 'EN'];
 const Settings = ({
     changeLang,
     changeDefaultDiceCount,
+    curLang,
     defaultDice,
     translate,
     }) =>

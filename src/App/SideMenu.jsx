@@ -3,8 +3,6 @@ import { Page, SplitterSide, List } from 'react-onsenui';
 
 import SideMenuItem from './SideMenuItem.jsx';
 import SideMenuHeader from './SideMenuHeader.jsx';
-import Toolbar from './Toolbar.jsx';
-
 
 const SideMenu = ({
     closeMenu,
@@ -12,37 +10,38 @@ const SideMenu = ({
     goToRoute,
     menuItems,
     title,
-    }) => (
-    <SplitterSide
-        side="left"
-        style={{ boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)' }}
-        width={200}
-        collapse
-        isSwipeable
-        isOpen={isOpen}
-    >
-        <Page>
-            <List
-                className="myList"
-                dataSource={menuItems}
-                renderHeader={() => <SideMenuHeader title={title} />}
-                renderRow={
-                        ({ title, path }) => (
+    }) =>
+    (
+        <SplitterSide
+            side="left"
+            style={{ boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)' }}
+            width={200}
+            collapse
+            isSwipeable
+            isOpen={isOpen}
+        >
+            <Page>
+                <List
+                    className="myList"
+                    dataSource={menuItems}
+                    renderHeader={() => <SideMenuHeader title={title} />}
+                    renderRow={
+                        ({ _title, _path }) => (
                             <SideMenuItem
-                                key={title}
-                                title={title}
+                                key={_title}
+                                title={_title}
                                 onClick={() => {
                                     closeMenu();
-                                    goToRoute(path);
+                                    goToRoute(_path);
                                 }}
                                 style={{}}
                             />
                         )
                     }
-            />
-        </Page>
-    </SplitterSide>
-);
+                />
+            </Page>
+        </SplitterSide>
+    );
 
 SideMenu.propTypes = {
     closeMenu: PropTypes.func.isRequired,

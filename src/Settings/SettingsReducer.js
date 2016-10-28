@@ -6,13 +6,11 @@ const State = Record({
     curLang: 'GER',
 });
 
-//export const settingsInitState = new State();
-
 export const createSettingsInitState = (dice, lang) => {
-    dice = (dice && dice != 'undefined')? dice : 15;
-    lang = (lang && lang != 'undefined')? lang : 'GER';
-    return new State().set('defaultDiceCount', dice)
-               .set('curLang', lang);
+    const _dice = (dice && dice !== 'undefined') ? dice : 15;
+    const _lang = (lang && lang !== 'undefined') ? lang : 'GER';
+    return new State().set('defaultDiceCount', _dice)
+                      .set('curLang', _lang);
 };
 
 const actionHandlers = {
@@ -27,4 +25,3 @@ export const settingsReducer = (state = createSettingsInitState(), action) => {
     }
     return state;
 };
-

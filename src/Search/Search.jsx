@@ -22,7 +22,9 @@ const Search = ({
             <LazyList
                 className="myList"
                 length={filteredSize}
-                renderRow={index => <SearchItem key={index} select={_bookSelector[_filteredIdArray[index]]} />}
+                renderRow={index => (
+                    <SearchItem key={index} select={_bookSelector[_filteredIdArray[index]]} />
+                )}
                 calculateItemHeight={() => 44}
             />
             <br />
@@ -58,4 +60,3 @@ const actionList = {
 };
 
 export default connector(mapStateToProps, actionList)(Search);
-

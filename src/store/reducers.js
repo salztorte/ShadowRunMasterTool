@@ -5,7 +5,7 @@ import { resourcesReducer } from '../Resources';
 import { routing } from './routingReducer';
 import { appReducer } from '../App';
 import { diceReducer, diceInitState } from '../Dice';
-import { createTranslationReducer, translationInitState } from '../translation';
+import { createTranslationReducer } from '../translation';
 import { settingsReducer, createSettingsInitState } from '../Settings';
 import languages from './languages';
 
@@ -13,6 +13,8 @@ const defaultDiceCount = localStorage.getItem('defaultDice');
 const curLang = localStorage.getItem('lang');
 const settingsInitState = createSettingsInitState(defaultDiceCount, curLang);
 
+
+//ich muss den initState so setzen da ich mit combineReducers arbeite
 export const initState = {
     app: undefined,
     dice: diceInitState.set('diceCount', settingsInitState.defaultDiceCount),

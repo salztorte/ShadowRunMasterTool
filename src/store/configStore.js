@@ -11,7 +11,6 @@ const middleware = [
     routerMiddleware(hashHistory),
     thunk,
 ];
-
 const enhancer = compose(
     applyMiddleware(...middleware),
     searchTool
@@ -34,7 +33,7 @@ const handleChange = () => {
         localStorage.setItem('lang', curVal.lang);
     }
 
-    if (`${curVal.defaultDice}` != preValue.defaultDice) {
+    if (`${curVal.defaultDice}` !== preValue.defaultDice) {
         preValue.defaultDice = curVal.defaultDice;
         localStorage.setItem('defaultDice', curVal.defaultDice);
     }

@@ -1,5 +1,5 @@
 import { CHANGE_LANG } from './translationAction';
-import { translationInitState, createTranslationReducer} from './translationReducer';
+import { translationInitState, createTranslationReducer } from './translationReducer';
 
 const de = {
     hello: 'Hallo',

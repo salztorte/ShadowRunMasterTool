@@ -17,7 +17,6 @@ describe('DiceActions', () => {
             type: ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT,
             payload: 20,
         };
-
         expect(settingsActions.changeDefaultDiceCount(20)).toEqual(expectedAction);
     });
 
@@ -30,4 +29,3 @@ describe('DiceActions', () => {
         expect(resAction[1].type).toBe(ACTION_TYPES.CHANGE_LANG);
     });
 });
-

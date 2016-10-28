@@ -19,4 +19,4 @@ export const settingsActions = {
         type: ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT,
         payload: count,
     }),
-}
+};

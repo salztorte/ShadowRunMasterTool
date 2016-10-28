@@ -14,17 +14,18 @@ import { ListItem } from 'react-onsenui';
 //});
 
 const DiceResult = ({
-  rollResult
-  }) => (
-  <ListItem style={{ width: '100%' }}>
-    <div className="myListItem">
-      <div style={{ height: '1em'}}>{rollResult.join("; ")}</div>
-    </div>
-  </ListItem>
-);
+    rollResult,
+    }) =>
+    (
+        <ListItem style={{ width: '100%' }}>
+            <div className="myListItem">
+                <div style={{ height: '1em'}}>{rollResult.join("; ")}</div>
+            </div>
+        </ListItem>
+    );
 
 DiceResult.propTypes = {
-  rollResult: PropTypes.arrayOf(PropTypes.number),
+    rollResult: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default DiceResult;

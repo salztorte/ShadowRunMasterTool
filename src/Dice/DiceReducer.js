@@ -4,7 +4,7 @@ import { ACTION_TYPES } from './DiceActions';
 const State = Record({
     diceCount: 15,
     rollResult: [],
-    showModal : false,
+    showModal: false,
 });
 
 export const diceInitState = new State();

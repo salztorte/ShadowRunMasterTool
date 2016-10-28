@@ -12,19 +12,20 @@ const Dice = ({
     rollDice,
     rollResult,
     translate,
-    }) => (
-    <section className="myList">
-        <DiceInput
-            translate={translate}
-            changeDiceCount={changeDiceCount}
-            diceCount={diceCount}
-            rollDice={rollDice}
-        />
-        <DiceResult
-            rollResult={rollResult}
-        />
-    </section>
-);
+    }) =>
+    (
+        <section className="myList">
+            <DiceInput
+                translate={translate}
+                changeDiceCount={changeDiceCount}
+                diceCount={diceCount}
+                rollDice={rollDice}
+            />
+            <DiceResult
+                rollResult={rollResult}
+            />
+        </section>
+    );
 
 
 Dice.propTypes = {

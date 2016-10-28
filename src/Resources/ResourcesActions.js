@@ -12,7 +12,7 @@ export const ACTION_TYPES = keyMirror([
 
 export const resourcesActions = {
     clearData: () => ({ type: ACTION_TYPES.CLEAR_DATA }),
-    generateData: () => dispatch => {
+    generateData: () => (dispatch) => {
         dispatch(resourcesActions.clearData());
         dispatch({
             type: ACTION_TYPES.SET_DATA,
