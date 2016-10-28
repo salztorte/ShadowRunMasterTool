@@ -1,5 +1,6 @@
 import { keyMirror } from '../tools';
 import { changeLang } from '../translation';
+
 export const ACTION_TYPES = keyMirror([
     'CHANGE_DEFAULT_DICE_COUNT',
     'CHANGE_LANG',
@@ -8,7 +9,7 @@ export const ACTION_TYPES = keyMirror([
 
 export const settingsActions = {
     changeLang: lang => (dispatch) => {
-        dispatch(changeLang);
+        dispatch(changeLang(lang));
         dispatch({
             type: ACTION_TYPES.CHANGE_LANG,
             payload: lang,

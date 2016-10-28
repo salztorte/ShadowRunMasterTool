@@ -26,8 +26,8 @@ describe('DiceActions', () => {
         store.dispatch(settingsActions.changeLang('EN'));
         const resAction = store.getActions();
 
-        expect(resAction.length).toBe(1);
-        expect(resAction[0].type).toBe(ACTION_TYPES.CHANGE_LANG);
+        expect(resAction.length).toBe(2);
+        expect(resAction[1].type).toBe(ACTION_TYPES.CHANGE_LANG);
     });
 });
 

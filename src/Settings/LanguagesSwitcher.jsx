@@ -9,24 +9,24 @@ const LanguagesSwitcher = ({
     translate,
     changeLang,
     langArray,
-    }) => (
-    <ListItem>
-        <div className="myListItem">
-            <p style={{ fontWeight: 'bold' }}>{translate.HEADLINE}</p>
-            {langArray.reduce((res, cur) => {
-                res.push(<Button
-                    key={cur}
-                    style={buttonStyle}
-                    onClick={() => changeLang(cur)}
-                >
-                    {translate[cur]}
-                </Button>);
-                return res;
-            }, [])
-            }
-        </div>
-    </ListItem>
-);
+    }) =>
+    (
+        <ListItem>
+            <div className="myListItem">
+                <p style={{ fontWeight: 'bold' }}>{translate.HEADLINE}</p>
+                {langArray.reduce((res, cur) => {
+                    res.push(<Button
+                        key={cur}
+                        style={buttonStyle}
+                        onClick={() => changeLang(cur)}
+                    >
+                        {translate[cur]}
+                    </Button>);
+                    return res;
+                }, [])}
+            </div>
+        </ListItem>
+    );
 
 
 LanguagesSwitcher.propTypes = {
