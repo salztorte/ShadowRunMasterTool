@@ -6,7 +6,7 @@ export const ACTION_TYPES = keyMirror([
 ]);
 
 
-export const actions = {
+export const settingsActions = {
     changeLang: lang => (dispatch) => {
         dispatch(changeLang);
         dispatch({

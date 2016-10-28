@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const dispatchMapper = list => dispatch => {
+const dispatchMapper = list => (dispatch) => {
     const map = {};
     for (const item in list) {
         map[item] = bindActionCreators(list[item], dispatch);

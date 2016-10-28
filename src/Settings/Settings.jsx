@@ -1,10 +1,8 @@
 import { PropTypes } from 'react';
 
-import { changeDefaultDiceCount } from '../Dice';
-
 import { connector } from '../tools';
-import { changeLang } from '../translation';
 
+import { settingsActions } from './SettingsActions';
 import LanguagesSwitcher from './LanguagesSwitcher.jsx';
 import DefaultDicePool from './DefaultDicePool.jsx';
 
@@ -47,7 +45,7 @@ const mapStateToProps = state => ({
 });
 
 const actionList = {
-    changeLang,
-    changeDefaultDiceCount
+    changeLang: settingsActions.changeLang(),
+    changeDefaultDiceCount: settingsActions.changeDefaultDiceCount(),
 };
 export default connector(mapStateToProps, actionList)(Settings);
