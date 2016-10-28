@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 import { rootReducer, initState } from './reducers';
 import { searchTool } from '../Resources';
-
+import subscriber from './subscriber';
 
 const middleware = [
     routerMiddleware(hashHistory),
@@ -17,29 +17,7 @@ const enhancer = compose(
 );
 
 const store = createStore(rootReducer, initState, enhancer);
-const preValue = {
-    lang: localStorage.getItem('lang'),
-    defaultDice: localStorage.getItem('defaultDice'),
-};
-const handleChange = () => {
-    const state = store.getState();
-    const curVal = {
-        lang: state.translation.curLang,
-        defaultDice: state.dice.defaultCount,
-    };
-
-    if (curVal.lang !== preValue.lang) {
-        preValue.lang = curVal.lang;
-        localStorage.setItem('lang', curVal.lang);
-    }
-
-    if (`${curVal.defaultDice}` !== preValue.defaultDice) {
-        preValue.defaultDice = curVal.defaultDice;
-        localStorage.setItem('defaultDice', curVal.defaultDice);
-    }
-};
-
-store.subscribe(handleChange);
+store.subscribe(() => subscriber(store));
 
 export const configureStore = () => store;
 
