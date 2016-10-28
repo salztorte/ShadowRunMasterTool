@@ -16,5 +16,5 @@ export const connector = function (listState, listDispatch = {}) {
 
 export const keyMirror = keys => keys.reduce((res, cur) => {
     res[cur] = cur;
-    return res
+    return res;
 }, {});

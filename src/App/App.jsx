@@ -1,10 +1,7 @@
-/** @module App */
-
 import { PropTypes } from 'react';
 import { Page, Splitter, SplitterContent, ToolbarButton, Icon } from 'react-onsenui';
 import { routerActions } from 'react-router-redux';
 
-import { changeLang } from '../translation';
 import Toolbar from './Toolbar.jsx';
 import SideMenu from './SideMenu.jsx';
 import { resourcesActions } from '../Resources';
