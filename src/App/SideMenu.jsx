@@ -26,13 +26,13 @@ const SideMenu = ({
                     dataSource={menuItems}
                     renderHeader={() => <SideMenuHeader title={title} />}
                     renderRow={
-                        ({ _title, _path }) => (
+                        item => (
                             <SideMenuItem
-                                key={_title}
-                                title={_title}
+                                key={item.title}
+                                title={item.title}
                                 onClick={() => {
                                     closeMenu();
-                                    goToRoute(_path);
+                                    goToRoute(item.path);
                                 }}
                                 style={{}}
                             />
