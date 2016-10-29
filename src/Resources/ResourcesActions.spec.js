@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import { createSearchAction } from 'redux-search';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';

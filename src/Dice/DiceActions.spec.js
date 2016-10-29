@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
@@ -37,7 +38,7 @@ describe('DiceActions', () => {
 
     it('show modal', () => {
         const expectedAction = {
-            type: ACTION_TYPES.SHOW_MODAL
+            type: ACTION_TYPES.SHOW_MODAL,
         };
 
         expect(diceActions.showModal()).toEqual(expectedAction);

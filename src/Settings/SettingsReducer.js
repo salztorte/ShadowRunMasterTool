@@ -7,10 +7,10 @@ const State = Record({
 });
 
 export const createSettingsInitState = (dice, lang) => {
-    const _dice = (dice && dice !== 'undefined') ? dice : 15;
-    const _lang = (lang && lang !== 'undefined') ? lang : 'GER';
-    return new State().set('defaultDiceCount', _dice)
-                      .set('curLang', _lang);
+    const newDice = (dice && dice !== 'undefined') ? dice : 15;
+    const newLang = (lang && lang !== 'undefined') ? lang : 'GER';
+    return new State().set('defaultDiceCount', newDice)
+                      .set('curLang', newLang);
 };
 
 const actionHandlers = {

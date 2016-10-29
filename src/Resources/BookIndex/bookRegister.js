@@ -1,3 +1,4 @@
+/* eslint no-param-reassign: 0 */
 import bookIndex from './bookIndex';
 
 export const loadBookData = bookIndex.reduce((res, cur, id) => {
@@ -12,4 +13,3 @@ export const loadBookData = bookIndex.reduce((res, cur, id) => {
 
 export const resourceName = 'bookIndex';
 export const searchIndex = ['term', 'pages'];
-

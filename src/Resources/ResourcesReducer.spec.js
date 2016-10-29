@@ -26,5 +26,4 @@ describe('Resource reducer', () => {
         };
         expect(resourcesReducer(initStateResources, incommingAction).bookIndex).toEqual(payload);
     });
-
 });

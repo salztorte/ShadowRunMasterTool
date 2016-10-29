@@ -3,5 +3,5 @@ import EN from './en';
 
 export default {
     GER,
-    EN
+    EN,
 };

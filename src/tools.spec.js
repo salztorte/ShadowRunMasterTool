@@ -11,7 +11,6 @@ describe('Tools', () => {
             };
 
             expect(keyMirror(incomming)).toEqual(exceptedResult);
-
         });
     });
 });

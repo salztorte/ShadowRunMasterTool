@@ -5,10 +5,12 @@
   "main": "index.js",
   "bin": "./node_modules/.bin",
   "scripts": {
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
     "build": "webpack --progress --colors",
-    "build:watch": "npm run build -- --watch"
+    "build:watch": "npm run build -- --watch",
+    "clean:build" : "rimraf build",
+    "lint" : "eslint src --config .eslintrc.js",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
