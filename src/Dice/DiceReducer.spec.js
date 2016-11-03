@@ -28,14 +28,14 @@ describe('DiceReducer', () => {
         const incommingAction = {
             type: ACTION_TYPES.SHOW_MODAL,
         };
-        expect(diceReducer(diceInitState, incommingAction).showModal).toBeTruthy();
+        expect(diceReducer(diceInitState, incommingAction).isDialogOpen).toBeTruthy();
     });
 
     it('should handel HIDE_MODAL', () => {
         const incommingAction = {
             type: ACTION_TYPES.HIDE_MODAL,
         };
-        expect(diceReducer(diceInitState, incommingAction).showModal).toBeFalsy();
+        expect(diceReducer(diceInitState, incommingAction).isDialogOpen).toBeFalsy();
     });
 });
 

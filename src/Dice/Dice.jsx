@@ -1,5 +1,4 @@
 import { PropTypes } from 'react';
-import {Button, Popover} from 'react-onsenui'
 
 import { diceActions } from './DiceActions';
 import DiceInput from './DiceInput.jsx';
@@ -13,8 +12,8 @@ const Dice = ({
     rollResult,
     translate,
     hideModal,
-    showModal,
-    isModalOpen,
+    openModal,
+    isOpen,
     }) => {
     return (
         <section className="myList">
@@ -31,27 +30,20 @@ const Dice = ({
     );
 };
 
-//            <Button id="test" onClick={showModal}> Show Popover </Button>
-//<Popover
-//    getTarget={() => BindButton}
-//    isOpen={isModalOpen}
+//<Dialog
+//    isOpen={isOpen}
+//    isCancelable={true}
+//    onCancel={hideModal}
+//    animation="none"
 //>
-//    <Button onClick={hideModal}> Hide Popover </Button>
-//</Popover>
-//
-//<Popover
-//  isOpen={isModalOpen}
-//  onOpen={showModal}
-//  onHide={hideModal}
-//  isCancelable={true}
-//  getTarget={ref.test}
-//>
-//  <section style={{margin: '16px'}}>
-//    <p style={{opacity: 0.6}}>
-//      This is a popover. Show some information here.
-//    </p>
-//  </section>
-//</Popover>
+//    <div style={{textAlign: 'center', margin: '20px'}}>
+//        <p style={{opacity: 0.5}}>This is a dialog!</p>
+//        <p>
+//            <Button onClick={hideModal}>Close</Button>
+//        </p>
+//    </div>
+//</Dialog>
+
 Dice.propTypes = {
     diceCount: PropTypes.number.isRequired,
     changeDiceCount: PropTypes.func.isRequired,
@@ -59,8 +51,8 @@ Dice.propTypes = {
     rollResult: PropTypes.arrayOf(PropTypes.number),
     translate: PropTypes.object,
     hideModal: PropTypes.any,
-    showModal: PropTypes.any,
-    isModalOpen: PropTypes.any,
+    openModal: PropTypes.any,
+    isOpen: PropTypes.any,
 };
 
 
@@ -68,13 +60,13 @@ const mapStateToProps = state => ({
     diceCount: state.dice.diceCount,
     rollResult: state.dice.rollResult,
     translate: state.translation.translate.DICE_CUP,
-    isModalOpen: state.dice.showModal
+    isOpen: state.dice.isDialogOpen
 });
 
 const actionList = {
     changeDiceCount: diceActions.changeDiceCount,
     rollDice: diceActions.rollDice,
-    showModal: diceActions.showModal,
+    openModal: diceActions.showModal,
     hideModal: diceActions.hideModal,
 };
 
