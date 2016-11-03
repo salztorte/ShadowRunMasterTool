@@ -22,17 +22,17 @@
   "bugs": {
     "url": "https://github.com/salztorte/ShadowRunMasterTool/issues"
   },
-  "jest": {
-    "browser": true
-  },
   "homepage": "https://github.com/salztorte/ShadowRunMasterTool#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "css-loader": "^0.25.0",
+    "grommet": "^1.0.1",
     "immutable": "3.7.5",
-    "onsenui": "^2.0.1",
+    "node-sass": "^3.11.1",
+    "onsenui": "^2.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-onsenui": "^1.0.1",
+    "react-onsenui": "^1.0.3",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "react-router-redux": "^4.0.6",
@@ -40,7 +40,9 @@
     "redux-search": "^2.3.1",
     "redux-thunk": "^2.1.0",
     "reselect": "2.0.1",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

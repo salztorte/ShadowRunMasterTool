@@ -1,3 +1,4 @@
+import Toolbar from './Toolbar.jsx';
 import { expect } from 'chai';
 
 describe('Toolbar', () => {

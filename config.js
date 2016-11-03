@@ -17,6 +17,11 @@ const loaders = {
         exclude: /node_modules/,
         loader: 'babel',
     }),
+    sass: () => ({
+        includePaths: [
+            './node_modules',
+        ],
+    }),
 };
 
 
