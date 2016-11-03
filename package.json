@@ -9,7 +9,7 @@
     "build:watch": "npm run build -- --watch",
     "clean:build": "rimraf build",
     "lint": "eslint src --config .eslintrc.js",
-    "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js",
+    "test": "mocha --compilers js:babel-core/register -w testHelpers/browser.js --recursive src/**/*.spec.js",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
