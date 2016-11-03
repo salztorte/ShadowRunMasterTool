@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { CHANGE_LANG, changeLang } from './translationAction';
 
 describe('translation Action', () => {
@@ -6,6 +7,6 @@ describe('translation Action', () => {
             type: CHANGE_LANG,
             payload: 'de',
         };
-        expect(changeLang('de')).toEqual(expectedAction);
+        expect(changeLang('de')).to.eql(expectedAction);
     });
 });

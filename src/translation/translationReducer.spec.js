@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { CHANGE_LANG } from './translationAction';
 import { translationInitState, createTranslationReducer } from './translationReducer';
 
@@ -22,7 +23,7 @@ describe('translate reducer', () => {
 
 
     it('should return the initial state', () => {
-        expect(reducer(undefined, {})).toEqual(initState);
+        expect(reducer(undefined, {})).to.eql(initState);
     });
 
     it('should handel changeLang', () => {
@@ -32,6 +33,6 @@ describe('translate reducer', () => {
         };
         const expectResult = translationInitState.set('translate', en);
 
-        expect(reducer(initState, incommingAction)).toEqual(expectResult);
+        expect(reducer(initState, incommingAction)).to.eql(expectResult);
     });
 });

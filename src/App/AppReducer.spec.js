@@ -1,22 +1,32 @@
+import { expect } from 'chai';
+
 import { appInitState, appReducer } from './AppReducer';
 import { ACTION_TYPES } from './AppActions';
 
 describe('App reducer', () => {
     it('should return the initial state', () => {
-        expect(appReducer(undefined, {})).toEqual(appInitState);
+        expect(appReducer(undefined, {})).to
+                                         .deep
+                                         .equal(appInitState);
     });
 
     it('should handel OPEN_MENU', () => {
         const incommingAction = {
             type: ACTION_TYPES.OPEN_MENU,
         };
-        expect(appReducer(appInitState, incommingAction).isOpen).toBeTruthy();
+        expect(appReducer(appInitState, incommingAction)).to
+                                                         .have
+                                                         .deep
+                                                         .property('isOpen', true);
     });
 
     it('should handel CLOSE_MENU', () => {
         const incommingAction = {
             type: ACTION_TYPES.CLOSE_MENU,
         };
-        expect(appReducer(appInitState, incommingAction).isOpen).toBeFalsy();
+        expect(appReducer(appInitState, incommingAction)).to
+                                                         .have
+                                                         .deep
+                                                         .property('isOpen', false);
     });
 });

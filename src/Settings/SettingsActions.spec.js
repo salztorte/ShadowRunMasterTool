@@ -1,4 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
+import { expect } from 'chai';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
@@ -18,7 +19,9 @@ describe('DiceActions', () => {
             type: ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT,
             payload: 20,
         };
-        expect(settingsActions.changeDefaultDiceCount(20)).toEqual(expectedAction);
+        expect(settingsActions.changeDefaultDiceCount(20)).to
+                                                          .deep
+                                                          .equal(expectedAction);
     });
 
     it('change default dice count', () => {
@@ -26,7 +29,9 @@ describe('DiceActions', () => {
         store.dispatch(settingsActions.changeLang('EN'));
         const resAction = store.getActions();
 
-        expect(resAction.length).toBe(2);
-        expect(resAction[1].type).toBe(ACTION_TYPES.CHANGE_LANG);
+        expect(resAction).to
+                         .have
+                         .lengthOf(2);
+        expect(resAction[1].type).to.be.equal(ACTION_TYPES.CHANGE_LANG);
     });
 });

@@ -9,7 +9,7 @@
     "build:watch": "npm run build -- --watch",
     "clean:build": "rimraf build",
     "lint": "eslint src --config .eslintrc.js",
-    "test": "jest",
+    "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/salztorte/ShadowRunMasterTool#readme",
   "dependencies": {
+    "chai": "^3.5.0",
     "immutable": "3.7.5",
     "onsenui": "^2.0.1",
     "react": "^15.3.2",
@@ -56,7 +57,8 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
     "html-webpack-plugin": "^2.22.0",
-    "jest": "^16.0.2",
+    "jsdom": "^9.8.3",
+    "mocha": "^3.1.2",
     "react-addons-test-utils": "^15.3.2",
     "redux-mock-store": "^1.2.1",
     "webpack": "^1.13.2"

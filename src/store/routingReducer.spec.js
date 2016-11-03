@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { initState, routing } from './routingReducer';
 
 describe('routing reducer', () => {
     it('should return the initial state', () => {
-        expect(routing(undefined, {})).toEqual(initState);
+        expect(routing(undefined, {})).to.be.eql(initState);
     });
 
     it('should handel OPEN_MENU', () => {
@@ -17,7 +19,7 @@ describe('routing reducer', () => {
 
         const newState = routing(initState, incommingAction);
 
-        expect(newState.location).toBe('test');
-        expect(newState.locationBeforeTransitions.toJS()).toEqual(payload);
+        expect(newState.location).to.be.equal('test');
+        expect(newState.locationBeforeTransitions.toJS()).to.eql(payload);
     });
 });

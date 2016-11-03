@@ -1,3 +1,5 @@
+import { expect } from 'chai';
+
 import { ACTION_TYPES, appActions } from './AppActions';
 
 describe('AppActions', () => {
@@ -7,7 +9,9 @@ describe('AppActions', () => {
             payload: true,
         };
 
-        expect(appActions.openMenu()).toEqual(expectedAction);
+        expect(appActions.openMenu()).to
+                                     .deep
+                                     .equal(expectedAction);
     });
 
     it('closeMenu', () => {
@@ -15,6 +19,8 @@ describe('AppActions', () => {
             type: ACTION_TYPES.CLOSE_MENU,
             payload: false,
         };
-        expect(appActions.closeMenu()).toEqual(expectedAction);
+        expect(appActions.closeMenu()).to
+                                      .deep
+                                      .equal(expectedAction);
     });
 });

@@ -1,4 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
+import { expect } from 'chai';
 import { createSearchAction } from 'redux-search';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -15,11 +16,15 @@ describe('Resource Actions', () => {
             type: ACTION_TYPES.CLEAR_DATA,
         };
 
-        expect(resourcesActions.clearData()).toEqual(expectedAction);
+        expect(resourcesActions.clearData()).to
+                                            .deep
+                                            .equal(expectedAction);
     });
     it('searchData', () => {
         const expectedAction = createSearchAction('bookIndex')();
-        expect(resourcesActions.searchData()).toEqual(expectedAction);
+        expect(resourcesActions.searchData()).to
+                                             .deep
+                                             .equal(expectedAction);
     });
 
 
@@ -28,8 +33,14 @@ describe('Resource Actions', () => {
         store.dispatch(resourcesActions.generateData());
         const resAction = store.getActions();
 
-        expect(resAction.length).toBe(2);
-        expect(resAction[0].type).toBe(ACTION_TYPES.CLEAR_DATA);
-        expect(resAction[1].type).toBe(ACTION_TYPES.SET_DATA);
+        expect(resAction).to
+                         .have
+                         .lengthOf(2);
+        expect(resAction[0].type).to
+                                 .be
+                                 .equal(ACTION_TYPES.CLEAR_DATA);
+        expect(resAction[1].type).to
+                                 .be
+                                 .equal(ACTION_TYPES.SET_DATA);
     });
 });

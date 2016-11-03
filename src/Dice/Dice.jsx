@@ -60,7 +60,7 @@ const mapStateToProps = state => ({
     diceCount: state.dice.diceCount,
     rollResult: state.dice.rollResult,
     translate: state.translation.translate.DICE_CUP,
-    isOpen: state.dice.isDialogOpen
+    isOpen: state.dice.isDialogOpen,
 });
 
 const actionList = {

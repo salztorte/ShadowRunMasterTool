@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { keyMirror } from './tools';
 
 describe('Tools', () => {
@@ -10,7 +11,11 @@ describe('Tools', () => {
                 c: 'c',
             };
 
-            expect(keyMirror(incomming)).toEqual(exceptedResult);
+            expect(keyMirror(incomming)).to.deep.equal(exceptedResult);
+            //assert.equal(keyMirror(incomming), exceptedResult);
         });
     });
 });
+
+
+//mocha --compilers js:babel-core/register .\src\tools.spec.js

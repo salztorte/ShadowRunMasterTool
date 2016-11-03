@@ -1,4 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
+import { expect } from 'chai';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
@@ -18,22 +19,34 @@ describe('DiceActions', () => {
         store.dispatch(diceActions.changeDiceCount());
         const resAction = store.getActions();
 
-        expect(resAction.length).toBe(2);
-        expect(resAction[0].type).toBe(ACTION_TYPES.CLEAR_ROLLS);
-        expect(resAction[1].type).toBe(ACTION_TYPES.CHANGE_DICE_COUNT);
+        expect(resAction).to
+                         .have
+                         .lengthOf(2);
+        expect(resAction[0].type).to
+                                 .be
+                                 .equal(ACTION_TYPES.CLEAR_ROLLS);
+        expect(resAction[1].type).to
+                                 .be
+                                 .equal(ACTION_TYPES.CHANGE_DICE_COUNT);
     });
 
     it('roll dice', () => {
         const res = diceActions.rollDice(15);
-        expect(res.type).toBe(ACTION_TYPES.ROLL_DICE);
-        expect(res.payload.length).toBe(15);
+        expect(res.type).to
+                        .be
+                        .equal(ACTION_TYPES.ROLL_DICE);
+        expect(res.payload.length).to
+                                  .be
+                                  .equal(15);
     });
 
     it('clear Rollresult', () => {
         const expectedAction = {
             type: ACTION_TYPES.CLEAR_ROLLS,
         };
-        expect(diceActions.clearRoll()).toEqual(expectedAction);
+        expect(diceActions.clearRoll()).to
+                                       .deep
+                                       .equal(expectedAction);
     });
 
     it('show modal', () => {
@@ -41,13 +54,17 @@ describe('DiceActions', () => {
             type: ACTION_TYPES.SHOW_MODAL,
         };
 
-        expect(diceActions.showModal()).toEqual(expectedAction);
+        expect(diceActions.showModal()).to
+                                       .deep
+                                       .equal(expectedAction);
     });
 
     it('closeMenu', () => {
         const expectedAction = {
             type: ACTION_TYPES.HIDE_MODAL,
         };
-        expect(diceActions.hideModal()).toEqual(expectedAction);
+        expect(diceActions.hideModal()).to
+                                       .deep
+                                       .equal(expectedAction);
     });
 });
