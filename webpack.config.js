@@ -15,14 +15,25 @@ module.exports = {
     devtool: 'source-map',
     entry: ['babel-polyfill', './src/main.jsx'],
     output: output('build'),
+    resolve: {
+        extensions: ['', '.js', ',jsx', '.scss', '.css'],
+    },
     plugins: [
         plugins.wbpDev(),
         plugins.provide(provide),
-        plugins.copyCss(),
     ],
     module: {
         loaders: [
             loaders.bable(),
+            {
+                test: /\.scss$/,
+                loader: 'style!css!sass?outputStyle=compressed',
+            },
+        ],
+    },
+    sassLoader: {
+        includePaths: [
+            './node_modules',
         ],
     },
 };

@@ -13,17 +13,23 @@ const store = configureStore();
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
 
-render(
-    <Provider store={store}>
-        <Router history={history}>
-            <Route path="/" component={App}>
-                <IndexRedirect to="/dicecup" />
-                <Route path="search" component={Search} />
-                <Route path="dicecup" component={Dice} />
-                <Route path="settings" component={Settings} />
-                <Route path="impressum" component={Impressum} />
-            </Route>
 
-        </Router>
-    </Provider>
+
+render(
+    <App />
     , rootEl);
+
+//                <IndexRedirect to="/dicecup" />
+//                <Route path="search" component={Search} />
+//                <Route path="dicecup" component={Dice} />
+//                <Route path="settings" component={Settings} />
+//                <Route path="impressum" component={Impressum} />
+
+//render(
+//    <Provider store={store}>
+//        <Router history={history}>
+//            <Route path="/" component={App} />
+//
+//        </Router>
+//    </Provider>
+//    , rootEl);
