@@ -6,11 +6,6 @@ const loaders = config.loaders;
 const plugins = config.plugins;
 const output = config.output;
 
-
-const provide = {
-    React: 'react',
-};
-
 module.exports = {
     devtool: 'source-map',
     entry: ['babel-polyfill', './src/main.jsx'],
@@ -20,7 +15,6 @@ module.exports = {
     },
     plugins: [
         plugins.wbpDev(),
-        plugins.provide(provide),
     ],
     module: {
         loaders: [

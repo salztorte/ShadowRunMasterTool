@@ -24,9 +24,6 @@ module.exports = {
         'no-plusplus': 0,
         'no-unused-vars': [2, {'vars': 'all', 'args': 'after-used', 'varsIgnorePattern': 'React'}],
         'linebreak-style': 0,
-        //kann raus da ich react per Webpack zurverfügung stelle
-        'react/react-in-jsx-scope': 0,
-
     },
     plugins: [
         'react',

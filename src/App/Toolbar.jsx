@@ -1,31 +1,37 @@
-//import styles
-import 'grommet/scss/vanilla/index';
-
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
+import Menu from 'grommet/components/icons/base/Menu';
+
 
 const toolbar = ({
     title,
-    leftToolbar,
+    clickIcon,
     }) =>
     (
-        <Header>
-            <Title>
-                {Title}
+        <Header
+            size="small"
+            justify="between"
+            colorIndex="neutral-1"
+            pad={{ horizontal: 'medium' }}
+            fixed={true}
+        >
+            <Menu
+                size="small"
+                onClick={clickIcon}
+            />
+            <Title
+                align="center"
+            >
+                {title}
             </Title>
         </Header>
     );
 
-//<Toolbar>
-//    <div className="left">
-//        {leftToolbar}
-//    </div>
-//    <div className="center">{title}</div>
-//</Toolbar>
-
 toolbar.propTypes = {
     title: PropTypes.string.isRequired,
-    leftToolbar: PropTypes.element,
+    clickIcon: PropTypes.func.isRequired,
 };
+
+
 export default toolbar;
