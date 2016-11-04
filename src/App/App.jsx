@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react';
 
+import Animate from 'grommet/components/Animate';
+import Article from 'grommet/components/Article';
 import Page from 'grommet/components/App';
+import Section from 'grommet/components/Section';
 import Sidebar from 'grommet/components/Sidebar';
+import Split from 'grommet/components/Split';
+import Layer from 'grommet/components/Layer';
 
 //import { routerActions } from 'react-router-redux';
 
 import Toolbar from './Toolbar.jsx';
-//import SideMenu from './SideMenu.jsx';
+import SideMenu from './SideMenu.jsx';
 //import { resourcesActions } from '../Resources';
 
 import { appActions } from './AppActions';
@@ -49,26 +54,50 @@ const onInit = (genData, bookIndex) => () => {
 //    const getTitleFromPath = _path => menu.reduce((res, cur) => (
 //        _path === `/${cur.path}` ? cur.title : res
 //    ), '');
+
+//<Animate enter={{ animation: "slide-rigth", duration: 1000 }}
+//         leave={{ animation: "slide-left", duration: 1000 }}
+//         visible={isOpen}>
+
 const App = ({
+    children,
+    closeMenu,
     openMenu,
+    isOpen,
+    translate,
+    path,
     }) => {
+    const menu = createMenu(translate);
+    const getTitleFromPath = _path => menu.reduce((res, cur) => (
+        _path === `/${cur.path}` ? cur.title : res
+    ), '');
     return (
         <Page
             centered={false}
         >
-            <Toolbar
-                title="Cola"
-                clickIcon={openMenu}
-            />
+            <Split flex="right">
+                <SideMenu />
+                <Article>
+                    <Toolbar
+                        title={getTitleFromPath(path)}
+                        clickIcon={() => (
+                            isOpen ? closeMenu() : openMenu()
+                        )}
+                    />
+                    <Section
+                        pad={{
+                            horizontal: 'small',
+                            vertical: 'small',
+                        }}
+                    >
+                        {children}
+                    </Section>
+                </Article>
+            </Split>
         </Page>
     );
 };
 
-//<Sidebar
-//    colorIndex="neutral-2"
-//>
-//    Test
-//</Sidebar>
 
 //
 //<Splitter>
@@ -96,25 +125,25 @@ const App = ({
 //
 App.propTypes = {
 //    bookIndex: PropTypes.object,
-//    children: PropTypes.element,
-//    closeMenu: PropTypes.func.isRequired,
+    children: PropTypes.element,
+    closeMenu: PropTypes.func.isRequired,
 //    generateData: PropTypes.func.isRequired,
-//    isOpen: PropTypes.bool.isRequired,
+    isOpen: PropTypes.bool.isRequired,
     openMenu: PropTypes.func.isRequired,
-//    path: PropTypes.string,
+    path: PropTypes.string,
 //    routerPush: PropTypes.func,
 //    searchData: PropTypes.func.isRequired,
-//    translate: PropTypes.object,
+    translate: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
 //    bookIndex: state.resources.bookIndex,
-//    isOpen: state.app.isOpen,
-//    path: state.routing.locationBeforeTransitions.get('pathname'),
-//    translate: state.translation.translate.HEADLINES,
+    isOpen: state.app.isOpen,
+    path: state.routing.locationBeforeTransitions.get('pathname'),
+    translate: state.translation.translate.HEADLINES,
 });
 const actionList = {
-//    closeMenu: appActions.closeMenu,
+    closeMenu: appActions.closeMenu,
 //    generateData: resourcesActions.generateData,
     openMenu: appActions.openMenu,
 //    routerPush: routerActions.push,

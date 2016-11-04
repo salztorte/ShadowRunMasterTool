@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import { connector } from '../tools';
 
@@ -18,7 +18,7 @@ const Settings = ({
     translate,
     }) =>
     (
-        <section className="myList">
+        <section>
             <LanguagesSwitcher
                 langArray={langArray}
                 translate={translate.LANGUAGES}
