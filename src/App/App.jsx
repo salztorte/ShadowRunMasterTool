@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Page from 'grommet/components/App';
-import Header from 'grommet/components/Header';
-import Title from 'grommet/components/Title';
+import Sidebar from 'grommet/components/Sidebar';
 
 //import { routerActions } from 'react-router-redux';
 
@@ -50,18 +49,26 @@ const onInit = (genData, bookIndex) => () => {
 //    const getTitleFromPath = _path => menu.reduce((res, cur) => (
 //        _path === `/${cur.path}` ? cur.title : res
 //    ), '');
-const App = () => {
+const App = ({
+    openMenu,
+    }) => {
     return (
         <Page
             centered={false}
         >
             <Toolbar
-                title="Test1234"
-                clickIcon={() => {}}
+                title="Cola"
+                clickIcon={openMenu}
             />
         </Page>
     );
 };
+
+//<Sidebar
+//    colorIndex="neutral-2"
+//>
+//    Test
+//</Sidebar>
 
 //
 //<Splitter>
