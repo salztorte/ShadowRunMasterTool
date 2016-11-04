@@ -13,18 +13,17 @@ const toolbar = ({
             size="small"
             justify="between"
             colorIndex="neutral-1"
-            pad={{ horizontal: 'medium' }}
-            fixed={true}
+            full="horizontal"
+            fixed
         >
             <Menu
                 size="small"
                 onClick={clickIcon}
             />
-            <Title
-                align="center"
-            >
+            <Title>
                 {title}
             </Title>
+            <div />
         </Header>
     );
 
