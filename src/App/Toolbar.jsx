@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
 import Menu from 'grommet/components/icons/base/Menu';
-
+import Box from 'grommet/components/Box';
 
 const toolbar = ({
     title,
@@ -16,14 +16,17 @@ const toolbar = ({
             full="horizontal"
             fixed
         >
-            <Menu
-                size="small"
+            <Box
                 onClick={clickIcon}
-            />
+            >
+                <Menu
+                    size="small"
+                />
+            </Box>
             <Title>
                 {title}
             </Title>
-            <div />
+            <Title />
         </Header>
     );
 

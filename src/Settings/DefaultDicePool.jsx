@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Input, ListItem } from 'react-onsenui';
 
 const DefaultDicePool = ({
@@ -24,7 +24,7 @@ const DefaultDicePool = ({
 DefaultDicePool.propTypes = {
     translate  : PropTypes.object.isRequired,
     onChange   : PropTypes.func.isRequired,
-    defaultDice: PropTypes.number.isRequired
+    defaultDice: PropTypes.number.isRequired,
 };
 
 export default DefaultDicePool;
