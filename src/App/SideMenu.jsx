@@ -25,7 +25,6 @@ const SideMenu = ({
     (
         <Sidebar
             colorIndex="neutral-1"
-
         >
             Test
         </Sidebar>

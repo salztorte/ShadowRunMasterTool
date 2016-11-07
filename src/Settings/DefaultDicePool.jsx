@@ -1,29 +1,40 @@
 import React, { PropTypes } from 'react';
-import { Input, ListItem } from 'react-onsenui';
+import Box from 'grommet/components/Box';
+import NumberInput from 'grommet/components/NumberInput';
+import FormField from 'grommet/components/FormField';
 
 const DefaultDicePool = ({
     translate,
     onChange,
     defaultDice,
-}) =>
+    }) =>
     (
-        <ListItem>
-            <div className="myListItem" style={{width: '100%'}}>
-                <p style={{fontWeight: 'bold'}}>{translate.HEADLINE}</p>
-                <Input
-                    type="number"
+        <Box
+            separator={'bottom'}
+            pad={{
+                vertical: 'small',
+            }}
+        >
+            <p style={{ fontWeight: 'bold' }}>{translate.HEADLINE}</p>
+            <FormField
+                style={{ width: '100%' }}
+            >
+                <NumberInput
+                    id="item2"
+                    name="item2"
+                    label="Item 2"
                     value={`${defaultDice}`}
-                    modifier="underbar"
-                    style={{width: '100%'}}
                     onChange={onChange}
+                    style={{ width: '100%' }}
                 />
-            </div>
-        </ListItem>
+            </FormField>
+
+        </Box>
     );
 
 DefaultDicePool.propTypes = {
-    translate  : PropTypes.object.isRequired,
-    onChange   : PropTypes.func.isRequired,
+    translate: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
     defaultDice: PropTypes.number.isRequired,
 };
 
