@@ -75,7 +75,10 @@ const App = ({
         <Page
             centered={false}
         >
-            <Split flex="right">
+            <Split
+                flex="right"
+                showOnResponsive="both"
+            >
                 <SideMenu />
                 <Article>
                     <Toolbar
@@ -97,7 +100,6 @@ const App = ({
         </Page>
     );
 };
-
 
 //
 //<Splitter>

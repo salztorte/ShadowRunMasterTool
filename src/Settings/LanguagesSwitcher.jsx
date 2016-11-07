@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
 import Button from 'grommet/components/Button';
-//import { Button, ListItem } from 'react-onsenui';
+
+import LanguagesButton from './LanguagesButton.jsx';
 
 const buttonStyle = {
     marginRight: '15px',
@@ -17,20 +18,17 @@ const LanguagesSwitcher = ({
             separator={'bottom'}
         >
             <p style={{ fontWeight: 'bold' }}>{translate.HEADLINE}</p>
-            <Box
-                direction={'col'}
-            >
-                {langArray.reduce((res, cur) => {
-                    res.push(<Button
-                        type="button"
+            {langArray.reduce((res, cur) => {
+                res.push(
+                    <LanguagesButton
                         key={cur}
-                        onClick={() => changeLang(cur)}
-                        label={translate[cur]}
-                        primary
-                    />);
-                    return res;
-                }, [])}
-            </Box>
+                        name={cur}
+                        translate={translate}
+                        changeLang={changeLang}
+                    />
+                );
+                return res;
+            }, [])}
         </Box>
     );
 

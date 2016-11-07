@@ -21,7 +21,7 @@ const rootEl = document.getElementById('app');
 //                <IndexRedirect to="/dicecup" />
 //                <Route path="search" component={Search} />
 //                <Route path="dicecup" component={Dice} />
-
+//                <Route path="settings" component={Settings} />
 //                <Route path="impressum" component={Impressum} />
 
 render(

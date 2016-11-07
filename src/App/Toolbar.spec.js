@@ -25,7 +25,6 @@ describe('<Toolbar/>', () => {
         expect(wrapper.children()).to.have.length(3);
         expect(wrapper.children().find('Menu')).to.have.length(1);
         expect(wrapper.children().find('Title')).to.have.length(1);
-        expect(wrapper.children().find('div')).to.have.length(1);
     });
 
     it('should have props for title and clickIcon', () => {
