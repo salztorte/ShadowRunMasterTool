@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import Section from 'grommet/components/Section';
 import Box from 'grommet/components/Box';
 
 import { connector } from '../tools';

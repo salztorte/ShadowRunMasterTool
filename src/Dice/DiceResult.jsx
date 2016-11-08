@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
-import { ListItem } from 'react-onsenui';
 
+import Box from 'grommet/components/Box';
+import Paragraph from 'grommet/components/Paragraph';
 //const countSucAndFail = result => result.reduce((res, cur) => {
 //  if (cur >= 5) {
 //    res.succsess++;
@@ -17,11 +18,18 @@ const DiceResult = ({
     rollResult,
     }) =>
     (
-        <ListItem style={{ width: '100%' }}>
-            <div className="myListItem">
-                <div style={{ height: '1em'}}>{rollResult.join("; ")}</div>
-            </div>
-        </ListItem>
+        <Box
+            separator={'bottom'}
+            pad={{
+                horizontal: 'small',
+                vertical: 'small',
+            }}
+        >
+            <Paragraph>
+                {rollResult.join('; ')}
+            </Paragraph>
+        </Box>
+
     );
 
 DiceResult.propTypes = {
