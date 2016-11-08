@@ -3,6 +3,9 @@ import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
 
+import ReactList from 'react-list';
+
+
 import { createSelector } from 'reselect';
 
 import { connector } from '../tools';
@@ -10,6 +13,81 @@ import { resourcesActions } from '../Resources';
 import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
 import SearchItem from './SearchItem.jsx';
+
+const list = [
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c','Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+    'Brian Vaughn',
+    'Bob',
+    'asdfsadf',
+    'asdfsawqerewqrq',
+    '2131254opewwerge',
+    'a',
+    'b',
+    'c',
+];
+
 
 const Search = ({
     _bookSelector,
@@ -24,6 +102,14 @@ const Search = ({
             <SearchInput
                 onChange={event => searchData(event.target.value)}
                 style={{ width: '100%' }}
+            />
+            <ReactList
+                length={list.length}
+                itemRenderer={(index, key) => (
+                    <div key={key} >
+                        {list[index]}
+                    </div>
+                )}
             />
         </Box>
     );

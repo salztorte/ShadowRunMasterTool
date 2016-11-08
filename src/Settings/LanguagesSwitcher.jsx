@@ -19,6 +19,7 @@ const LanguagesSwitcher = ({
             separator={'bottom'}
             pad={{
                 horizontal: 'small',
+                vertical: 'small',
             }}
         >
             <Heading

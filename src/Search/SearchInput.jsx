@@ -4,15 +4,19 @@ import Box from 'grommet/components/Box';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
 import TextInput from 'grommet/components/TextInput';
+import Header from 'grommet/components/Header';
 
 const SearchInput = ({
     onChange,
     }) =>
     (
-        <Box
+        <Header
+            fixed
+            style={{ width: '100%' }}
             pad={{
                 horizontal: 'small',
             }}
+            colorIndex="light-1"
         >
             <Form
                 style={{ width: '100%' }}
@@ -27,7 +31,7 @@ const SearchInput = ({
                     />
                 </FormField>
             </Form>
-        </Box>
+        </Header>
     );
 
 
