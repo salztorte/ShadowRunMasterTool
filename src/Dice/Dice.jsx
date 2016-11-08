@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import Box from 'grommet/components/Box';
+
 import { diceActions } from './DiceActions';
 import DiceInput from './DiceInput.jsx';
 import DiceResult from './DiceResult.jsx';
@@ -11,12 +13,12 @@ const Dice = ({
     rollDice,
     rollResult,
     translate,
-    hideModal,
-    openModal,
-    isOpen,
+//    hideModal,
+//    openModal,
+//    isOpen,
     }) => {
     return (
-        <section className="myList">
+        <Box>
             <DiceInput
                 translate={translate}
                 changeDiceCount={changeDiceCount}
@@ -26,9 +28,10 @@ const Dice = ({
             <DiceResult
                 rollResult={rollResult}
             />
-        </section>
+        </Box>
     );
 };
+
 
 //<Dialog
 //    isOpen={isOpen}
@@ -50,9 +53,9 @@ Dice.propTypes = {
     rollDice: PropTypes.func.isRequired,
     rollResult: PropTypes.arrayOf(PropTypes.number),
     translate: PropTypes.object,
-    hideModal: PropTypes.any,
-    openModal: PropTypes.any,
-    isOpen: PropTypes.any,
+//    hideModal: PropTypes.any,
+//    openModal: PropTypes.any,
+//    isOpen: PropTypes.any,
 };
 
 
@@ -60,14 +63,14 @@ const mapStateToProps = state => ({
     diceCount: state.dice.diceCount,
     rollResult: state.dice.rollResult,
     translate: state.translation.translate.DICE_CUP,
-    isOpen: state.dice.isDialogOpen,
+//    isOpen: state.dice.isDialogOpen,
 });
 
 const actionList = {
     changeDiceCount: diceActions.changeDiceCount,
     rollDice: diceActions.rollDice,
-    openModal: diceActions.showModal,
-    hideModal: diceActions.hideModal,
+//    openModal: diceActions.showModal,
+//    hideModal: diceActions.hideModal,
 };
 
 export default connector(mapStateToProps, actionList)(Dice);

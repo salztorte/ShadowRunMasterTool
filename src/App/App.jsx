@@ -84,7 +84,7 @@ const App = ({
             <Article>
                 <Toolbar
                     title={getTitleFromPath(path)}
-                    clickIcon={openMenu()}
+                    clickIcon={openMenu}
                     icon={<Menu size="small" />}
                 />
                 <Section>
