@@ -1,18 +1,39 @@
 import React, { PropTypes } from 'react';
 
+import Heading from 'grommet/components/Heading';
+import Paragraph from 'grommet/components/Paragraph';
+import Section from 'grommet/components/Section';
+
 import { connector } from '../tools';
 
 const Impressum = ({
     translate,
     }) =>
     (
-        <section style={{ textAlign: 'center' }}>
-            <h1> Shadowrun Mastertool</h1>
-            <p> Version 0.1.0 </p>
+        <Section>
+            <Heading
+                tag="h1"
+            >
+                Shadowrun Mastertool
+            </Heading>
+            <Paragraph
+                size="large"
+            >
+                Version 0.1.0
+            </Paragraph>
             <br />
-            <h2> {`${translate.DEVELOPER}:`} </h2>
-            <p>Oliver Franzen</p>
-        </section>
+
+            <Heading
+                tag="h2"
+            >
+                {`${translate.DEVELOPER}:`}
+            </Heading>
+            <Paragraph
+                size="large"
+            >
+                Oliver Franzen
+            </Paragraph>
+        </Section>
     );
 
 Impressum.propTypes = {

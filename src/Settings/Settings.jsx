@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
 
+import Section from 'grommet/components/Section';
+import Box from 'grommet/components/Box';
+
 import { connector } from '../tools';
 
 import { settingsActions } from './SettingsActions';
@@ -18,21 +21,37 @@ const Settings = ({
     translate,
     }) =>
     (
-        <section>
-            <LanguagesSwitcher
-                langArray={langArray}
-                translate={translate.LANGUAGES}
-                changeLang={changeLang}
-            />
-            <DefaultDicePool
-                translate={translate.DICE_POOL}
-                onChange={(event) => {
+        <Box>
+            <Box
+                separator={'bottom'}
+                pad={{
+                    horizontal: 'small',
+                }}
+            >
+                <LanguagesSwitcher
+                    langArray={langArray}
+                    translate={translate.LANGUAGES}
+                    changeLang={changeLang}
+                />
+            </Box>
+            <Box
+                separator={'bottom'}
+                pad={{
+                    horizontal: 'small',
+                }}
+            >
+                <DefaultDicePool
+                    translate={translate.DICE_POOL}
+                    onChange={(event) => {
                     changeDefaultDiceCount(event.target.value);
                 }}
-                defaultDice={defaultDice}
-            />
-        </section>
+                    defaultDice={defaultDice}
+                />
+            </Box>
+        </Box>
     );
+
+
 
 
 Settings.propTypes = {

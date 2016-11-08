@@ -91,12 +91,7 @@ const App = ({
                         )}
                         icon={<Menu size="small" />}
                     />
-                    <Section
-                        pad={{
-                            horizontal: 'small',
-                            vertical: 'small',
-                        }}
-                    >
+                    <Section>
                         {children}
                     </Section>
                 </Article>
@@ -105,7 +100,11 @@ const App = ({
     );
 };
 
-//
+//pad={{
+//horizontal: 'small',
+//    vertical: 'small',
+//}}
+
 //<Splitter>
 //    <SideMenu
 //        closeMenu={closeMenu}
@@ -137,7 +136,7 @@ App.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     openMenu: PropTypes.func.isRequired,
     path: PropTypes.string,
-//    routerPush: PropTypes.func,
+    routerPush: PropTypes.func,
 //    searchData: PropTypes.func.isRequired,
     translate: PropTypes.object,
 };
