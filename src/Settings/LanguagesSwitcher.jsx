@@ -15,7 +15,12 @@ const LanguagesSwitcher = ({
     langArray,
     }) =>
     (
-        <Box>
+        <Box
+            separator={'bottom'}
+            pad={{
+                    horizontal: 'small',
+                }}
+        >
             <Heading
                 tag="h4"
                 strong
