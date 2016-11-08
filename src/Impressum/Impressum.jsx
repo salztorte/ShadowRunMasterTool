@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
-import Section from 'grommet/components/Section';
+import Box from 'grommet/components/Box';
 
 import { connector } from '../tools';
 
@@ -10,7 +10,11 @@ const Impressum = ({
     translate,
     }) =>
     (
-        <Section>
+        <Box
+            pad={{
+                horizontal: 'small',
+            }}
+        >
             <Heading
                 tag="h1"
             >
@@ -33,7 +37,7 @@ const Impressum = ({
             >
                 Oliver Franzen
             </Paragraph>
-        </Section>
+        </Box>
     );
 
 Impressum.propTypes = {

@@ -22,36 +22,20 @@ const Settings = ({
     }) =>
     (
         <Box>
-            <Box
-                separator={'bottom'}
-                pad={{
-                    horizontal: 'small',
-                }}
-            >
-                <LanguagesSwitcher
-                    langArray={langArray}
-                    translate={translate.LANGUAGES}
-                    changeLang={changeLang}
-                />
-            </Box>
-            <Box
-                separator={'bottom'}
-                pad={{
-                    horizontal: 'small',
-                }}
-            >
-                <DefaultDicePool
-                    translate={translate.DICE_POOL}
-                    onChange={(event) => {
+            <LanguagesSwitcher
+                langArray={langArray}
+                translate={translate.LANGUAGES}
+                changeLang={changeLang}
+            />
+            <DefaultDicePool
+                translate={translate.DICE_POOL}
+                defaultDice={defaultDice}
+                onChange={(event) => {
                     changeDefaultDiceCount(event.target.value);
                 }}
-                    defaultDice={defaultDice}
-                />
-            </Box>
+            />
         </Box>
     );
-
-
 
 
 Settings.propTypes = {
