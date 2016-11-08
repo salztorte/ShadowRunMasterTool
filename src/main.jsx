@@ -28,7 +28,7 @@ render(
     <Provider store={store}>
         <Router history={history}>
             <Route path="/" component={App}>
-                <IndexRedirect to="/dicecup" />
+                <IndexRedirect to="/search" />
                 <Route path="search" component={Search} />
                 <Route path="dicecup" component={Dice} />
                 <Route path="settings" component={Settings} />

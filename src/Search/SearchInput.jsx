@@ -1,21 +1,34 @@
 import React, { PropTypes } from 'react';
-import { Input } from 'react-onsenui';
 
-//<div>
-//
-//</div>
+import Box from 'grommet/components/Box';
+import FormField from 'grommet/components/FormField';
+import Form from 'grommet/components/Form';
+import TextInput from 'grommet/components/TextInput';
 
 const SearchInput = ({
     onChange,
-    }) => (
-
-    <Input
-        placeholder="Suche"
-        type="Text"
-        className="mySearch search-input"
-        onChange={onChange}
-    />
-);
+    }) =>
+    (
+        <Box
+            pad={{
+                horizontal: 'small',
+            }}
+        >
+            <Form
+                style={{ width: '100%' }}
+            >
+                <FormField
+                    style={{ width: '100%' }}
+                >
+                    <TextInput
+                        placeHolder="Suche"
+                        onDOMChange={onChange}
+                        style={{ width: '100%' }}
+                    />
+                </FormField>
+            </Form>
+        </Box>
+    );
 
 
 SearchInput.propTypes = {

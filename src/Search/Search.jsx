@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
-import { LazyList } from 'react-onsenui';
+//import { LazyList } from 'react-onsenui';
+
+import Box from 'grommet/components/Box';
+
 import { createSelector } from 'reselect';
 
 import { connector } from '../tools';
@@ -15,23 +18,31 @@ const Search = ({
     }) => {
     const filteredSize = _filteredIdArray.size || _filteredIdArray.length;
     return (
-        <section style={{ textAlign: 'center' }}>
+        <Box
+            full="horizontal"
+        >
             <SearchInput
                 onChange={event => searchData(event.target.value)}
+                style={{ width: '100%' }}
             />
-            <LazyList
-                className="myList"
-                length={filteredSize}
-                renderRow={index => (
-                    <SearchItem key={index} select={_bookSelector[_filteredIdArray[index]]} />
-                )}
-                calculateItemHeight={() => 44}
-            />
-            <br />
-            <br />
-        </section>
+        </Box>
     );
 };
+
+//<section style={{ textAlign: 'center' }}>
+//    <SearchInput
+//        onChange={event => searchData(event.target.value)}
+//    />
+//    <LazyList
+//        className="myList"
+//        length={filteredSize}
+//        renderRow={index => (
+//                    <SearchItem key={index} select={_bookSelector[_filteredIdArray[index]]} />
+//                )}
+//        calculateItemHeight={() => 44}
+//    />
+//</section>
+
 
 Search.propTypes = {
     _bookSelector: PropTypes.object.isRequired,
