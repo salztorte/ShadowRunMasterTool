@@ -38,7 +38,6 @@
     "redux": "^3.6.0",
     "redux-search": "^2.3.1",
     "redux-thunk": "^2.1.0",
-    "replace-webpack-plugin": "^0.1.2",
     "reselect": "2.0.1"
   },
   "devDependencies": {
@@ -64,6 +63,7 @@
     "node-sass": "^3.11.1",
     "react-addons-test-utils": "^15.3.2",
     "redux-mock-store": "^1.2.1",
+    "replace-webpack-plugin": "^0.1.2",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",

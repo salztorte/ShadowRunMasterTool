@@ -12,7 +12,7 @@ import { routerActions } from 'react-router-redux';
 
 import Toolbar from './Toolbar.jsx';
 import SideMenu from './SideMenu.jsx';
-//import { resourcesActions } from '../Resources';
+import { resourcesActions } from '../Resources';
 
 import { appActions } from './AppActions';
 import { connector } from '../tools';
@@ -38,29 +38,14 @@ const onInit = (genData, bookIndex) => () => {
 };
 
 
-//const App = ({
-//    bookIndex,
-//    children,
-//    closeMenu,
-//    generateData,
-//    isOpen,
-//    openMenu,
-//    path,
-//    routerPush,
-//    searchData,
-//    translate,
-//    }) => {
-//    const menu = createMenu(translate);
-//    const getTitleFromPath = _path => menu.reduce((res, cur) => (
-//        _path === `/${cur.path}` ? cur.title : res
-//    ), '');
-
 //                        closeMenu();
 //                        searchData('');
 const App = ({
+    bookIndex,
     children,
     closeMenu,
     openMenu,
+    generateData,
     isOpen,
     translate,
     path,
@@ -70,6 +55,12 @@ const App = ({
     const getTitleFromPath = _path => menu.reduce((res, cur) => (
         _path === `/${cur.path}` ? cur.title : res
     ), '');
+
+//    if (bookIndex.size === 0) {
+//        generateData();
+//    }
+
+
     return (
         <Page
             centered={false}
@@ -96,10 +87,10 @@ const App = ({
 };
 
 App.propTypes = {
-//    bookIndex: PropTypes.object,
+    bookIndex: PropTypes.object,
     children: PropTypes.element,
     closeMenu: PropTypes.func.isRequired,
-//    generateData: PropTypes.func.isRequired,
+    generateData: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
     openMenu: PropTypes.func.isRequired,
     path: PropTypes.string,
@@ -109,18 +100,17 @@ App.propTypes = {
 };
 
 const mapStateToProps = state => ({
-//    bookIndex: state.resources.bookIndex,
+    bookIndex: state.resources.bookIndex,
     isOpen: state.app.isOpen,
     path: state.routing.locationBeforeTransitions.get('pathname'),
     translate: state.translation.translate.HEADLINES,
 });
 const actionList = {
     closeMenu: appActions.closeMenu,
-//    generateData: resourcesActions.generateData,
+    generateData: resourcesActions.generateData,
     openMenu: appActions.openMenu,
     routerPush: routerActions.push,
-//    searchData: resourcesActions.searchData,
-//
+    searchData: resourcesActions.searchData,
 };
 
 export default connector(mapStateToProps, actionList)(App);
