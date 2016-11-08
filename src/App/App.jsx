@@ -5,6 +5,8 @@ import Page from 'grommet/components/App';
 import Section from 'grommet/components/Section';
 import Split from 'grommet/components/Split';
 import Menu from 'grommet/components/icons/base/Menu';
+import Layer from 'grommet/components/Layer';
+import Box from 'grommet/components/Box';
 
 import { routerActions } from 'react-router-redux';
 
@@ -72,62 +74,27 @@ const App = ({
         <Page
             centered={false}
         >
-            <Split
-                flex="right"
-                showOnResponsive="both"
-            >
-                <SideMenu
-                    title={translate.MENU}
-                    goToRoute={(_path) => {
-                        routerPush(_path);
-                    }}
-                    menuItems={menu}
+            <SideMenu
+                title={translate.MENU}
+                goToRoute={routerPush}
+                menuItems={menu}
+                closeMenu={closeMenu}
+                isOpen={isOpen}
+            />
+            <Article>
+                <Toolbar
+                    title={getTitleFromPath(path)}
+                    clickIcon={openMenu()}
+                    icon={<Menu size="small" />}
                 />
-                <Article>
-                    <Toolbar
-                        title={getTitleFromPath(path)}
-                        clickIcon={() => (
-                            isOpen ? closeMenu() : openMenu()
-                        )}
-                        icon={<Menu size="small" />}
-                    />
-                    <Section>
-                        {children}
-                    </Section>
-                </Article>
-            </Split>
+                <Section>
+                    {children}
+                </Section>
+            </Article>
         </Page>
     );
 };
 
-//pad={{
-//horizontal: 'small',
-//    vertical: 'small',
-//}}
-
-//<Splitter>
-//    <SideMenu
-//        closeMenu={closeMenu}
-//        goToRoute={(_path) => {
-//                    closeMenu();
-//                    searchData('');
-//                    routerPush(_path);
-//                }}
-//        menuItems={menu}
-//        isOpen={isOpen}
-//        title={translate.MENU}
-//    />
-//    <SplitterContent>
-//        <Page
-//            renderToolbar={() => toolbar(getTitleFromPath(path), openMenu)}
-//            onInit={onInit(generateData, bookIndex)}
-//        >
-//            {children}
-//        </Page>
-//    </SplitterContent>
-//</Splitter>
-
-//
 App.propTypes = {
 //    bookIndex: PropTypes.object,
     children: PropTypes.element,
@@ -157,4 +124,3 @@ const actionList = {
 };
 
 export default connector(mapStateToProps, actionList)(App);
-//export default App;

@@ -2,79 +2,58 @@ import React, { PropTypes } from 'react';
 
 import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
-import Sidebar from 'grommet/components/Sidebar';
+import Box from 'grommet/components/Box';
+import Layer from 'grommet/components/Layer';
+
 
 import Toolbar from './Toolbar.jsx';
 
 const SideMenu = ({
-//    closeMenu,
-//    isOpen,
+    closeMenu,
     goToRoute,
+    isOpen,
     menuItems,
     title,
-    }) =>
-    (
-        <Sidebar
-            colorIndex="neutral-1"
+    }) => (
+    isOpen ? (
+        <Layer
+            align="left"
+            closer
+            flush
+            onClose={closeMenu}
         >
-            <Toolbar
-                title={title}
-            />
-            <Menu
-                primary
+            <Box
+                colorIndex="neutral-1"
+                style={{ width: '100%' }}
+                full="vertical"
             >
-                {menuItems.reduce((res, { title, path }) => {
-                    res.push(
-                        <Anchor
-                            key={title}
-                            onClick={() => {
-                                goToRoute(path);
-                            }}
-                        >
-                            {title}
-                        </Anchor>
-                    );
-                    return res;
-                }, [])}
-            </Menu>
-        </Sidebar>
-    );
-
-//        <SplitterSide
-//            side='left'
-//            style={{ boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)' }}
-//            width={200}
-//            collapse
-//            isSwipeable
-//            isOpen={isOpen}
-//        >
-//            <Page>
-//                <List
-//                    className='myList'
-//                    dataSource={menuItems}
-//                    renderHeader={() => <SideMenuHeader title={title} />}
-//                    renderRow={
-//                        item => (
-//                            <SideMenuItem
-//                                key={item.title}
-//                                title={item.title}
-//                                onClick={() => {
-//                                    closeMenu();
-//                                    goToRoute(item.path);
-//                                }}
-//                                style={{}}
-//                            />
-//                        )
-//                    }
-//                />
-//            </Page>
-//        </SplitterSide>
+                <Toolbar title={title} />
+                <Menu primary>
+                    {menuItems.reduce((res, { title, path }) => {
+                        res.push(
+                            <Anchor
+                                label={title}
+                                key={title}
+                                onClick={() => {
+                                    goToRoute(path);
+                                    closeMenu();
+                                }}
+                            />
+                        );
+                        return res;
+                    }, [])}
+                </Menu>
+            </Box>
+        </Layer>
+    )
+        : null
+);
 
 
 SideMenu.propTypes = {
-//    closeMenu: PropTypes.func.isRequired,
-//    isOpen: PropTypes.bool.isRequired,
+    closeMenu: PropTypes.func.isRequired,
     goToRoute: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
     menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
     title: PropTypes.string.isRequired,
 };
