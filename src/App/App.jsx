@@ -87,9 +87,9 @@ const App = ({
                     clickIcon={openMenu}
                     icon={<Menu size="small" />}
                 />
-                <Section>
+                <Box>
                     {children}
-                </Section>
+                </Box>
             </Article>
         </Page>
     );

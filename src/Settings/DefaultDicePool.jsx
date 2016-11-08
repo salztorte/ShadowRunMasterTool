@@ -15,9 +15,6 @@ const DefaultDicePool = ({
     (
         <Box
             separator={'bottom'}
-            pad={{
-                horizontal: 'small',
-            }}
         >
             <Heading
                 tag="h4"
