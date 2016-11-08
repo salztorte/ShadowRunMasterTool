@@ -1,12 +1,13 @@
 import { Record, OrderedMap } from 'immutable';
 import { ACTION_TYPES } from './ResourcesActions';
-import { resourceName } from './BookIndex';
+import { resourceName, loadBookData } from './BookIndex';
 
 const State = Record({
     [resourceName]: OrderedMap(),
 });
 
-export const initStateResources = new State();
+
+export const initStateResources = new State().set(resourceName, loadBookData);
 
 const actionHandlers = {
     [ACTION_TYPES.CLEAR_DATA]: state => state.set(resourceName, {}),

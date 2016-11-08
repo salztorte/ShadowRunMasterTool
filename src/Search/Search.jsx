@@ -1,8 +1,5 @@
 import React, { PropTypes } from 'react';
-//import { LazyList } from 'react-onsenui';
-
 import Box from 'grommet/components/Box';
-
 import ReactList from 'react-list';
 
 
@@ -13,81 +10,6 @@ import { resourcesActions } from '../Resources';
 import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
 import SearchItem from './SearchItem.jsx';
-
-const list = [
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c','Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-    'Brian Vaughn',
-    'Bob',
-    'asdfsadf',
-    'asdfsawqerewqrq',
-    '2131254opewwerge',
-    'a',
-    'b',
-    'c',
-];
-
 
 const Search = ({
     _bookSelector,
@@ -103,17 +25,24 @@ const Search = ({
                 onChange={event => searchData(event.target.value)}
                 style={{ width: '100%' }}
             />
-            <ReactList
-                length={list.length}
-                itemRenderer={(index, key) => (
-                    <div key={key} >
-                        {list[index]}
-                    </div>
-                )}
-            />
+            <div style={{ overflow: 'auto' }}>
+
+            </div>
         </Box>
     );
 };
+
+//<ReactList
+    //                    itemRenderer={(index, key) => (
+    //                        <SearchItem
+    //                            key={key}
+    //                            item={_bookSelector[_filteredIdArray[index]]}
+    //                        />
+    //                    )}
+    //                    length={filteredSize}
+    //                    type="uniform"
+    //                />
+
 
 //<section style={{ textAlign: 'center' }}>
 //    <SearchInput
