@@ -1,37 +1,47 @@
 import React, { PropTypes } from 'react';
+
+import Anchor from 'grommet/components/Anchor';
+import Menu from 'grommet/components/Menu';
 import Sidebar from 'grommet/components/Sidebar';
 
-//import { Page, SplitterSide, List } from 'react-onsenui';
-//
-//import SideMenuItem from './SideMenuItem.jsx';
-//import SideMenuHeader from './SideMenuHeader.jsx';
-
-
-//<Sidebar
-//    colorIndex="neutral-2"
-//    fixed
-//>
-//    Test
-//</Sidebar>
-
+import Toolbar from './Toolbar.jsx';
 
 const SideMenu = ({
 //    closeMenu,
 //    isOpen,
-//    goToRoute,
-//    menuItems,
-//    title,
+    goToRoute,
+    menuItems,
+    title,
     }) =>
     (
         <Sidebar
             colorIndex="neutral-1"
         >
-            Test
+            <Toolbar
+                title={title}
+            />
+            <Menu
+                primary
+            >
+                {menuItems.reduce((res, { title, path }) => {
+                    res.push(
+                        <Anchor
+                            key={title}
+                            onClick={() => {
+                                goToRoute(path);
+                            }}
+                        >
+                            {title}
+                        </Anchor>
+                    );
+                    return res;
+                }, [])}
+            </Menu>
         </Sidebar>
     );
 
 //        <SplitterSide
-//            side="left"
+//            side='left'
 //            style={{ boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)' }}
 //            width={200}
 //            collapse
@@ -40,7 +50,7 @@ const SideMenu = ({
 //        >
 //            <Page>
 //                <List
-//                    className="myList"
+//                    className='myList'
 //                    dataSource={menuItems}
 //                    renderHeader={() => <SideMenuHeader title={title} />}
 //                    renderRow={
@@ -64,9 +74,9 @@ const SideMenu = ({
 SideMenu.propTypes = {
 //    closeMenu: PropTypes.func.isRequired,
 //    isOpen: PropTypes.bool.isRequired,
-//    goToRoute: PropTypes.func.isRequired,
-//    menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-//    title: PropTypes.string.isRequired,
+    goToRoute: PropTypes.func.isRequired,
+    menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+    title: PropTypes.string.isRequired,
 };
 
 export default SideMenu;

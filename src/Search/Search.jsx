@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { LazyList } from 'react-onsenui';
 import { createSelector } from 'reselect';
 

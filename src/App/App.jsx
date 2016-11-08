@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
 
-import Animate from 'grommet/components/Animate';
 import Article from 'grommet/components/Article';
 import Page from 'grommet/components/App';
 import Section from 'grommet/components/Section';
-import Sidebar from 'grommet/components/Sidebar';
 import Split from 'grommet/components/Split';
-import Layer from 'grommet/components/Layer';
+import Menu from 'grommet/components/icons/base/Menu';
 
-//import { routerActions } from 'react-router-redux';
+import { routerActions } from 'react-router-redux';
 
 import Toolbar from './Toolbar.jsx';
 import SideMenu from './SideMenu.jsx';
@@ -55,10 +53,8 @@ const onInit = (genData, bookIndex) => () => {
 //        _path === `/${cur.path}` ? cur.title : res
 //    ), '');
 
-//<Animate enter={{ animation: "slide-rigth", duration: 1000 }}
-//         leave={{ animation: "slide-left", duration: 1000 }}
-//         visible={isOpen}>
-
+//                        closeMenu();
+//                        searchData('');
 const App = ({
     children,
     closeMenu,
@@ -66,6 +62,7 @@ const App = ({
     isOpen,
     translate,
     path,
+    routerPush,
     }) => {
     const menu = createMenu(translate);
     const getTitleFromPath = _path => menu.reduce((res, cur) => (
@@ -79,13 +76,20 @@ const App = ({
                 flex="right"
                 showOnResponsive="both"
             >
-                <SideMenu />
+                <SideMenu
+                    title={translate.MENU}
+                    goToRoute={(_path) => {
+                        routerPush(_path);
+                    }}
+                    menuItems={menu}
+                />
                 <Article>
                     <Toolbar
                         title={getTitleFromPath(path)}
                         clickIcon={() => (
                             isOpen ? closeMenu() : openMenu()
                         )}
+                        icon={<Menu size="small" />}
                     />
                     <Section
                         pad={{
@@ -148,7 +152,7 @@ const actionList = {
     closeMenu: appActions.closeMenu,
 //    generateData: resourcesActions.generateData,
     openMenu: appActions.openMenu,
-//    routerPush: routerActions.push,
+    routerPush: routerActions.push,
 //    searchData: resourcesActions.searchData,
 //
 };

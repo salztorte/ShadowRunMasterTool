@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
-import Menu from 'grommet/components/icons/base/Menu';
 import Box from 'grommet/components/Box';
 
-const toolbar = ({
+const Toolbar = ({
     title,
     clickIcon,
+    icon,
     }) =>
     (
         <Header
@@ -15,25 +15,28 @@ const toolbar = ({
             colorIndex="neutral-1"
             full="horizontal"
             fixed
+            separator="bottom"
         >
             <Box
                 onClick={clickIcon}
             >
-                <Menu
-                    size="small"
-                />
+                {icon}
             </Box>
             <Title>
                 {title}
             </Title>
-            <Title />
+            <Box />
         </Header>
     );
 
-toolbar.propTypes = {
+Toolbar.propTypes = {
     title: PropTypes.string.isRequired,
-    clickIcon: PropTypes.func.isRequired,
+    clickIcon: PropTypes.func,
+    icon: PropTypes.element,
 };
 
+Toolbar.defaultProps = {
+    clickIcon: () => {},
+};
 
-export default toolbar;
+export default Toolbar;

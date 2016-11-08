@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { ListItem } from 'react-onsenui';
 
 //const countSucAndFail = result => result.reduce((res, cur) => {
