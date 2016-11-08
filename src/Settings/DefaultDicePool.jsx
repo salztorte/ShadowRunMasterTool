@@ -1,7 +1,11 @@
 import React, { PropTypes } from 'react';
+
 import Box from 'grommet/components/Box';
+import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import FormField from 'grommet/components/FormField';
+import Form from 'grommet/components/Form';
+
 
 const DefaultDicePool = ({
     translate,
@@ -10,25 +14,27 @@ const DefaultDicePool = ({
     }) =>
     (
         <Box
-            separator={'bottom'}
-            pad={{
-                vertical: 'small',
-            }}
         >
-            <p style={{ fontWeight: 'bold' }}>{translate.HEADLINE}</p>
-            <FormField
-                style={{ width: '100%' }}
+            <Heading
+                tag="h4"
+                strong
             >
-                <NumberInput
-                    id="item2"
-                    name="item2"
-                    label="Item 2"
-                    value={`${defaultDice}`}
-                    onChange={onChange}
+                {translate.HEADLINE}
+            </Heading>
+            <Form
+                style={{ width: '100%' }}
+                pad={{ vertical: 'small' }}
+            >
+                <FormField
                     style={{ width: '100%' }}
-                />
-            </FormField>
-
+                >
+                    <NumberInput
+                        value={`${defaultDice}`}
+                        onChange={onChange}
+                        style={{ width: '100%' }}
+                    />
+                </FormField>
+            </Form>
         </Box>
     );
 

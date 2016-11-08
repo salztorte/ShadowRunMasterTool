@@ -4229,6 +4229,10 @@ replace-ext@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
+replace-webpack-plugin:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/replace-webpack-plugin/-/replace-webpack-plugin-0.1.2.tgz#1e930e8e7d006e071901570388e26ff0658029ea"
+
 request@^2.55.0, request@^2.61.0, request@^2.75.0, request@2:
   version "2.78.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.78.0.tgz#e1c8dec346e1c81923b24acdb337f11decabe9cc"

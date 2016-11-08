@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
-import Button from 'grommet/components/Button';
-
+import Heading from 'grommet/components/Heading';
+import Paragraph from 'grommet/components/Paragraph';
 import LanguagesButton from './LanguagesButton.jsx';
 
-const buttonStyle = {
-    marginRight: '15px',
-};
+//<Paragraph>
+//    {translate.HEADLINE}
+//</Paragraph>
+
 
 const LanguagesSwitcher = ({
     translate,
@@ -14,21 +15,18 @@ const LanguagesSwitcher = ({
     langArray,
     }) =>
     (
-        <Box
-            separator={'bottom'}
-        >
-            <p style={{ fontWeight: 'bold' }}>{translate.HEADLINE}</p>
-            {langArray.reduce((res, cur) => {
-                res.push(
-                    <LanguagesButton
-                        key={cur}
-                        name={cur}
-                        translate={translate}
-                        changeLang={changeLang}
-                    />
-                );
-                return res;
-            }, [])}
+        <Box>
+            <Heading
+                tag="h4"
+                strong
+            >
+                {translate.HEADLINE}
+            </Heading>
+            <LanguagesButton
+                languages={langArray}
+                translate={translate}
+                changeLang={changeLang}
+            />
         </Box>
     );
 

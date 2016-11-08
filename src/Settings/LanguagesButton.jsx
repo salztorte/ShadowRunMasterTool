@@ -4,26 +4,49 @@ import Button from 'grommet/components/Button';
 
 const LanguagesButton = ({
     changeLang,
-    name,
+    languages,
     translate,
     }) =>
     (
         <Box
-            pad={{ vertical: 'small' }}
+            pad={{
+                vertical: 'small',
+                between: 'small',
+            }}
+            direction="row"
         >
-            <Button
-                type="button"
-                onClick={() => changeLang(name)}
-                label={translate[name]}
-                primary
-            />
+            {languages.reduce((res, name) => {
+                res.push(
+                    <Button
+                        key={name}
+                        type="button"
+                        onClick={() => changeLang(name)}
+                        label={translate[name]}
+                        primary
+                    />
+                );
+                return res;
+            }, [])}
         </Box>);
 
 LanguagesButton.propTypes = {
     changeLang: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
+    languages: PropTypes.arrayOf(PropTypes.string),
     translate: PropTypes.object.isRequired,
 };
 
 
 export default LanguagesButton;
+
+
+//{langArray.reduce((res, cur) => {
+//    res.push(
+//        <LanguagesButton
+//            key={cur}
+//            name={cur}
+//            translate={translate}
+//            changeLang={changeLang}
+//        />
+//    );
+//    return res;
+//}, [])}
