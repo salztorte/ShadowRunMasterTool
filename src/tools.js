@@ -19,6 +19,6 @@ export const connector = (listState, listDispatch = {}) => (
 
 
 export const keyMirror = keys => keys.reduce((res, cur) => {
-    res[cur] = cur;
+    res[cur] = Symbol(cur);
     return res;
 }, {});

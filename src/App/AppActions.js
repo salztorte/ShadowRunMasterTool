@@ -1,6 +1,5 @@
 import { keyMirror } from '../tools';
 
-
 export const ACTION_TYPES = keyMirror([
     'OPEN_MENU',
     'CLOSE_MENU',
