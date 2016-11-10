@@ -2,11 +2,9 @@ import React, { PropTypes } from 'react';
 
 import Article from 'grommet/components/Article';
 import Page from 'grommet/components/App';
-import Section from 'grommet/components/Section';
-import Split from 'grommet/components/Split';
-import Menu from 'grommet/components/icons/base/Menu';
-import Layer from 'grommet/components/Layer';
 import Box from 'grommet/components/Box';
+
+import Menu from 'grommet/components/icons/base/Menu';
 
 import { routerActions } from 'react-router-redux';
 
@@ -31,12 +29,9 @@ const createMenu = trans => [{
     path: 'impressum',
 }];
 
-const onInit = (genData, bookIndex) => () => {
-    if (bookIndex.size === 0) {
-        genData();
-    }
-};
-
+const getTitleFromPath = (menu, path) => menu.reduce((res, cur) => (
+    path === `/${cur.path}` ? cur.title : res
+), '');
 
 //                        closeMenu();
 //                        searchData('');
@@ -52,15 +47,6 @@ const App = ({
     routerPush,
     }) => {
     const menu = createMenu(translate);
-    const getTitleFromPath = _path => menu.reduce((res, cur) => (
-        _path === `/${cur.path}` ? cur.title : res
-    ), '');
-
-//    if (bookIndex.size === 0) {
-//        generateData();
-//    }
-
-
     return (
         <Page
             centered={false}
@@ -74,8 +60,8 @@ const App = ({
             />
             <Article>
                 <Toolbar
-                    title={getTitleFromPath(path)}
-                    clickIcon={openMenu}
+                    title={getTitleFromPath(menu, path)}
+                    toggleMenu={openMenu}
                     icon={<Menu size="small" />}
                 />
                 <Box>
