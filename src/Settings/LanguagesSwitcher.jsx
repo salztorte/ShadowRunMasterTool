@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
+import BoxItem from '../Componets/BoxItem.jsx';
 import LanguagesButton from './LanguagesButton.jsx';
 
 //<Paragraph>
@@ -15,13 +16,7 @@ const LanguagesSwitcher = ({
     langArray,
     }) =>
     (
-        <Box
-            separator={'bottom'}
-            pad={{
-                horizontal: 'small',
-                vertical: 'small',
-            }}
-        >
+        <BoxItem>
             <Heading
                 tag="h4"
                 strong
@@ -33,7 +28,7 @@ const LanguagesSwitcher = ({
                 translate={translate}
                 changeLang={changeLang}
             />
-        </Box>
+        </BoxItem>
     );
 
 

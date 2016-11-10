@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import Box from 'grommet/components/Box';
 import Paragraph from 'grommet/components/Paragraph';
+import BoxItem from '../Componets/BoxItem.jsx';
+
 //const countSucAndFail = result => result.reduce((res, cur) => {
 //  if (cur >= 5) {
 //    res.succsess++;
@@ -18,17 +19,11 @@ const DiceResult = ({
     rollResult,
     }) =>
     (
-        <Box
-            separator={'bottom'}
-            pad={{
-                horizontal: 'small',
-                vertical: 'small',
-            }}
-        >
+        <BoxItem>
             <Paragraph>
                 {rollResult.join('; ')}
             </Paragraph>
-        </Box>
+        </BoxItem>
 
     );
 

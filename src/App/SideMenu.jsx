@@ -5,8 +5,8 @@ import Menu from 'grommet/components/Menu';
 import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 
-
 import Toolbar from './Toolbar.jsx';
+import SideMenuItems from './SideMenuItems.jsx'
 
 const SideMenu = ({
     closeMenu,
@@ -28,14 +28,21 @@ const SideMenu = ({
                 full="vertical"
             >
                 <Toolbar title={title} />
+                <SideMenuItems
+                    onClick={(path) => {
+                        goToRoute(path);
+                        closeMenu();
+                    }}
+                    menuItems={menuItems}
+                />
                 <Menu primary>
-                    {menuItems.reduce((res, { title, path }) => {
+                    {menuItems.reduce((res, cur) => {
                         res.push(
                             <Anchor
-                                label={title}
-                                key={title}
+                                label={cur.title}
+                                key={cur.title}
                                 onClick={() => {
-                                    goToRoute(path);
+                                    goToRoute(cur.path);
                                     closeMenu();
                                 }}
                             />

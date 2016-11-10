@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 
-import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
 import Button from 'grommet/components/Button';
 
+import BoxItem from '../Componets/BoxItem.jsx';
 
 
 const style = {
@@ -26,13 +26,7 @@ const DiceInput = ({
     rollDice,
     }) =>
     (
-        <Box
-            separator={'bottom'}
-            pad={{
-                horizontal: 'small',
-                vertical: 'small',
-            }}
-        >
+        <BoxItem>
             <Heading
                 tag="h4"
                 strong
@@ -56,14 +50,14 @@ const DiceInput = ({
             <Button
                 type="button"
                 onClick={() => {
-                    rollDice(diceCount)
+                    rollDice(diceCount);
                 }}
                 label={translate.ROLL_BUTTON}
                 primary
                 fill
             />
 
-        </Box>
+        </BoxItem>
     );
 
 DiceInput.propTypes = {

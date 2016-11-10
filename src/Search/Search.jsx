@@ -86,3 +86,29 @@ const actionList = {
 };
 
 export default connector(mapStateToProps, actionList)(Search);
+
+//const PaginationHelper = function(coll, itemsPerPage) {
+//    const collection = coll.slice();
+//    const perPage = itemsPerPage;
+//    const pages = [];
+//    const i = 0;
+//    while (collection.length > 0) {
+//        pages[i] = collection.splice(0, perPage);
+//        i++;
+//    }
+//    const paginator = {
+//        getPage: index => pages[index],
+//        getPages: () => pages,
+//        itemCount: () => coll.length,
+//        pageCount: () => pages.length,
+//        pageItemCount: pageIndex => pages[pageIndex]?pages[pageIndex].length: -1,
+//        pageIndex: function(itemIndex) {
+//            if (itemIndex >= coll.length || itemIndex < 0) return -1;
+//            return Math.floor(itemIndex / perPage);
+//        }
+//    };
+//    return paginator;
+//};
+//
+//
+//

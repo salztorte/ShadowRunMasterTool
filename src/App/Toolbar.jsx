@@ -5,7 +5,7 @@ import Box from 'grommet/components/Box';
 
 const Toolbar = ({
     title,
-    clickIcon,
+    toggleMenu,
     icon,
     }) =>
     (
@@ -18,7 +18,7 @@ const Toolbar = ({
             separator="bottom"
         >
             <Box
-                onClick={clickIcon}
+                onClick={toggleMenu}
             >
                 {icon}
             </Box>
@@ -31,12 +31,12 @@ const Toolbar = ({
 
 Toolbar.propTypes = {
     title: PropTypes.string.isRequired,
-    clickIcon: PropTypes.func,
+    toggleMenu: PropTypes.func,
     icon: PropTypes.element,
 };
 
 Toolbar.defaultProps = {
-    clickIcon: () => {},
+    toggleMenu: () => {},
 };
 
 export default Toolbar;

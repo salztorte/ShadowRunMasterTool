@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 
-import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
 
+import BoxItem from '../Componets/BoxItem.jsx';
 
 const DefaultDicePool = ({
     translate,
@@ -13,9 +13,7 @@ const DefaultDicePool = ({
     defaultDice,
     }) =>
     (
-        <Box
-            separator={'bottom'}
-        >
+        <BoxItem>
             <Heading
                 tag="h4"
                 strong
@@ -36,7 +34,7 @@ const DefaultDicePool = ({
                     />
                 </FormField>
             </Form>
-        </Box>
+        </BoxItem>
     );
 
 DefaultDicePool.propTypes = {
