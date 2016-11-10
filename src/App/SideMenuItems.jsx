@@ -4,7 +4,7 @@ import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
 
 
-const SideMenuItem = ({
+const SideMenuItems = ({
     onClick,
     menuItems,
     }) =>
@@ -23,10 +23,10 @@ const SideMenuItem = ({
         </Menu>
     );
 
-
-SideMenuItem.propTypes = {
-    onClick: PropTypes.func.isRequired,
-    menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+SideMenuItems.propTypes = {
+    onClick: PropTypes.func,
+    menuItems: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default SideMenuItem;
+
+export default SideMenuItems;

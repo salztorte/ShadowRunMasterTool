@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Article from 'grommet/components/Article';
-import Page from 'grommet/components/App';
+import App from 'grommet/components/App';
 import Box from 'grommet/components/Box';
 
 import Menu from 'grommet/components/icons/base/Menu';
@@ -33,7 +33,7 @@ const getTitleFromPath = (menu, path) => menu.reduce((res, cur) => (
     path === `/${cur.path}` ? cur.title : res
 ), '');
 
-const App = ({
+const myApp = ({
     children,
     closeMenu,
     openMenu,
@@ -44,16 +44,18 @@ const App = ({
     }) => {
     const menu = createMenu(translate);
     return (
-        <Page
+        <App
             centered={false}
         >
-            <SideMenu
-                title={translate.MENU}
-                goToRoute={routerPush}
-                menuItems={menu}
-                closeMenu={closeMenu}
-                isOpen={isOpen}
-            />
+            {isOpen ? (
+                <SideMenu
+                    title={translate.MENU}
+                    goToRoute={routerPush}
+                    menuItems={menu}
+                    closeMenu={closeMenu}
+                />
+
+            ) : null}
             <Article>
                 <Toolbar
                     title={getTitleFromPath(menu, path)}
@@ -64,11 +66,11 @@ const App = ({
                     {children}
                 </Box>
             </Article>
-        </Page>
+        </App>
     );
 };
 
-App.propTypes = {
+myApp.propTypes = {
     bookIndex: PropTypes.object,
     children: PropTypes.element,
     closeMenu: PropTypes.func.isRequired,
@@ -94,4 +96,4 @@ const actionList = {
     searchData: resourcesActions.searchData,
 };
 
-export default connector(mapStateToProps, actionList)(App);
+export default connector(mapStateToProps, actionList)(myApp);

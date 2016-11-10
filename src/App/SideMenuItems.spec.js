@@ -26,9 +26,8 @@ const setup = () => {
 };
 
 describe('<SideMenuItems />', () => {
-    it('should call clickIcon', () => {
+    it('should call onClick', () => {
         const { wrapper, props } = setup();
-
         wrapper.children()
                .findWhere(n => n.key() !== 'test1')
                .simulate('click');
@@ -38,5 +37,10 @@ describe('<SideMenuItems />', () => {
                .findWhere(n => n.key() !== 'test2')
                .simulate('click');
         expect(props.onClick).have.been.called.twice;
+    });
+
+    it('should render 2 items', () => {
+        const { wrapper, props } = setup();
+        expect(wrapper.children()).to.have.length(2);
     });
 });

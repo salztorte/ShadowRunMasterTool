@@ -6,16 +6,15 @@ import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 
 import Toolbar from './Toolbar.jsx';
-import SideMenuItems from './SideMenuItems.jsx'
+import SideMenuItems from './SideMenuItems.jsx';
 
 const SideMenu = ({
     closeMenu,
     goToRoute,
-    isOpen,
     menuItems,
     title,
-    }) => (
-    isOpen ? (
+    }) =>
+    (
         <Layer
             align="left"
             closer
@@ -27,42 +26,23 @@ const SideMenu = ({
                 style={{ width: '100%' }}
                 full="vertical"
             >
-                <Toolbar title={title} />
+                <Toolbar title={title}/>
                 <SideMenuItems
+                    menuItems={menuItems}
                     onClick={(path) => {
                         goToRoute(path);
                         closeMenu();
                     }}
-                    menuItems={menuItems}
                 />
-                <Menu primary>
-                    {menuItems.reduce((res, cur) => {
-                        res.push(
-                            <Anchor
-                                label={cur.title}
-                                key={cur.title}
-                                onClick={() => {
-                                    goToRoute(cur.path);
-                                    closeMenu();
-                                }}
-                            />
-                        );
-                        return res;
-                    }, [])}
-                </Menu>
             </Box>
         </Layer>
-    )
-        : null
-);
-
+    );
 
 SideMenu.propTypes = {
-    closeMenu: PropTypes.func.isRequired,
-    goToRoute: PropTypes.func.isRequired,
-    isOpen: PropTypes.bool.isRequired,
-    menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-    title: PropTypes.string.isRequired,
+    closeMenu: PropTypes.func,
+    goToRoute: PropTypes.func,
+    menuItems: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string,
 };
 
 export default SideMenu;
