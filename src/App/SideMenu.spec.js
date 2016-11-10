@@ -33,7 +33,7 @@ describe('<SideMenu />', () => {
     it('should render Toolbar and SideMenuItems', () => {
         const { props, wrapper } = setup();
         expect(wrapper.find('Toolbar').equals(<Toolbar title={props.title} />)).to.be.true;
-        expect(wrapper.find('SideMenuItems').isEmpty()).to.be.false;
+        expect(wrapper.find('SideMenuItems').is('Menu')).to.be.true;
     });
 
 });
