@@ -33,14 +33,10 @@ const getTitleFromPath = (menu, path) => menu.reduce((res, cur) => (
     path === `/${cur.path}` ? cur.title : res
 ), '');
 
-//                        closeMenu();
-//                        searchData('');
 const App = ({
-    bookIndex,
     children,
     closeMenu,
     openMenu,
-    generateData,
     isOpen,
     translate,
     path,
@@ -81,7 +77,6 @@ App.propTypes = {
     openMenu: PropTypes.func.isRequired,
     path: PropTypes.string,
     routerPush: PropTypes.func,
-//    searchData: PropTypes.func.isRequired,
     translate: PropTypes.object,
 };
 

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
 import ReactList from 'react-list';
-
+import InfiniteScroll from 'react-infinite';
 
 import { createSelector } from 'reselect';
 
@@ -25,12 +25,29 @@ const Search = ({
                 onChange={event => searchData(event.target.value)}
                 style={{ width: '100%' }}
             />
-            <div style={{ overflow: 'auto' }}>
+            <InfiniteScroll
+                useWindowAsScrollContainer
+                elementHeight={40}
+            >
+                {
+                    _filteredIdArray.map( cur =>(
+                        <SearchItem
+                            key={cur}
+                            item={_bookSelector[cur]}
+                        />)
+                    )
 
-            </div>
+                }
+            </InfiniteScroll>
         </Box>
     );
 };
+
+
+
+//<div style={{ overflow: 'auto' }}>
+//
+//</div>
 
 //<ReactList
     //                    itemRenderer={(index, key) => (
