@@ -7,14 +7,16 @@ import chai, { expect } from 'chai';
 import spies from 'chai-spies';
 
 import SideMenu from './SideMenu.jsx';
+import Toolbar from './Toolbar.jsx';
+import SideMenuItems from './SideMenuItems.jsx';
 
 chai.use(spies);
 
 const setup = () => {
     const props = {
-        closeMenu: chai.spy(),
+        title: 'test',
         goToRoute: chai.spy(),
-        isOpen: false,
+        closeMenu: chai.spy(),
         menuItems: [{
             title: 'test1',
             path: 'test1',
@@ -22,20 +24,17 @@ const setup = () => {
             title: 'test2',
             path: 'test2',
         }],
-        title: '',
     };
     const wrapper = shallow(<SideMenu {...props} />);
     return { props, wrapper };
 };
 
 describe('<SideMenu />', () => {
-    it('should call clickIcon', () => {
-//        const { wrapper, props } = setup();
-//        expect(wrapper.children().find('test1')).to.have.length(1);
-
-
-
-//        wrapper.find('Menu').parent().simulate('click');
-//        expect(props.toggleMenu).have.been.called.once;
+    it('should render Toolbar and SideMenuItems', () => {
+        const { props, wrapper } = setup();
+        expect(wrapper.find('Toolbar').equals(<Toolbar title={props.title} />)).to.be.true;
+        expect(wrapper.find('SideMenuItems').isEmpty()).to.be.false;
     });
+
 });
+

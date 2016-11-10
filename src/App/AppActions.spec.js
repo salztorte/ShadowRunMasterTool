@@ -9,9 +9,7 @@ describe('AppActions', () => {
             payload: true,
         };
 
-        expect(appActions.openMenu()).to
-                                     .deep
-                                     .equal(expectedAction);
+        expect(appActions.openMenu()).to.deep.equal(expectedAction);
     });
 
     it('closeMenu', () => {

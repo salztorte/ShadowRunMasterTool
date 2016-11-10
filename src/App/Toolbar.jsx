@@ -30,7 +30,7 @@ const Toolbar = ({
     );
 
 Toolbar.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     toggleMenu: PropTypes.func,
     icon: PropTypes.element,
 };
