@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Article from 'grommet/components/Article';
-import App from 'grommet/components/App';
+import Page from 'grommet/components/App';
 import Box from 'grommet/components/Box';
 
 import Menu from 'grommet/components/icons/base/Menu';
@@ -33,7 +33,7 @@ const getTitleFromPath = (menu, path) => menu.reduce((res, cur) => (
     path === `/${cur.path}` ? cur.title : res
 ), '');
 
-const myApp = ({
+export const App = ({
     children,
     closeMenu,
     openMenu,
@@ -42,9 +42,10 @@ const myApp = ({
     path,
     routerPush,
     }) => {
+
     const menu = createMenu(translate);
     return (
-        <App
+        <Page
             centered={false}
         >
             {isOpen ? (
@@ -66,11 +67,11 @@ const myApp = ({
                     {children}
                 </Box>
             </Article>
-        </App>
+        </Page>
     );
 };
 
-myApp.propTypes = {
+App.propTypes = {
     children: PropTypes.element,
     closeMenu: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
@@ -79,6 +80,7 @@ myApp.propTypes = {
     routerPush: PropTypes.func,
     translate: PropTypes.object,
 };
+
 
 const mapStateToProps = state => ({
     bookIndex: state.resources.bookIndex,
@@ -94,4 +96,4 @@ const actionList = {
     searchData: resourcesActions.searchData,
 };
 
-export default connect(mapStateToProps, actionList)(myApp);
+export default connect(mapStateToProps, actionList)(App);

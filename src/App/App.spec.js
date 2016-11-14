@@ -6,9 +6,42 @@ import { shallow } from 'enzyme';
 import chai, { expect } from 'chai';
 import spies from 'chai-spies';
 
+import { App } from './App.jsx';
+import Toolbar from './Toolbar.jsx';
+import SideMenu from './SideMenu.jsx';
+
+import GER from '../store/languages/ger';
+
+import Menu from 'grommet/components/icons/base/Menu';
+
+chai.use(spies);
+
+const setup = () => {
+    const props = {
+        //muss nicht getestet werden da es weitergereicht wird
+        closeMenu: () => {
+        },
+        isOpen: true,
+        openMenu: chai.spy(),
+        path: 'test',
+        routerPush: chai.spy(),
+        translate: GER.HEADLINES,
+    };
+    const wrapper = shallow(<App {...props} />);
+    return { props, wrapper };
+};
 
 describe('<App/>', () => {
-    it('app', () => {
-        expect(1).to.be.equal(1);
+    it('should render the Toolbar', () => {
+        const { props, wrapper } = setup();
+        const expectedToolbar = <Toolbar
+            title={''}
+            toggleMenu={props.openMenu}
+            icon={<Menu size="small" />}
+        />;
+
+        expect(wrapper.find('Toolbar').equals(expectedToolbar)).to.be.true;
     });
+//    it('should render the SideMenu', () => {
+//    })
 });
