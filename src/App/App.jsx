@@ -15,7 +15,7 @@ import { resourcesActions } from '../Resources';
 
 import { appActions } from './AppActions';
 
-const createMenu = trans => [{
+export const createMenu = trans => [{
     title: trans.SEARCH,
     path: 'search',
 }, {
