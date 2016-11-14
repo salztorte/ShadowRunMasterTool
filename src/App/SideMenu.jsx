@@ -26,7 +26,7 @@ const SideMenu = ({
                 style={{ width: '100%' }}
                 full="vertical"
             >
-                <Toolbar title={title}/>
+                <Toolbar title={title} />
                 <SideMenuItems
                     menuItems={menuItems}
                     onClick={(path) => {

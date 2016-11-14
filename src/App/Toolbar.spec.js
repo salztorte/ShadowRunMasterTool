@@ -1,6 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0
  no-unused-expressions: 0
  */
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import chai, { expect } from 'chai';

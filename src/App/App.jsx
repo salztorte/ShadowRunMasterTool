@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Article from 'grommet/components/Article';
 import App from 'grommet/components/App';
@@ -13,7 +14,6 @@ import SideMenu from './SideMenu.jsx';
 import { resourcesActions } from '../Resources';
 
 import { appActions } from './AppActions';
-import { connector } from '../tools';
 
 const createMenu = trans => [{
     title: trans.SEARCH,
@@ -71,10 +71,8 @@ const myApp = ({
 };
 
 myApp.propTypes = {
-    bookIndex: PropTypes.object,
     children: PropTypes.element,
     closeMenu: PropTypes.func.isRequired,
-    generateData: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
     openMenu: PropTypes.func.isRequired,
     path: PropTypes.string,
@@ -96,4 +94,4 @@ const actionList = {
     searchData: resourcesActions.searchData,
 };
 
-export default connector(mapStateToProps, actionList)(myApp);
+export default connect(mapStateToProps, actionList)(myApp);

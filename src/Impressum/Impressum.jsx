@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import Box from 'grommet/components/Box';
-
-import { connector } from '../tools';
 
 const Impressum = ({
     translate,
@@ -49,4 +48,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connector(mapStateToProps)(Impressum);
+export default connect(mapStateToProps)(Impressum);

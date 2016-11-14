@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Box from 'grommet/components/Box';
 
 import { diceActions } from './DiceActions';
 import DiceInput from './DiceInput.jsx';
 import DiceResult from './DiceResult.jsx';
-import { connector } from '../tools';
 
 const Dice = ({
     diceCount,
@@ -13,9 +13,6 @@ const Dice = ({
     rollDice,
     rollResult,
     translate,
-//    hideModal,
-//    openModal,
-//    isOpen,
     }) => {
     return (
         <Box>
@@ -53,9 +50,6 @@ Dice.propTypes = {
     rollDice: PropTypes.func.isRequired,
     rollResult: PropTypes.arrayOf(PropTypes.number),
     translate: PropTypes.object,
-//    hideModal: PropTypes.any,
-//    openModal: PropTypes.any,
-//    isOpen: PropTypes.any,
 };
 
 
@@ -69,9 +63,7 @@ const mapStateToProps = state => ({
 const actionList = {
     changeDiceCount: diceActions.changeDiceCount,
     rollDice: diceActions.rollDice,
-//    openModal: diceActions.showModal,
-//    hideModal: diceActions.hideModal,
 };
 
-export default connector(mapStateToProps, actionList)(Dice);
+export default connect(mapStateToProps, actionList)(Dice);
 

@@ -1,16 +1,13 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Box from 'grommet/components/Box';
-
-import { connector } from '../tools';
 
 import { settingsActions } from './SettingsActions';
 import LanguagesSwitcher from './LanguagesSwitcher.jsx';
 import DefaultDicePool from './DefaultDicePool.jsx';
 
-
 const langArray = ['GER', 'EN'];
-
 
 const Settings = ({
     changeLang,
@@ -36,7 +33,6 @@ const Settings = ({
         </Box>
     );
 
-
 Settings.propTypes = {
     changeDefaultDiceCount: PropTypes.func.isRequired,
     changeLang: PropTypes.func.isRequired,
@@ -55,4 +51,4 @@ const actionList = {
     changeLang: settingsActions.changeLang,
     changeDefaultDiceCount: settingsActions.changeDefaultDiceCount,
 };
-export default connector(mapStateToProps, actionList)(Settings);
+export default connect(mapStateToProps, actionList)(Settings);

@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 import Box from 'grommet/components/Box';
 import InfiniteScroll from 'react-infinite';
 
 import { createSelector } from 'reselect';
 
-import { connector } from '../tools';
 import { resourcesActions } from '../Resources';
 import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
@@ -65,4 +66,4 @@ const actionList = {
     searchData: resourcesActions.searchData,
 };
 
-export default connector(mapStateToProps, actionList)(Search);
+export default connect(mapStateToProps, actionList)(Search);

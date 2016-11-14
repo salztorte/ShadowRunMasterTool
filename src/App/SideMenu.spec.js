@@ -8,7 +8,6 @@ import spies from 'chai-spies';
 
 import SideMenu from './SideMenu.jsx';
 import Toolbar from './Toolbar.jsx';
-import SideMenuItems from './SideMenuItems.jsx';
 
 chai.use(spies);
 
@@ -29,12 +28,18 @@ const setup = () => {
     return { props, wrapper };
 };
 
+const getFuncName = (fun) => {
+    let ret = fun.toString();
+    ret = ret.substr('function '.length);
+    ret = ret.substr(0, ret.indexOf('('));
+    return ret;
+};
+
+
 describe('<SideMenu />', () => {
     it('should render Toolbar and SideMenuItems', () => {
         const { props, wrapper } = setup();
         expect(wrapper.find('Toolbar').equals(<Toolbar title={props.title} />)).to.be.true;
-        expect(wrapper.find('SideMenuItems').is('Menu')).to.be.true;
+        expect(wrapper.find('SideMenuItems').isEmpty()).to.be.false;
     });
-
 });
-
