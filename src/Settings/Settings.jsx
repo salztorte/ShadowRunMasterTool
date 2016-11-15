@@ -18,11 +18,6 @@ const Settings = ({
     }) =>
     (
         <Box>
-            <LanguagesSwitcher
-                langArray={langArray}
-                translate={translate.LANGUAGES}
-                changeLang={changeLang}
-            />
             <DefaultDicePool
                 translate={translate.DICE_POOL}
                 defaultDice={defaultDice}
@@ -32,6 +27,13 @@ const Settings = ({
             />
         </Box>
     );
+
+//<LanguagesSwitcher
+//    langArray={langArray}
+//    translate={translate.LANGUAGES}
+//    changeLang={changeLang}
+///>
+
 
 Settings.propTypes = {
     changeDefaultDiceCount: PropTypes.func.isRequired,

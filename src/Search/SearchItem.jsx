@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+
+import Anchor from 'grommet/components/Anchor';
 import Box from 'grommet/components/Box';
 
 const SearchItem = ({

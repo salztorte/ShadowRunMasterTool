@@ -17,15 +17,13 @@ const Impressum = ({
             <Heading
                 tag="h1"
             >
-                Shadowrun Mastertool
+                {'Shadowrun Mastertool'}
             </Heading>
             <Paragraph
                 size="large"
             >
                 Version 0.1.0
             </Paragraph>
-            <br />
-
             <Heading
                 tag="h2"
             >
@@ -35,6 +33,15 @@ const Impressum = ({
                 size="large"
             >
                 Oliver Franzen
+            </Paragraph>
+            <br />
+            <br />
+            <Paragraph
+                size="large"
+            >
+                Shadowrun-Logo und Inhalte mit freundlicher Genehmigung von Pegasus Spiele unter Lizenz von
+                Catalyst Game Labs und Topps Company, Inc. © 2014 Toppy Company, Inc. Alle Rechte vorbehalten.
+                Shadowrun ist eine eingetragene Handelsmarke von Topps Company, Inc.
             </Paragraph>
         </Box>
     );
