@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import Anchor from 'grommet/components/Anchor';
-import Menu from 'grommet/components/Menu';
 import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 

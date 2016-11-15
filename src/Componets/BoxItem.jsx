@@ -4,7 +4,7 @@ import Box from 'grommet/components/Box';
 
 const BoxItem = ({
     children,
-    })=>
+    }) =>
     (
         <Box
             separator={'bottom'}
@@ -19,7 +19,10 @@ const BoxItem = ({
 
 
 BoxItem.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([
+        PropTypes.element,
+        PropTypes.arrayOf(PropTypes.element),
+    ]),
 };
 
 export default BoxItem;

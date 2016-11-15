@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { settingsReducer, createSettingsInitState } from './SettingsReducer';
 import { ACTION_TYPES } from './SettingsActions';
 
-describe('DiceReducer', () => {
+describe('SettingsReducer', () => {
     it('should create the rigth initState', () => {
         const init = createSettingsInitState();
         expect(init.defaultDiceCount).to.be.equal(15);

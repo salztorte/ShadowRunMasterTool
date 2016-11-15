@@ -9,6 +9,9 @@ export default {
     DICE_CUP: {
         DICE_POOL: 'Würfelpool',
         ROLL_BUTTON: 'Lass die Würfel rollen',
+        RESULT_SLIP: 'Du hast einen Patzer geworfen',
+        RESULT_CRIT_SLIP: 'Du hast einen kritischen Patzer geworfen',
+        TEXT_POPOVER: 'Du hast COUNT Erfloge geworfen',
     },
     SETTINGS: {
         LANGUAGES: {

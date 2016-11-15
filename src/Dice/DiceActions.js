@@ -5,8 +5,8 @@ export const ACTION_TYPES = keyMirror([
     'CHANGE_DEFAULT_DICE_COUNT',
     'CLEAR_ROLLS',
     'ROLL_DICE',
-    'SHOW_MODAL',
-    'HIDE_MODAL',
+    'SHOW_POPOVER',
+    'HIDE_POPOVER',
 ]);
 const rollDice = (diceCount) => {
     const result = [];
@@ -31,10 +31,10 @@ export const diceActions = {
         type: ACTION_TYPES.ROLL_DICE,
         payload: rollDice(diceCount),
     }),
-    showModal: () => ({
-        type: ACTION_TYPES.SHOW_MODAL,
+    showPopover: () => ({
+        type: ACTION_TYPES.SHOW_POPOVER,
     }),
-    hideModal: () => ({
-        type: ACTION_TYPES.HIDE_MODAL,
+    hidePopover: () => ({
+        type: ACTION_TYPES.HIDE_POPOVER,
     }),
 };

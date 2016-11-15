@@ -17,7 +17,7 @@ const enhancer = compose(
 );
 
 const store = createStore(rootReducer, initState, enhancer);
-//store.subscribe(() => subscriber(store));
+store.subscribe(() => subscriber(store));
 
 export const configureStore = () => store;
 

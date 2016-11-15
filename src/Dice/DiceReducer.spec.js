@@ -31,20 +31,20 @@ describe('DiceReducer', () => {
                                                                 .equal(0);
     });
 
-    it('should handel SHOW_MODAL', () => {
-        const incommingAction = {
-            type: ACTION_TYPES.SHOW_MODAL,
+    it('should handel show and hide POPOVER', () => {
+        let incommingShowAction = {
+            type: ACTION_TYPES.SHOW_POPOVER,
         };
-        const result = diceReducer(diceInitState, incommingAction).isDialogOpen;
-        expect(result).to.be.true;
-    });
+        const incommingHideAction = {
+            type: ACTION_TYPES.HIDE_POPOVER,
+        };
 
-    it('should handel HIDE_MODAL', () => {
-        const incommingAction = {
-            type: ACTION_TYPES.HIDE_MODAL,
-        };
-        const result = diceReducer(diceInitState, incommingAction).isDialogOpen;
-        expect(result).to.be.false;
+
+        const showResult = diceReducer(diceInitState, incommingShowAction);
+        const hideResult = diceReducer(showResult, incommingHideAction);
+
+        expect(showResult.isPopoverOpen).to.be.true;
+        expect(hideResult.isPopoverOpen).to.be.false;
     });
 });
 

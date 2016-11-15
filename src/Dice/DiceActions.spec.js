@@ -52,19 +52,19 @@ describe('DiceActions', () => {
 
     it('show modal', () => {
         const expectedAction = {
-            type: ACTION_TYPES.SHOW_MODAL,
+            type: ACTION_TYPES.SHOW_POPOVER,
         };
 
-        expect(diceActions.showModal()).to
+        expect(diceActions.showPopover()).to
                                        .deep
                                        .equal(expectedAction);
     });
 
     it('closeMenu', () => {
         const expectedAction = {
-            type: ACTION_TYPES.HIDE_MODAL,
+            type: ACTION_TYPES.HIDE_POPOVER,
         };
-        expect(diceActions.hideModal()).to
+        expect(diceActions.hidePopover()).to
                                        .deep
                                        .equal(expectedAction);
     });

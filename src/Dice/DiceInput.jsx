@@ -1,23 +1,13 @@
 import React, { PropTypes } from 'react';
 
-import Heading from 'grommet/components/Heading';
-import NumberInput from 'grommet/components/NumberInput';
+import Button from 'grommet/components/Button';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
-import Button from 'grommet/components/Button';
+import Heading from 'grommet/components/Heading';
+import NumberInput from 'grommet/components/NumberInput';
+import Paragraph from 'grommet/components/Paragraph';
 
 import BoxItem from '../Componets/BoxItem.jsx';
-
-
-const style = {
-    headLine: {
-        fontWeight: 'bold',
-    },
-    diceInput: {
-        width: '100%',
-        marginBottom: '15px',
-    },
-};
 
 const DiceInput = ({
     translate,
@@ -56,6 +46,12 @@ const DiceInput = ({
                 primary
                 fill
             />
+            <Paragraph
+                style={{
+                    color: 'green',
+                    fontWeight: 'bold',
+                }}
+            >{`Du kannst dir ${Math.floor(diceCount / 4)} Erfolge kaufen.`}</Paragraph>
 
         </BoxItem>
     );

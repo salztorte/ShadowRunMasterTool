@@ -6,63 +6,64 @@ import Box from 'grommet/components/Box';
 import { diceActions } from './DiceActions';
 import DiceInput from './DiceInput.jsx';
 import DiceResult from './DiceResult.jsx';
+import DiceResultPopover from './DiceResultPopover.jsx';
 
 const Dice = ({
-    diceCount,
     changeDiceCount,
+    diceCount,
+    hidePopover,
+    isPopoverOpen,
     rollDice,
     rollResult,
+    showPopover,
     translate,
-    }) => {
-    return (
+    }) =>
+    (
         <Box>
             <DiceInput
                 translate={translate}
                 changeDiceCount={changeDiceCount}
                 diceCount={diceCount}
-                rollDice={rollDice}
+                rollDice={(count) => {
+                    rollDice(count);
+                    showPopover();
+                }}
             />
             <DiceResult
                 rollResult={rollResult}
             />
+            {isPopoverOpen ? <DiceResultPopover
+                onClose={hidePopover}
+                rollResult={rollResult}
+                translate={translate}
+            /> : null}
         </Box>
     );
-};
-
-
-//<Dialog
-//    isOpen={isOpen}
-//    isCancelable={true}
-//    onCancel={hideModal}
-//    animation="none"
-//>
-//    <div style={{textAlign: 'center', margin: '20px'}}>
-//        <p style={{opacity: 0.5}}>This is a dialog!</p>
-//        <p>
-//            <Button onClick={hideModal}>Close</Button>
-//        </p>
-//    </div>
-//</Dialog>
 
 Dice.propTypes = {
-    diceCount: PropTypes.number.isRequired,
     changeDiceCount: PropTypes.func.isRequired,
+    diceCount: PropTypes.number.isRequired,
+    hidePopover: PropTypes.func.isRequired,
+    isPopoverOpen: PropTypes.bool,
     rollDice: PropTypes.func.isRequired,
     rollResult: PropTypes.arrayOf(PropTypes.number),
+    showPopover: PropTypes.func.isRequired,
     translate: PropTypes.object,
 };
 
 
 const mapStateToProps = state => ({
     diceCount: state.dice.diceCount,
+    isPopoverOpen: state.dice.isPopoverOpen,
     rollResult: state.dice.rollResult,
     translate: state.translation.translate.DICE_CUP,
-//    isOpen: state.dice.isDialogOpen,
 });
 
 const actionList = {
     changeDiceCount: diceActions.changeDiceCount,
+    hidePopover: diceActions.hidePopover,
     rollDice: diceActions.rollDice,
+    showPopover: diceActions.showPopover,
 };
 
 export default connect(mapStateToProps, actionList)(Dice);
