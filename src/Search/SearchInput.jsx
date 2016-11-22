@@ -16,7 +16,6 @@ const SearchInput = ({
             pad={{
                 horizontal: 'small',
             }}
-            colorIndex="light-1"
         >
             <Form
                 style={{ width: '100%' }}

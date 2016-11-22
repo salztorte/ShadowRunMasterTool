@@ -38,6 +38,9 @@ const Impressum = ({
             <br />
             <Paragraph
                 size="large"
+                style={{
+                    maxWidth: '100%',
+                }}
             >
                 Shadowrun-Logo und Inhalte mit freundlicher Genehmigung von Pegasus Spiele unter Lizenz von
                 Catalyst Game Labs und Topps Company, Inc. © 2014 Toppy Company, Inc. Alle Rechte vorbehalten.

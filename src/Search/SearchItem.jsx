@@ -29,20 +29,11 @@ const SearchItem = ({
                     width: '50%',
                 }}
             >
+
                 {item.pages}
             </Box>
         </Box>
     );
-
-
-//<ListItem style={{ borderTop: 'none' }}>
-//    <Row className="myListItem">
-//        <Col width="50%" verticalAlign="center"> {item.term} </Col>
-//        <Col width="50%" verticalAlign="center">
-//            {item.pages}
-//        </Col>
-//    </Row>
-//</ListItem>
 
 SearchItem.propTypes = {
     item: PropTypes.any.isRequired,

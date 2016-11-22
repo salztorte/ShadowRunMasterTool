@@ -48,25 +48,28 @@ export const App = ({
         <Page
             centered={false}
         >
-            {isOpen ? (
-                <SideMenu
-                    title={translate.MENU}
-                    goToRoute={routerPush}
-                    menuItems={menu}
-                    closeMenu={closeMenu}
-                />
+                {isOpen ? (
+                    <SideMenu
+                        title={translate.MENU}
+                        goToRoute={routerPush}
+                        menuItems={menu}
+                        closeMenu={closeMenu}
+                    />
 
-            ) : null}
-            <Article>
-                <Toolbar
-                    title={getTitleFromPath(menu, path)}
-                    toggleMenu={openMenu}
-                    icon={<Menu size="small" />}
-                />
-                <Box>
-                    {children}
-                </Box>
-            </Article>
+                ) : null}
+                <Article>
+                    <Toolbar
+                        title={getTitleFromPath(menu, path)}
+                        toggleMenu={openMenu}
+                        icon={<Menu size="small" />}
+                    />
+                    <Box
+                        full
+                        texture={'./Skyline_weiss.jpg'}
+                    >
+                        {children}
+                    </Box>
+                </Article>
         </Page>
     );
 };
