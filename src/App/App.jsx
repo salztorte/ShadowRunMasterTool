@@ -81,7 +81,7 @@ export const App = ({
         </Page>
     );
 };
-delapouite@gmail.com
+
 //background-image: url(http://localhost:63342/ShadowRunMasterTool/build/8e9d6e7ad65b37816385250ed799e836.jpg);
 
 //style={{
