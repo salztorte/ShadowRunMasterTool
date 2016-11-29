@@ -1,39 +1,58 @@
 import React, { PropTypes } from 'react';
 
-import Anchor from 'grommet/components/Anchor';
-import Box from 'grommet/components/Box';
+import ListItem from 'grommet/components/ListItem';
+
 
 const SearchItem = ({
     item,
     }) =>
     (
-        <Box
-            separator="bottom"
-            direction="row"
-            pad={{
-                vertical: 'small',
-                horizontal: 'small',
+        <ListItem
+            justify="between"
+            style={{
+                backgroundPosition : 'initial',
             }}
         >
-            <Box
-                textAlign="left"
-                style={{
-                    width: '50%',
-                }}
-            >
+            <span>
                 {item.term}
-            </Box>
-            <Box
-                textAlign="right"
-                style={{
-                    width: '50%',
-                }}
-            >
-
+            </span>
+            <span className="secondary">
                 {item.pages}
-            </Box>
-        </Box>
+            </span>
+        </ListItem>
     );
+
+
+//const SearchItem = ({
+//    item,
+//    }) =>
+//    (
+//        <Box
+//            separator="bottom"
+//            direction="row"
+//            texture={false}
+//            pad={{
+//                vertical: 'small',
+//                horizontal: 'small',
+//            }}
+//        >
+//            <Columns>
+//
+//            </Columns>
+//        </Box>
+//    );
+//
+//<Box
+//>
+//    {item.term}
+//</Box>
+//<Box
+//texture={""}
+//    >
+//
+//    {item.pages}
+//</Box>
+
 
 SearchItem.propTypes = {
     item: PropTypes.any.isRequired,

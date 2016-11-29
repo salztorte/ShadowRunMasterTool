@@ -6,6 +6,7 @@ import Page from 'grommet/components/App';
 import Box from 'grommet/components/Box';
 
 import Menu from 'grommet/components/icons/base/Menu';
+import backgroundSkyline from 'file-loader!../../SR5_Fankit/Hintergruende/Skyline_Seattle_weiss_1920x1080px.jpg';
 
 import { routerActions } from 'react-router-redux';
 
@@ -48,31 +49,44 @@ export const App = ({
         <Page
             centered={false}
         >
-                {isOpen ? (
-                    <SideMenu
-                        title={translate.MENU}
-                        goToRoute={routerPush}
-                        menuItems={menu}
-                        closeMenu={closeMenu}
-                    />
+            {isOpen ? (
+                <SideMenu
+                    title={translate.MENU}
+                    goToRoute={routerPush}
+                    menuItems={menu}
+                    closeMenu={closeMenu}
+                />
 
-                ) : null}
-                <Article>
+            ) : null}
+            <Article
+                full
+                flex={'shrink'}
+                texture={backgroundSkyline}
+                style={{
+                    backgroundAttachment: 'fixed',
+                }}
+            >
+                <div>
                     <Toolbar
                         title={getTitleFromPath(menu, path)}
                         toggleMenu={openMenu}
                         icon={<Menu size="small" />}
                     />
-                    <Box
-                        full
-                        texture={'./Skyline_weiss.jpg'}
-                    >
+                    <Box>
                         {children}
                     </Box>
-                </Article>
+                </div>
+            </Article
+>
         </Page>
     );
 };
+
+//background-image: url(http://localhost:63342/ShadowRunMasterTool/build/8e9d6e7ad65b37816385250ed799e836.jpg);
+
+//style={{
+//    backgroundImage: backgroundSkyline,
+//}}
 
 App.propTypes = {
     children: PropTypes.element,

@@ -1,7 +1,7 @@
 /* eslint object-shorthand: 0
  import/no-extraneous-dependencies: 0 */
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
