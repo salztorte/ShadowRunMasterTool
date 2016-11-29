@@ -3,7 +3,7 @@ import { ACTION_TYPES } from './DiceActions';
 
 const State = Record({
     diceCount: 15,
-    rollResult: [],
+    rollResult: [0],
     isPopoverOpen: false,
 });
 
