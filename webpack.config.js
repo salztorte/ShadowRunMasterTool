@@ -18,11 +18,10 @@ module.exports = {
     ],
     module: {
         loaders: [
-            loaders.bable(),
-            {
-                test: /\.scss$/,
-                loader: 'style!css!sass?outputStyle=compressed',
-            },
+            loaders.bable,
+            loaders.jpg,
+            loaders.sass,
+            loaders.svg,
         ],
     },
     sassLoader: {

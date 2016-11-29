@@ -1,8 +1,9 @@
 /* eslint object-shorthand: 0
  import/no-extraneous-dependencies: 0 */
 const path = require('path');
-    const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const webpack = require('webpack');
 
 const output = outputDir => ({
@@ -12,19 +13,24 @@ const output = outputDir => ({
 });
 
 const loaders = {
-    bable: () => ({
+    bable: {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
-    }),
-    sass: () => ({
-        includePaths: [
-            './node_modules',
-        ],
-    }),
+    },
+    jpg: {
+        test: /\.jpg$/,
+        loader: 'file-loader?mimetype=image/jpg',
+    },
+    sass: {
+        test: /\.scss$/,
+        loader: 'style!css!sass?outputStyle=compressed',
+    },
+    svg: {
+        test: /\.svg$/,
+        loader: 'babel?presets[]=es2015,presets[]=react!svg-react',
+    },
 };
-
-
 const plugins = {
     wbpDev: fileName => {
         const name = fileName || './index.html';
@@ -38,8 +44,7 @@ const plugins = {
     copyCss: () => new CopyWebpackPlugin([{
         context: './node_modules/onsenui/',
         from: './css/**/*',
-    },
-    ], {
+    }], {
         ignore: [
             '*.txt',
             { glob: '**/*', dot: true },

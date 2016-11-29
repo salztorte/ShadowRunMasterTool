@@ -6,9 +6,11 @@ import Page from 'grommet/components/App';
 import Box from 'grommet/components/Box';
 
 import Menu from 'grommet/components/icons/base/Menu';
-import backgroundSkyline from 'file-loader!../../SR5_Fankit/Hintergruende/Skyline_Seattle_weiss_1920x1080px.jpg';
-
 import { routerActions } from 'react-router-redux';
+
+
+import backgroundSkyline from '../../SR5_Fankit/Hintergruende/Skyline_Seattle_weiss_1920x1080px.jpg';
+
 
 import Toolbar from './Toolbar.jsx';
 import SideMenu from './SideMenu.jsx';
@@ -66,7 +68,6 @@ export const App = ({
                     backgroundAttachment: 'fixed',
                 }}
             >
-                <div>
                     <Toolbar
                         title={getTitleFromPath(menu, path)}
                         toggleMenu={openMenu}
@@ -75,9 +76,7 @@ export const App = ({
                     <Box>
                         {children}
                     </Box>
-                </div>
-            </Article
->
+            </Article>
         </Page>
     );
 };
