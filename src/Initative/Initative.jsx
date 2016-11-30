@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import Button from 'grommet/components/Button';
 import Header from 'grommet/components/Header';
 import Content from '../Componets/Content.jsx';
+import Title from 'grommet/components/Title';
+
+import BoxItem from '../Componets/BoxItem.jsx';
 
 const Initative = ({
     translate,
@@ -12,6 +15,7 @@ const Initative = ({
         <Content
             title={translate.TITLE}
         >
+
             <Button
                 type="button"
                 onClick={() => {}}
@@ -22,7 +26,9 @@ const Initative = ({
                     margin: '12px',
                 }}
             />
-
+            <BoxItem>
+                <Title>{translate.ORDER}</Title>
+            </BoxItem>
         </Content>
     );
 

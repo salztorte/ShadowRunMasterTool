@@ -42,5 +42,6 @@ export default {
     INITATIVE: {
         TITLE: MENU.INITATIVE,
         NEXT_BUTTON: 'Nächster',
+        ORDER: 'Initative Reihenfolge',
     },
 };
