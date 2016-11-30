@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import Box from 'grommet/components/Box';
-import backgroundSkyline from 'file-loader!../../SR5_Fankit/Hintergruende/Skyline_Seattle_weiss_1920x1080px.jpg';
 
 const Impressum = ({
     translate,
