@@ -1,10 +1,9 @@
 /* eslint object-shorthand: 0
  import/no-extraneous-dependencies: 0 */
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const webpack = require('webpack');
 
 const output = outputDir => ({
     path: path.resolve(outputDir),
@@ -41,15 +40,11 @@ const plugins = {
         });
     },
     provide: provide => new webpack.ProvidePlugin(provide),
-    copyCss: () => new CopyWebpackPlugin([{
-        context: './node_modules/onsenui/',
-        from: './css/**/*',
-    }], {
-        ignore: [
-            '*.txt',
-            { glob: '**/*', dot: true },
-        ],
-        copyUnmodified: true,
+    uglify: () => new webpack.optimize.UglifyJsPlugin(),
+    setEnv: () => new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: JSON.stringify('production'),
+        },
     }),
 };
 
