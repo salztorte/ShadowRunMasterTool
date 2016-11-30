@@ -9,9 +9,6 @@ const SearchItem = ({
     (
         <ListItem
             justify="between"
-            style={{
-                backgroundPosition: 'initial',
-            }}
         >
             <span>
                 {item.term}

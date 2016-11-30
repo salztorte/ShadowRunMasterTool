@@ -22,7 +22,7 @@ render(
     <Provider store={store}>
         <Router history={history}>
             <Route path="/" component={App}>
-                <IndexRedirect to="/dicecup" />
+                <IndexRedirect to="/initative" />
                 <Route path="search" component={Search} />
                 <Route path="dicecup" component={Dice} />
                 <Route path="initative" component={Initative} />

@@ -17,7 +17,7 @@ const SearchList = ({
                 elementHeight={40}
             >
                 {
-                    filteredIdArray.map(cur => (
+                    filteredIdArray.map((cur, index) => (
                         <SearchItem
                             key={cur}
                             item={bookSelector[cur]}
