@@ -1,19 +1,10 @@
 import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
-import Button from 'grommet/components/Button';
-import Paragraph from 'grommet/components/Paragraph';
-
 import SVGIcon from 'grommet/components/SVGIcon';
-//import One from 'babel!svg-react!../../dice/one.svg';
-import Zero from '../../dice/zero.svg';
-import One from '../../dice/one.svg';
-import Two from '../../dice/two.svg';
-import Three from '../../dice/three.svg';
-import Four from '../../dice/four.svg';
-import Five from '../../dice/five.svg';
-import Six from '../../dice/six.svg';
 import BoxItem from '../Componets/BoxItem.jsx';
+
+import { Zero, One, Two, Three, Four, Five, Six } from '../Resources/Dice';
 
 const DiceIcon = {
     0: <Zero />,

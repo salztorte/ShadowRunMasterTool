@@ -10,7 +10,7 @@ const SearchItem = ({
         <ListItem
             justify="between"
             style={{
-                backgroundPosition : 'initial',
+                backgroundPosition: 'initial',
             }}
         >
             <span>

@@ -9,10 +9,10 @@ export const ACTION_TYPES = keyMirror([
     'SET_DATA',
 ]);
 
-export const resourcesActions = {
+export const searchIndexActions = {
     clearData: () => ({ type: ACTION_TYPES.CLEAR_DATA }),
     generateData: () => (dispatch) => {
-        dispatch(resourcesActions.clearData());
+        dispatch(searchIndexActions.clearData());
         dispatch({
             type: ACTION_TYPES.SET_DATA,
             payload: loadBookData,

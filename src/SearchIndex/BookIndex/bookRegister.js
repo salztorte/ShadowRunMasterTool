@@ -11,5 +11,5 @@ export const loadBookData = bookIndex.reduce((res, cur, id) => {
     return res;
 }, {});
 
-export const resourceName = 'bookIndex';
+export const searchIndexName = 'bookIndex';
 export const searchIndex = ['term', 'pages'];

@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import Box from 'grommet/components/Box';
 import { createSelector } from 'reselect';
 
-import { resourcesActions } from '../Resources';
+import { searchIndexActions } from '../SearchIndex';
 import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
 import SearchList from './SearchList.jsx';
-import backgroundSkyline from 'file-loader!../../SR5_Fankit/Hintergruende/Skyline_Seattle_weiss_1920x1080px.jpg';
 
 const Search = ({
     _bookSelector,
@@ -52,7 +51,7 @@ const mapStateToProps = (state) => {
 };
 
 const actionList = {
-    searchData: resourcesActions.searchData,
+    searchData: searchIndexActions.searchData,
 };
 
 export default connect(mapStateToProps, actionList)(Search);

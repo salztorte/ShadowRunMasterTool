@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as search } from 'redux-search';
 
-import { resourcesReducer } from '../Resources';
+import { searchIndexReducer } from '../SearchIndex';
 import { routing } from './routingReducer';
 import { appReducer } from '../App';
 import { diceReducer, diceInitState } from '../Dice';
@@ -29,7 +29,7 @@ export const initState = {
 export const rootReducer = combineReducers({
     app: appReducer,
     dice: diceReducer,
-    resources: resourcesReducer,
+    resources: searchIndexReducer,
     routing,
     search,
     setting: settingsReducer,

@@ -4,7 +4,7 @@ import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 import { rootReducer, initState } from './reducers';
-import { searchTool } from '../Resources';
+import { searchTool } from '../SearchIndex';
 import subscriber from './subscriber';
 
 const middleware = [

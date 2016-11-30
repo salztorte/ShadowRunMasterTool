@@ -8,13 +8,12 @@ import Box from 'grommet/components/Box';
 import Menu from 'grommet/components/icons/base/Menu';
 import { routerActions } from 'react-router-redux';
 
-
-import backgroundSkyline from '../../SR5_Fankit/Hintergruende/Skyline_Seattle_weiss_1920x1080px.jpg';
+import backgroundSkyline from '../Resources/Background/Skyline.jpg';
 
 
 import Toolbar from './Toolbar.jsx';
 import SideMenu from './SideMenu.jsx';
-import { resourcesActions } from '../Resources';
+import { searchIndexActions } from '../SearchIndex';
 
 import { appActions } from './AppActions';
 
@@ -106,10 +105,10 @@ const mapStateToProps = state => ({
 });
 const actionList = {
     closeMenu: appActions.closeMenu,
-    generateData: resourcesActions.generateData,
+    generateData: searchIndexActions.generateData,
     openMenu: appActions.openMenu,
     routerPush: routerActions.push,
-    searchData: resourcesActions.searchData,
+    searchData: searchIndexActions.searchData,
 };
 
 export default connect(mapStateToProps, actionList)(App);
