@@ -1,23 +1,19 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-;
+
 import Paragraph from 'grommet/components/Paragraph';
-import Box from 'grommet/components/Box';
+import Content from '../Componets/Content.jsx';
 
 const Initative = ({
     translate,
     }) =>
     (
-        <Box
-            pad={{
-                horizontal: 'small',
-            }}
-        >
+        <Content title={translate.TITEL}>
 
             <Paragraph>
                 DAs ist ein Test
             </Paragraph>
-        </Box>
+        </Content>
     );
 
 Initative.propTypes = {
@@ -25,6 +21,7 @@ Initative.propTypes = {
 };
 
 const mapStateToProps = state => ({
+    translate: state.translation.translate.IMPRESSUM,
 });
 
 

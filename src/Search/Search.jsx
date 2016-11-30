@@ -9,8 +9,8 @@ import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
 import SearchList from './SearchList.jsx';
 
-import Toolbar from '../Componets/Toolbar.jsx';
 
+import Content from '../Componets/Content.jsx';
 const Search = ({
     _bookSelector,
     _filteredIdArray,
@@ -18,11 +18,7 @@ const Search = ({
     translate,
     }) =>
     (
-        <Box>
-            <Toolbar
-                title={translate.TITLE}
-                showMenuIcon
-            />
+        <Content title={translate.TITLE}>
             <SearchInput
                 onChange={event => searchData(event.target.value)}
                 style={{ width: '100%' }}
@@ -32,7 +28,7 @@ const Search = ({
                 bookSelector={_bookSelector}
                 filteredIdArray={_filteredIdArray}
             />
-        </Box>
+        </Content>
     );
 
 Search.propTypes = {

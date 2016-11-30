@@ -5,13 +5,12 @@ import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
 import Box from 'grommet/components/Box';
 
-import Menu from 'grommet/components/icons/base/Menu';
 import { appActions } from '../App';
 
 const Toolbar = ({
     openMenu,
     title,
-    showMenuIcon,
+    icon,
     }) =>
     (
         <Header
@@ -22,15 +21,11 @@ const Toolbar = ({
             fixed
             separator="bottom"
         >
-
             <Box
                 onClick={openMenu}
             >
-                {showMenuIcon ? (
-                    <Menu size="small" />
-                ) : null}
+                {icon}
             </Box>
-
             <Title>
                 {title}
             </Title>
@@ -41,11 +36,9 @@ const Toolbar = ({
 Toolbar.propTypes = {
     openMenu: PropTypes.func,
     title: PropTypes.string,
-    showMenuIcon: PropTypes.bool,
+    icon: PropTypes.any,
 };
-Toolbar.defaultProps = {
-//    toggleMenu: () => {},
-};
+
 const mapStateToProps = () => ({});
 
 const actionList = {

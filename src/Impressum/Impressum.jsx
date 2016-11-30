@@ -3,56 +3,47 @@ import { connect } from 'react-redux';
 
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
-import Box from 'grommet/components/Box';
-import Toolbar from '../Componets/Toolbar.jsx';
+import Content from '../Componets/Content.jsx';
 
 const Impressum = ({
     translate,
     }) =>
     (
-        <Box>
-            <Toolbar
-                title={translate.TITLE}
-                showMenuIcon
-            />
-            <Box
-                pad={{
-                    horizontal: 'small',
-                    vertical: 'small',
+        <Content
+            title={translate.TITLE}
+            pad={'small'}
+        >
+            <Heading
+                tag="h1"
+            >
+                {'Shadowrun Mastertool'}
+            </Heading>
+            <Paragraph
+                size="large"
+            >
+                Version 0.1.0
+            </Paragraph>
+            <Heading
+                tag="h2"
+            >
+                {`${translate.DEVELOPER}:`}
+            </Heading>
+            <Paragraph
+                size="large"
+            >
+                Oliver Franzen
+            </Paragraph>
+            <br />
+            <br />
+            <Paragraph
+                size="large"
+                style={{
+                    maxWidth: '100%',
                 }}
             >
-                <Heading
-                    tag="h1"
-                >
-                    {'Shadowrun Mastertool'}
-                </Heading>
-                <Paragraph
-                    size="large"
-                >
-                    Version 0.1.0
-                </Paragraph>
-                <Heading
-                    tag="h2"
-                >
-                    {`${translate.DEVELOPER}:`}
-                </Heading>
-                <Paragraph
-                    size="large"
-                >
-                    Oliver Franzen
-                </Paragraph>
-                <br />
-                <br />
-                <Paragraph
-                    size="large"
-                    style={{
-                        maxWidth: '100%',
-                    }}
-                >
-                    {translate.COPY_RIGTH}
-                </Paragraph>
-            </Box>
-        </Box>
+                {translate.COPY_RIGTH}
+            </Paragraph>
+        </Content>
     );
 
 Impressum.propTypes = {

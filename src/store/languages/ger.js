@@ -39,4 +39,7 @@ export default {
         'Catalyst Game Labs und Topps Company, Inc. © 2014 Toppy Company, Inc. Alle Rechte vorbehalten.' +
         'Shadowrun ist eine eingetragene Handelsmarke von Topps Company, Inc.',
     },
+    INITATIVE: {
+        TITLE: MENU.INITATIVE,
+    },
 };

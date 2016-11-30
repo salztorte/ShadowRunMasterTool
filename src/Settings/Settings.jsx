@@ -7,7 +7,7 @@ import { settingsActions } from './SettingsActions';
 import LanguagesSwitcher from './LanguagesSwitcher.jsx';
 import DefaultDicePool from './DefaultDicePool.jsx';
 
-import Toolbar from '../Componets/Toolbar.jsx';
+import Content from '../Componets/Content.jsx';
 const langArray = ['GER', 'EN'];
 
 const Settings = ({
@@ -18,11 +18,7 @@ const Settings = ({
     translate,
     }) =>
     (
-        <Box>
-            <Toolbar
-                title={translate.TITLE}
-                showMenuIcon
-            />
+        <Content title={translate.TITLE}>
             <DefaultDicePool
                 translate={translate.DICE_POOL}
                 defaultDice={defaultDice}
@@ -30,7 +26,7 @@ const Settings = ({
                     changeDefaultDiceCount(event.target.value);
                 }}
             />
-        </Box>
+        </Content>
     );
 
 //<LanguagesSwitcher

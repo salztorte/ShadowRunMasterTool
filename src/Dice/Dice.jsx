@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Box from 'grommet/components/Box';
-
 import { diceActions } from './DiceActions';
 import DiceInput from './DiceInput.jsx';
 import DiceResult from './DiceResult.jsx';
 import DiceResultPopover from './DiceResultPopover.jsx';
 
-import Toolbar from '../Componets/Toolbar.jsx';
+import Content from '../Componets/Content.jsx';
 
 
 const Dice = ({
@@ -22,11 +20,7 @@ const Dice = ({
     translate,
     }) =>
     (
-        <Box>
-            <Toolbar
-                title={translate.TITLE}
-                showMenuIcon
-            />
+        <Content title={translate.TITLE}>
             <DiceInput
                 translate={translate}
                 changeDiceCount={changeDiceCount}
@@ -44,7 +38,7 @@ const Dice = ({
                 rollResult={rollResult}
                 translate={translate}
             /> : null}
-        </Box>
+        </Content>
     );
 
 Dice.propTypes = {
