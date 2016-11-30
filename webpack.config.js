@@ -41,7 +41,7 @@ const plugins = {
     },
     provide: provide => new webpack.ProvidePlugin(provide),
     uglify: () => new webpack.optimize.UglifyJsPlugin(),
-    setEnv: () => new webpack.DefinePlugin({
+    setEnvProd: () => new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: JSON.stringify('production'),
         },

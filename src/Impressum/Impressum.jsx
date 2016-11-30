@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import Box from 'grommet/components/Box';
-import BoxItem from '../Componets/BoxItem.jsx';
 import Toolbar from '../Componets/Toolbar.jsx';
 
 const Impressum = ({
@@ -16,7 +15,12 @@ const Impressum = ({
                 title={translate.TITLE}
                 showMenuIcon
             />
-            <BoxItem>
+            <Box
+                pad={{
+                    horizontal: 'small',
+                    vertical: 'small',
+                }}
+            >
                 <Heading
                     tag="h1"
                 >
@@ -47,7 +51,7 @@ const Impressum = ({
                 >
                     {translate.COPY_RIGTH}
                 </Paragraph>
-            </BoxItem>
+            </Box>
         </Box>
     );
 
