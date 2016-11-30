@@ -16,42 +16,21 @@ import { searchIndexActions } from '../SearchIndex';
 
 import { appActions } from './AppActions';
 
-export const createMenu = trans => [{
-    title: trans.SEARCH,
-    path: 'search',
-}, {
-    title: trans.DICE_CUP,
-    path: 'dicecup',
-}, {
-    title: trans.SETTINGS,
-    path: 'settings',
-}, {
-    title: trans.IMPRESSUM,
-    path: 'impressum',
-}];
-
-const getTitleFromPath = (menu, path) => menu.reduce((res, cur) => (
-    path === `/${cur.path}` ? cur.title : res
-), '');
-
 export const App = ({
     children,
     closeMenu,
     isOpen,
     translate,
-    path,
     routerPush,
-    }) => {
-    const menu = createMenu(translate);
-    return (
+    }) =>
+    (
         <Page
             centered={false}
         >
             {isOpen ? (
                 <SideMenu
-                    title={translate.TITLE}
+                    translate={translate}
                     goToRoute={routerPush}
-                    menuItems={menu}
                     closeMenu={closeMenu}
                 />
 
@@ -61,15 +40,13 @@ export const App = ({
                 flex={'shrink'}
                 texture={backgroundSkyline}
                 style={{
-                    backgroundAttachment: 'fixed',
-                }}
+                backgroundAttachment: 'fixed',
+            }}
             >
                 {children}
             </Article>
         </Page>
     );
-};
-
 
 //<Toolbar
 //    title={getTitleFromPath(menu, path)}
@@ -89,17 +66,14 @@ App.propTypes = {
     children: PropTypes.element,
     closeMenu: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
-    path: PropTypes.string,
     routerPush: PropTypes.func,
     translate: PropTypes.object,
 };
 
-
 const mapStateToProps = state => ({
     bookIndex: state.resources.bookIndex,
     isOpen: state.app.isOpen,
-    path: state.routing.locationBeforeTransitions.get('pathname'),
-    translate: state.translation.translate.HEADLINES,
+    translate: state.translation.translate.MENU,
 });
 const actionList = {
     closeMenu: appActions.closeMenu,

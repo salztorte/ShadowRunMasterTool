@@ -39,7 +39,6 @@ const Settings = ({
 //    changeLang={changeLang}
 ///>
 
-
 Settings.propTypes = {
     changeDefaultDiceCount: PropTypes.func.isRequired,
     changeLang: PropTypes.func.isRequired,

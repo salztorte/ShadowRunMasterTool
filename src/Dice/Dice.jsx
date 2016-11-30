@@ -10,6 +10,7 @@ import DiceResultPopover from './DiceResultPopover.jsx';
 
 import Toolbar from '../Componets/Toolbar.jsx';
 
+
 const Dice = ({
     changeDiceCount,
     diceCount,
@@ -56,7 +57,6 @@ Dice.propTypes = {
     showPopover: PropTypes.func.isRequired,
     translate: PropTypes.object,
 };
-
 
 const mapStateToProps = state => ({
     diceCount: state.dice.diceCount,

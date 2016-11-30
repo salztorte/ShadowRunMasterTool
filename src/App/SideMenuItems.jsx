@@ -10,18 +10,28 @@ const SideMenuItems = ({
     }) =>
     (
         <Menu primary>
-            {menuItems.reduce((res, cur) => {
-                res.push(
-                    <Anchor
-                        label={cur.title}
-                        key={cur.title}
-                        onClick={() => onClick(cur.path)}
-                    />
-                );
-                return res;
-            }, [])}
+            {menuItems.map(cur =>
+                <Anchor
+                    label={cur.title}
+                    key={cur.title}
+                    onClick={() => onClick(cur.path)}
+                />
+            )}
         </Menu>
     );
+
+
+//{menuItems.reduce((res, cur) => {
+//    res.push(
+//        <Anchor
+//            label={cur.title}
+//            key={cur.title}
+//            onClick={() => onClick(cur.path)}
+//        />
+//    );
+//    return res;
+//}, [])}
+
 
 SideMenuItems.propTypes = {
     onClick: PropTypes.func,

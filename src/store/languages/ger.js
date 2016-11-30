@@ -1,15 +1,16 @@
-const HEADLINES = {
+const MENU = {
     DICE_CUP: 'Würfelbecher',
     IMPRESSUM: 'Impressum',
+    INITATIVE: 'Initative',
     TITLE: 'Menü',
     SEARCH: 'Indexsuche',
     SETTINGS: 'Einstellungen',
 };
 
 export default {
-    HEADLINES,
+    MENU,
     DICE_CUP: {
-        TITLE: HEADLINES.DICE_CUP,
+        TITLE: MENU.DICE_CUP,
         DICE_POOL: 'Würfelpool',
         ROLL_BUTTON: 'Lass die Würfel rollen',
         RESULT_SLIP: 'Du hast einen Patzer geworfen',
@@ -17,11 +18,11 @@ export default {
         TEXT_POPOVER: 'Du hast COUNT Erfloge geworfen',
     },
     SEARCH: {
-        TITLE: HEADLINES.SEARCH,
+        TITLE: MENU.SEARCH,
         PLACEHOLDER: 'Suche',
     },
     SETTINGS: {
-        TITLE: HEADLINES.SETTINGS,
+        TITLE: MENU.SETTINGS,
         LANGUAGES: {
             HEADLINE: 'Sprache',
             GER: 'Deutsch',
@@ -32,7 +33,7 @@ export default {
         },
     },
     IMPRESSUM: {
-        TITLE: HEADLINES.IMPRESSUM,
+        TITLE: MENU.IMPRESSUM,
         DEVELOPER: 'Entwikler',
         COPY_RIGTH: 'Shadowrun-Logo und Inhalte mit freundlicher Genehmigung von Pegasus Spiele unter Lizenz von ' +
         'Catalyst Game Labs und Topps Company, Inc. © 2014 Toppy Company, Inc. Alle Rechte vorbehalten.' +

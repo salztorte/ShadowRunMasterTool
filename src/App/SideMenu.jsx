@@ -6,11 +6,28 @@ import Layer from 'grommet/components/Layer';
 import Toolbar from '../Componets/Toolbar.jsx';
 import SideMenuItems from './SideMenuItems.jsx';
 
+
+const getMenuItems = trans => [{
+    title: trans.SEARCH,
+    path: 'search',
+}, {
+    title: trans.DICE_CUP,
+    path: 'dicecup',
+}, {
+    title: trans.INITATIVE,
+    path: 'Initative',
+}, {
+    title: trans.SETTINGS,
+    path: 'settings',
+}, {
+    title: trans.IMPRESSUM,
+    path: 'impressum',
+}];
+
 const SideMenu = ({
     closeMenu,
     goToRoute,
-    menuItems,
-    title,
+    translate,
     }) =>
     (
         <Layer
@@ -24,9 +41,9 @@ const SideMenu = ({
                 style={{ width: '100%' }}
                 full="vertical"
             >
-                <Toolbar title={title} />
+                <Toolbar title={translate.TITLE} />
                 <SideMenuItems
-                    menuItems={menuItems}
+                    menuItems={getMenuItems(translate)}
                     onClick={(path) => {
                         goToRoute(path);
                         closeMenu();
@@ -39,8 +56,7 @@ const SideMenu = ({
 SideMenu.propTypes = {
     closeMenu: PropTypes.func,
     goToRoute: PropTypes.func,
-    menuItems: PropTypes.arrayOf(PropTypes.object),
-    title: PropTypes.string,
+    translate: PropTypes.object,
 };
 
 export default SideMenu;
