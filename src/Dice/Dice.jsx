@@ -8,6 +8,8 @@ import DiceInput from './DiceInput.jsx';
 import DiceResult from './DiceResult.jsx';
 import DiceResultPopover from './DiceResultPopover.jsx';
 
+import Toolbar from '../Componets/Toolbar.jsx';
+
 const Dice = ({
     changeDiceCount,
     diceCount,
@@ -20,6 +22,10 @@ const Dice = ({
     }) =>
     (
         <Box>
+            <Toolbar
+                title={translate.TITLE}
+                showMenuIcon
+            />
             <DiceInput
                 translate={translate}
                 changeDiceCount={changeDiceCount}

@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 
-import Toolbar from './Toolbar.jsx';
+import Toolbar from '../Componets/Toolbar.jsx';
 import SideMenuItems from './SideMenuItems.jsx';
 
 const SideMenu = ({

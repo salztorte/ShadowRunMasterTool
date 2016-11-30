@@ -5,13 +5,12 @@ import Article from 'grommet/components/Article';
 import Page from 'grommet/components/App';
 import Box from 'grommet/components/Box';
 
-import Menu from 'grommet/components/icons/base/Menu';
 import { routerActions } from 'react-router-redux';
 
 import backgroundSkyline from '../Resources/Background/Skyline.jpg';
 
 
-import Toolbar from './Toolbar.jsx';
+import Toolbar from '../Componets/Toolbar.jsx';
 import SideMenu from './SideMenu.jsx';
 import { searchIndexActions } from '../SearchIndex';
 
@@ -38,13 +37,11 @@ const getTitleFromPath = (menu, path) => menu.reduce((res, cur) => (
 export const App = ({
     children,
     closeMenu,
-    openMenu,
     isOpen,
     translate,
     path,
     routerPush,
     }) => {
-
     const menu = createMenu(translate);
     return (
         <Page
@@ -52,7 +49,7 @@ export const App = ({
         >
             {isOpen ? (
                 <SideMenu
-                    title={translate.MENU}
+                    title={translate.TITLE}
                     goToRoute={routerPush}
                     menuItems={menu}
                     closeMenu={closeMenu}
@@ -67,18 +64,20 @@ export const App = ({
                     backgroundAttachment: 'fixed',
                 }}
             >
-                    <Toolbar
-                        title={getTitleFromPath(menu, path)}
-                        toggleMenu={openMenu}
-                        icon={<Menu size="small" />}
-                    />
-                    <Box>
-                        {children}
-                    </Box>
+                {children}
             </Article>
         </Page>
     );
 };
+
+
+//<Toolbar
+//    title={getTitleFromPath(menu, path)}
+//    showMenuIcon
+///>
+//<Box>
+//{children}
+//</Box>
 
 //background-image: url(http://localhost:63342/ShadowRunMasterTool/build/8e9d6e7ad65b37816385250ed799e836.jpg);
 
@@ -90,7 +89,6 @@ App.propTypes = {
     children: PropTypes.element,
     closeMenu: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
-    openMenu: PropTypes.func.isRequired,
     path: PropTypes.string,
     routerPush: PropTypes.func,
     translate: PropTypes.object,

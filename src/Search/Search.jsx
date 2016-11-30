@@ -9,16 +9,24 @@ import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
 import SearchList from './SearchList.jsx';
 
+import Toolbar from '../Componets/Toolbar.jsx';
+
 const Search = ({
     _bookSelector,
     _filteredIdArray,
     searchData,
+    translate,
     }) =>
     (
         <Box>
+            <Toolbar
+                title={translate.TITLE}
+                showMenuIcon
+            />
             <SearchInput
                 onChange={event => searchData(event.target.value)}
                 style={{ width: '100%' }}
+                translate={translate}
             />
             <SearchList
                 bookSelector={_bookSelector}
@@ -31,8 +39,8 @@ Search.propTypes = {
     _bookSelector: PropTypes.object.isRequired,
     _filteredIdArray: PropTypes.arrayOf(PropTypes.any).isRequired,
     searchData: PropTypes.func.isRequired,
-}
-;
+    translate: PropTypes.object,
+};
 
 const selectors = createSelector(
     [filteredIdArray, bookSelector],
@@ -47,11 +55,13 @@ const mapStateToProps = (state) => {
     return {
         _filteredIdArray,
         _bookSelector,
+        translate: state.translation.translate.SEARCH,
     };
 };
 
 const actionList = {
     searchData: searchIndexActions.searchData,
+
 };
 
 export default connect(mapStateToProps, actionList)(Search);

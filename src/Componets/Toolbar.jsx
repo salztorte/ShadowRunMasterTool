@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
 import Box from 'grommet/components/Box';
 
+import Menu from 'grommet/components/icons/base/Menu';
+import { appActions } from '../App';
+
 const Toolbar = ({
+    openMenu,
     title,
-    toggleMenu,
-    icon,
+    showMenuIcon,
     }) =>
     (
         <Header
@@ -17,11 +22,15 @@ const Toolbar = ({
             fixed
             separator="bottom"
         >
+
             <Box
-                onClick={toggleMenu}
+                onClick={openMenu}
             >
-                {icon}
+                {showMenuIcon ? (
+                    <Menu size="small" />
+                ) : null}
             </Box>
+
             <Title>
                 {title}
             </Title>
@@ -30,13 +39,17 @@ const Toolbar = ({
     );
 
 Toolbar.propTypes = {
+    openMenu: PropTypes.func,
     title: PropTypes.string,
-    toggleMenu: PropTypes.func,
-    icon: PropTypes.element,
+    showMenuIcon: PropTypes.bool,
 };
-
 Toolbar.defaultProps = {
-    toggleMenu: () => {},
+//    toggleMenu: () => {},
+};
+const mapStateToProps = () => ({});
+
+const actionList = {
+    openMenu: appActions.openMenu,
 };
 
-export default Toolbar;
+export default connect(mapStateToProps, actionList)(Toolbar);
