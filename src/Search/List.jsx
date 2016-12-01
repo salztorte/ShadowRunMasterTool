@@ -1,10 +1,8 @@
 import React, { PropTypes } from 'react';
-
+import InfiniteScroll from 'react-infinite';
 import List from 'grommet/components/List';
 
-import SearchItem from './SearchItem.jsx';
-
-import InfiniteScroll from 'react-infinite';
+import Item from './Item.jsx';
 
 const SearchList = ({
     bookSelector,
@@ -17,8 +15,8 @@ const SearchList = ({
                 elementHeight={40}
             >
                 {
-                    filteredIdArray.map((cur, index) => (
-                        <SearchItem
+                    filteredIdArray.map(cur => (
+                        <Item
                             key={cur}
                             item={bookSelector[cur]}
                         />)

@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Box from 'grommet/components/Box';
 import { createSelector } from 'reselect';
 
 import { actions } from '../SearchIndex';
-import { filteredIdArray, bookSelector } from './SearchAction';
-import SearchInput from './SearchInput.jsx';
-import SearchList from './SearchList.jsx';
+import { filteredIdArray, bookSelector } from './Action';
+import Input from './Input.jsx';
+import List from './List.jsx';
 
 
 import Content from '../Componets/Content.jsx';
@@ -19,12 +18,12 @@ const Search = ({
     }) =>
     (
         <Content title={translate.TITLE}>
-            <SearchInput
+            <Input
                 onChange={event => searchData(event.target.value)}
                 style={{ width: '100%' }}
                 translate={translate}
             />
-            <SearchList
+            <List
                 bookSelector={_bookSelector}
                 filteredIdArray={_filteredIdArray}
             />

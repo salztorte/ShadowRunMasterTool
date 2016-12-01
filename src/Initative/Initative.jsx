@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Content from '../Componets/Content.jsx';
-import InitativeHeader from './InitativeHeader.jsx';
+import Header from './Header.jsx';
 //import BoxItem from '../Componets/BoxItem.jsx';
 
 const Initative = ({
@@ -12,7 +12,7 @@ const Initative = ({
         <Content
             title={translate.TITLE}
         >
-            <InitativeHeader
+            <Header
                 translate={translate}
             />
         </Content>
