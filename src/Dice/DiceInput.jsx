@@ -18,7 +18,7 @@ const DiceInput = ({
     (
         <BoxItem>
             <Heading
-                tag="h4"
+                tag='h4'
                 strong
             >
                 {translate.DICE_POOL}
@@ -38,7 +38,7 @@ const DiceInput = ({
                 </FormField>
             </Form>
             <Button
-                type="button"
+                type='button'
                 onClick={() => {
                     rollDice(diceCount);
                 }}

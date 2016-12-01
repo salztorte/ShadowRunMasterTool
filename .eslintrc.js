@@ -18,6 +18,7 @@ module.exports = {
         'spaced-comment': 0,
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        'jsx-quotes': [2, 'prefer-single'],
         'react/forbid-prop-types': 0,
         'import/extensions': [2, {'jsx': 'always', 'js': 'never'}],
         'import/prefer-default-export': 0,

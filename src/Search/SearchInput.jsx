@@ -24,7 +24,7 @@ const SearchInput = ({
                     style={{ width: '100%' }}
                 >
                     <TextInput
-                        placeHolder="Suche"
+                        placeHolder='Suche'
                         onDOMChange={onChange}
                         style={{ width: '100%' }}
                     />

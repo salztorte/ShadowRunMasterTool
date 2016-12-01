@@ -14,12 +14,12 @@ const Toolbar = ({
     }) =>
     (
         <Header
-            size="small"
-            justify="between"
-            colorIndex="neutral-1"
-            full="horizontal"
+            size='small'
+            justify='between'
+            colorIndex='neutral-1'
+            full='horizontal'
             fixed
-            separator="bottom"
+            separator='bottom'
         >
             <Box
                 onClick={openMenu}

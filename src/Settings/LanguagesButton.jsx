@@ -13,13 +13,13 @@ const LanguagesButton = ({
                 vertical: 'small',
                 between: 'small',
             }}
-            direction="row"
+            direction='row'
         >
             {languages.reduce((res, name) => {
                 res.push(
                     <Button
                         key={name}
-                        type="button"
+                        type='button'
                         onClick={() => changeLang(name)}
                         label={translate[name]}
                         primary

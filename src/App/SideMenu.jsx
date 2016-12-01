@@ -31,15 +31,15 @@ const SideMenu = ({
     }) =>
     (
         <Layer
-            align="left"
+            align='left'
             closer
             flush
             onClose={closeMenu}
         >
             <Box
-                colorIndex="neutral-1"
+                colorIndex='neutral-1'
                 style={{ width: '100%' }}
-                full="vertical"
+                full='vertical'
             >
                 <Toolbar title={translate.TITLE} />
                 <SideMenuItems

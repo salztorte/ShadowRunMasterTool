@@ -26,12 +26,12 @@ const DiceResult = ({
     (
         <BoxItem>
             <Box
-                direction="row"
+                direction='row'
             >
 
                 {
                     rollResult.map((cur, i) => (
-                        <SVGIcon key={i} viewBox="0 0 130 108" type="logo">
+                        <SVGIcon key={i} viewBox='0 0 130 108' type='logo'>
                             {DiceIcon[cur]}
                         </SVGIcon>
                     ))
@@ -40,11 +40,11 @@ const DiceResult = ({
         </BoxItem>
     );
 
-//<ListPlaceholder unfilteredTotal={2} emptyMessage="You do not have any items at the moment." addControl={<Button a11yTitle="Add item" />} />
+//<ListPlaceholder unfilteredTotal={2} emptyMessage='You do not have any items at the moment.' addControl={<Button a11yTitle='Add item' />} />
 
 //{
 //    rollResult.map((cur, i) => (
-//        <SVGIcon key={i} viewBox="0 0 130 108" type="logo">
+//        <SVGIcon key={i} viewBox='0 0 130 108' type='logo'>
 //            {DiceIcon[cur]}
 //        </SVGIcon>
 //    ))
@@ -52,11 +52,11 @@ const DiceResult = ({
 
 //<BoxItem>
 //    <Box
-//        direction="row"
+//        direction='row'
 //    >
 //        {
 //            rollResult.map((cur, i) => (
-//                <SVGIcon key={i} viewBox="0 0 130 108" type="logo">
+//                <SVGIcon key={i} viewBox='0 0 130 108' type='logo'>
 //                    {DiceIcon[cur]}
 //                </SVGIcon>
 //            ))

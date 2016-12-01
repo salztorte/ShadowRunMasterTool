@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Button from 'grommet/components/Button';
-import Header from 'grommet/components/Header';
 import Content from '../Componets/Content.jsx';
-import Title from 'grommet/components/Title';
-
-import BoxItem from '../Componets/BoxItem.jsx';
+import InitativeHeader from './InitativeHeader.jsx';
+//import BoxItem from '../Componets/BoxItem.jsx';
 
 const Initative = ({
     translate,
@@ -15,20 +12,9 @@ const Initative = ({
         <Content
             title={translate.TITLE}
         >
-
-            <Button
-                type="button"
-                onClick={() => {}}
-                label={translate.NEXT_BUTTON}
-                primary
-                fill
-                style={{
-                    margin: '12px',
-                }}
+            <InitativeHeader
+                translate={translate}
             />
-            <BoxItem>
-                <Title>{translate.ORDER}</Title>
-            </BoxItem>
         </Content>
     );
 

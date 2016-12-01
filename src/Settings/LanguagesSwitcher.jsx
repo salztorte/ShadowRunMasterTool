@@ -18,7 +18,7 @@ const LanguagesSwitcher = ({
     (
         <BoxItem>
             <Heading
-                tag="h4"
+                tag='h4'
                 strong
             >
                 {translate.HEADLINE}

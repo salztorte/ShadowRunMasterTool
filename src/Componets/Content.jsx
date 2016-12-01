@@ -14,7 +14,7 @@ const Content = ({
         <Box>
             <Toolbar
                 title={title}
-                icon={<Menu size="small" />}
+                icon={<Menu size='small' />}
             />
             <Box
                 pad={pad}

@@ -14,29 +14,29 @@ const Impressum = ({
             pad={'small'}
         >
             <Heading
-                tag="h1"
+                tag='h1'
             >
                 {'Shadowrun Mastertool'}
             </Heading>
             <Paragraph
-                size="large"
+                size='large'
             >
                 Version 0.1.0
             </Paragraph>
             <Heading
-                tag="h2"
+                tag='h2'
             >
                 {`${translate.DEVELOPER}:`}
             </Heading>
             <Paragraph
-                size="large"
+                size='large'
             >
                 Oliver Franzen
             </Paragraph>
             <br />
             <br />
             <Paragraph
-                size="large"
+                size='large'
                 style={{
                     maxWidth: '100%',
                 }}
