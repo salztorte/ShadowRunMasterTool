@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Box from 'grommet/components/Box';
-
-import { settingsActions } from './SettingsActions';
+import { actions } from './Actions';
 import LanguagesSwitcher from './LanguagesSwitcher.jsx';
 import DefaultDicePool from './DefaultDicePool.jsx';
 
 import Content from '../Componets/Content.jsx';
+
 const langArray = ['GER', 'EN'];
 
 const Settings = ({
@@ -50,7 +49,7 @@ const mapStateToProps = state => ({
 });
 
 const actionList = {
-    changeLang: settingsActions.changeLang,
-    changeDefaultDiceCount: settingsActions.changeDefaultDiceCount,
+    changeLang: actions.changeLang,
+    changeDefaultDiceCount: actions.changeDefaultDiceCount,
 };
 export default connect(mapStateToProps, actionList)(Settings);

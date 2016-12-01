@@ -1,2 +1,2 @@
-export { changeLang } from './translationAction';
-export { createTranslationReducer, translationInitState } from './translationReducer';
+export { changeLang } from './Action';
+export { createTranslationReducer, InitState } from './Reducer';

@@ -6,7 +6,7 @@ import { routing } from './routingReducer';
 import { reducer as appReducer } from '../App';
 import { reducer as diceReducer, initState as diceInitState } from '../Dice';
 import { createTranslationReducer } from '../translation';
-import { settingsReducer, createSettingsInitState } from '../Settings';
+import { reducer as settingsReducer, createSettingsInitState } from '../Settings';
 import languages from './languages';
 
 const defaultDiceCount = localStorage.getItem('defaultDice');

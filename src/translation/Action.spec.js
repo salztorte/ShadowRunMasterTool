@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { CHANGE_LANG, changeLang } from './translationAction';
+import { CHANGE_LANG, changeLang } from './Action';
 
 describe('translation Action', () => {
     it('Change Lang', () => {

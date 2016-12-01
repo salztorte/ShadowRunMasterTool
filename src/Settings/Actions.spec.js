@@ -4,7 +4,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import { createSettingsInitState } from './SettingsReducer';
-import { ACTION_TYPES, settingsActions } from './SettingsActions';
+import { ACTION_TYPES, settingsActions } from './Actions';
 
 const middlewares = [thunk];
 

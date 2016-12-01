@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { CHANGE_LANG } from './translationAction';
-import { translationInitState, createTranslationReducer } from './translationReducer';
+import { CHANGE_LANG } from './Action';
+import { translationInitState, createTranslationReducer } from './Reducer';
 
 const de = {
     hello: 'Hallo',
