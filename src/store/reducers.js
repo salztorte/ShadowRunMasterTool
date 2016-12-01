@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { reducer as search } from 'redux-search';
 
-import { searchIndexReducer } from '../SearchIndex';
+import { reducer as searchIndexReducer } from '../SearchIndex';
 import { routing } from './routingReducer';
-import { appReducer } from '../App';
-import { diceReducer, diceInitState } from '../Dice';
+import { reducer as appReducer } from '../App';
+import { reducer as diceReducer, initState as diceInitState } from '../Dice';
 import { createTranslationReducer } from '../translation';
 import { settingsReducer, createSettingsInitState } from '../Settings';
 import languages from './languages';

@@ -5,7 +5,7 @@ import Menu from 'grommet/components/icons/base/Menu';
 import thunk from 'redux-thunk';
 
 import { diceInitState } from './DiceReducer';
-import { ACTION_TYPES, diceActions } from './DiceActions';
+import { ACTION_TYPES, actions } from './Actions';
 
 const middlewares = [thunk];
 
@@ -17,7 +17,7 @@ describe('DiceActions', () => {
 
     it('change dice count', () => {
         const store = mockStore(diceInitState);
-        store.dispatch(diceActions.changeDiceCount());
+        store.dispatch(actions.changeDiceCount());
         const resAction = store.getActions();
 
         expect(resAction).to
@@ -32,7 +32,7 @@ describe('DiceActions', () => {
     });
 
     it('roll dice', () => {
-        const res = diceActions.rollDice(15);
+        const res = actions.rollDice(15);
         expect(res.type).to
                         .be
                         .equal(ACTION_TYPES.ROLL_DICE);
@@ -45,9 +45,9 @@ describe('DiceActions', () => {
         const expectedAction = {
             type: ACTION_TYPES.CLEAR_ROLLS,
         };
-        expect(diceActions.clearRoll()).to
-                                       .deep
-                                       .equal(expectedAction);
+        expect(actions.clearRoll()).to
+                                   .deep
+                                   .equal(expectedAction);
     });
 
     it('show modal', () => {
@@ -55,17 +55,17 @@ describe('DiceActions', () => {
             type: ACTION_TYPES.SHOW_POPOVER,
         };
 
-        expect(diceActions.showPopover()).to
-                                       .deep
-                                       .equal(expectedAction);
+        expect(actions.showPopover()).to
+                                     .deep
+                                     .equal(expectedAction);
     });
 
     it('closeMenu', () => {
         const expectedAction = {
             type: ACTION_TYPES.HIDE_POPOVER,
         };
-        expect(diceActions.hidePopover()).to
-                                       .deep
-                                       .equal(expectedAction);
+        expect(actions.hidePopover()).to
+                                     .deep
+                                     .equal(expectedAction);
     });
 });

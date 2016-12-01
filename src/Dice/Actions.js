@@ -18,10 +18,10 @@ const rollDice = (diceCount) => {
     return result;
 };
 
-export const diceActions = {
+export const actions = {
     clearRoll: () => ({ type: ACTION_TYPES.CLEAR_ROLLS }),
     changeDiceCount: count => (dispatch) => {
-        dispatch(diceActions.clearRoll());
+        dispatch(actions.clearRoll());
         dispatch({
             type: ACTION_TYPES.CHANGE_DICE_COUNT,
             payload: count,

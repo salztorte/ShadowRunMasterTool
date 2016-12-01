@@ -4,7 +4,7 @@ import { createSearchAction } from 'redux-search';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { ACTION_TYPES, resourcesActions } from './SearchIndexActions';
+import { ACTION_TYPES, actions } from './Actions';
 import { initState } from './SearchIndexReducer';
 
 const middlewares = [thunk];
@@ -16,17 +16,17 @@ describe('Resource Actions', () => {
             type: ACTION_TYPES.CLEAR_DATA,
         };
 
-        expect(resourcesActions.clearData()).to.deep.equal(expectedAction);
+        expect(actions.clearData()).to.deep.equal(expectedAction);
     });
     it('searchData', () => {
         const expectedAction = createSearchAction('bookIndex')();
-        expect(resourcesActions.searchData()).to.deep.equal(expectedAction);
+        expect(actions.searchData()).to.deep.equal(expectedAction);
     });
 
 
     it('generateDate', () => {
         const store = mockStore(initState);
-        store.dispatch(resourcesActions.generateData());
+        store.dispatch(actions.generateData());
         const resAction = store.getActions();
 
         expect(resAction).to.have.lengthOf(2);

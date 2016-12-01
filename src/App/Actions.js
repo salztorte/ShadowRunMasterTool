@@ -6,7 +6,7 @@ export const ACTION_TYPES = keyMirror([
 ]);
 
 
-export const appActions = {
+export const actions = {
     openMenu: () => ({
         type: ACTION_TYPES.OPEN_MENU,
         payload: true,

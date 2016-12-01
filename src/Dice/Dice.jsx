@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { diceActions } from './DiceActions';
-import DiceInput from './DiceInput.jsx';
-import DiceResult from './DiceResult.jsx';
-import DiceResultPopover from './DiceResultPopover.jsx';
+import { actions } from './Actions';
+import Input from './Input.jsx';
+import Result from './Result.jsx';
+import ResultPopover from './ResultPopover.jsx';
 
 import Content from '../Componets/Content.jsx';
 
@@ -21,7 +21,7 @@ const Dice = ({
     }) =>
     (
         <Content title={translate.TITLE}>
-            <DiceInput
+            <Input
                 translate={translate}
                 changeDiceCount={changeDiceCount}
                 diceCount={diceCount}
@@ -30,10 +30,10 @@ const Dice = ({
                     showPopover();
                 }}
             />
-            <DiceResult
+            <Result
                 rollResult={rollResult}
             />
-            {isPopoverOpen ? <DiceResultPopover
+            {isPopoverOpen ? <ResultPopover
                 onClose={hidePopover}
                 rollResult={rollResult}
                 translate={translate}
@@ -60,10 +60,10 @@ const mapStateToProps = state => ({
 });
 
 const actionList = {
-    changeDiceCount: diceActions.changeDiceCount,
-    hidePopover: diceActions.hidePopover,
-    rollDice: diceActions.rollDice,
-    showPopover: diceActions.showPopover,
+    changeDiceCount: actions.changeDiceCount,
+    hidePopover: actions.hidePopover,
+    rollDice: actions.rollDice,
+    showPopover: actions.showPopover,
 };
 
 export default connect(mapStateToProps, actionList)(Dice);

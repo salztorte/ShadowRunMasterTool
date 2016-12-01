@@ -1,12 +1,12 @@
 import { expect } from 'chai';
-import { diceReducer, diceInitState } from './DiceReducer';
-import { ACTION_TYPES } from './DiceActions';
+import { diceReducer, initState } from './Reducer';
+import { ACTION_TYPES } from './Actions';
 
 describe('DiceReducer', () => {
     it('should return the initial state', () => {
         expect(diceReducer(undefined, {})).to
                                           .be
-                                          .eql(diceInitState);
+                                          .eql(initState);
     });
 
     it('should handel CHANGE_DICE_COUNT', () => {
@@ -15,16 +15,16 @@ describe('DiceReducer', () => {
             payload: 20,
         };
 
-        expect(diceReducer(diceInitState, inAction).diceCount).to
-                                                              .be
-                                                              .equal(20);
+        expect(diceReducer(initState, inAction).diceCount).to
+                                                          .be
+                                                          .equal(20);
     });
 
     it('should handel CLEAR_ROLLS', () => {
         const inAction = {
             type: ACTION_TYPES.CLEAR_ROLLS,
         };
-        const inState = diceInitState;
+        const inState = initState;
         inState.set('rollResult', [1, 5, 6, 4, 3, 4, 6]);
         expect(diceReducer(inState, inAction).rollResult.length).to
                                                                 .be
@@ -40,7 +40,7 @@ describe('DiceReducer', () => {
         };
 
 
-        const showResult = diceReducer(diceInitState, incommingShowAction);
+        const showResult = diceReducer(initState, incommingShowAction);
         const hideResult = diceReducer(showResult, incommingHideAction);
 
         expect(showResult.isPopoverOpen).to.be.true;

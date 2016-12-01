@@ -13,7 +13,7 @@ const actionHandlers = {
 };
 
 
-export const appReducer = (state = appInitState, action) => {
+export const reducer = (state = appInitState, action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

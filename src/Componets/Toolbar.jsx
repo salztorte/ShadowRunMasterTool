@@ -5,7 +5,7 @@ import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
 import Box from 'grommet/components/Box';
 
-import { appActions } from '../App';
+import { actions } from '../App';
 
 const Toolbar = ({
     openMenu,
@@ -42,7 +42,7 @@ Toolbar.propTypes = {
 const mapStateToProps = () => ({});
 
 const actionList = {
-    openMenu: appActions.openMenu,
+    openMenu: actions.openMenu,
 };
 
 export default connect(mapStateToProps, actionList)(Toolbar);

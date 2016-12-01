@@ -11,7 +11,7 @@ const ResultObj = function (rollResult) {
     this.isCrit = this.isSlip && this.ones > this.succsess;
 };
 
-const DiceResultPopover = ({
+const ResultPopover = ({
     onClose,
     rollResult,
     translate,
@@ -31,10 +31,10 @@ const DiceResultPopover = ({
     );
 };
 
-DiceResultPopover.propTypes = {
+ResultPopover.propTypes = {
     onClose: PropTypes.func,
     rollResult: PropTypes.arrayOf(PropTypes.number),
     translate: PropTypes.object,
 };
 
-export default DiceResultPopover;
+export default ResultPopover;

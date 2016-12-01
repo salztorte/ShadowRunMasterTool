@@ -9,9 +9,9 @@ import { routerActions } from 'react-router-redux';
 import backgroundSkyline from '../Resources/Background/Skyline.jpg';
 
 import Menu from './Menu.jsx';
-import { searchIndexActions } from '../SearchIndex';
+//import { searchIndexActions } from '../SearchIndex';
 
-import { appActions } from './Actions';
+import { actions } from './Actions';
 
 export const App = ({
     children,
@@ -60,11 +60,11 @@ const mapStateToProps = state => ({
     translate: state.translation.translate.MENU,
 });
 const actionList = {
-    closeMenu: appActions.closeMenu,
-    generateData: searchIndexActions.generateData,
-    openMenu: appActions.openMenu,
+    closeMenu: actions.closeMenu,
+//    generateData: searchIndexActions.generateData,
+    openMenu: actions.openMenu,
     routerPush: routerActions.push,
-    searchData: searchIndexActions.searchData,
+//    searchData: searchIndexActions.searchData,
 };
 
 export default connect(mapStateToProps, actionList)(App);

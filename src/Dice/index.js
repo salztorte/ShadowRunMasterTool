@@ -1,6 +1,6 @@
 import Dice from './Dice.jsx';
-import { diceActions } from './DiceActions';
+import { actions } from './Actions';
 
-export { diceReducer, diceInitState } from './DiceReducer';
-export const changeDefaultDiceCount = diceActions.changeDefaultDiceCount;
+export { reducer, initState } from './Reducer';
+export const changeDefaultDiceCount = actions.changeDefaultDiceCount;
 export default Dice;

@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { ACTION_TYPES } from './DiceActions';
+import { ACTION_TYPES } from './Actions';
 
 const State = Record({
     diceCount: 15,
@@ -7,7 +7,7 @@ const State = Record({
     isPopoverOpen: false,
 });
 
-export const diceInitState = new State();
+export const initState = new State();
 
 const actionHandlers = {
     [ACTION_TYPES.CHANGE_DICE_COUNT]: (state, action) => state.set('diceCount', action.payload),
@@ -17,7 +17,7 @@ const actionHandlers = {
     [ACTION_TYPES.HIDE_POPOVER]: state => state.set('isPopoverOpen', false),
 };
 
-export const diceReducer = (state = diceInitState, action) => {
+export const reducer = (state = initState, action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

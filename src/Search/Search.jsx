@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Box from 'grommet/components/Box';
 import { createSelector } from 'reselect';
 
-import { searchIndexActions } from '../SearchIndex';
+import { actions } from '../SearchIndex';
 import { filteredIdArray, bookSelector } from './SearchAction';
 import SearchInput from './SearchInput.jsx';
 import SearchList from './SearchList.jsx';
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
 };
 
 const actionList = {
-    searchData: searchIndexActions.searchData,
+    searchData: actions.searchData,
 
 };
 

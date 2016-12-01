@@ -9,7 +9,7 @@ import Paragraph from 'grommet/components/Paragraph';
 
 import BoxItem from '../Componets/BoxItem.jsx';
 
-const DiceInput = ({
+const Input = ({
     translate,
     changeDiceCount,
     diceCount,
@@ -56,7 +56,7 @@ const DiceInput = ({
         </BoxItem>
     );
 
-DiceInput.propTypes = {
+Input.propTypes = {
     diceCount: PropTypes.number.isRequired,
     changeDiceCount: PropTypes.func.isRequired,
     rollDice: PropTypes.func.isRequired,
@@ -64,4 +64,4 @@ DiceInput.propTypes = {
 };
 
 
-export default DiceInput;
+export default Input;

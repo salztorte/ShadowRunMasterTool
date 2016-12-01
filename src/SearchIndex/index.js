@@ -1,3 +1,3 @@
-export { ACTION_TYPES, searchIndexActions } from './SearchIndexActions';
-export { searchIndexReducer } from './SearchIndexReducer';
-export { searchTool } from './SearchIndexMiddleware';
+export { ACTION_TYPES, actions } from './Actions';
+export { reducer } from './Reducer';
+export { searchTool } from './Middleware';

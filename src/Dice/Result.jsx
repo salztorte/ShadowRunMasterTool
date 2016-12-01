@@ -6,7 +6,7 @@ import BoxItem from '../Componets/BoxItem.jsx';
 
 import { Zero, One, Two, Three, Four, Five, Six } from '../Resources/Dice';
 
-const DiceIcon = {
+const Icon = {
     0: <Zero />,
     1: <One />,
     2: <Two />,
@@ -15,12 +15,7 @@ const DiceIcon = {
     5: <Five />,
     6: <Six />,
 };
-
-//<Paragraph>
-//    {rollResult.join('; ')}
-// </Paragraph>
-
-const DiceResult = ({
+const Result = ({
     rollResult,
     }) =>
     (
@@ -32,7 +27,7 @@ const DiceResult = ({
                 {
                     rollResult.map((cur, i) => (
                         <SVGIcon key={i} viewBox='0 0 130 108' type='logo'>
-                            {DiceIcon[cur]}
+                            {Icon[cur]}
                         </SVGIcon>
                     ))
                 }
@@ -40,33 +35,8 @@ const DiceResult = ({
         </BoxItem>
     );
 
-//<ListPlaceholder unfilteredTotal={2} emptyMessage='You do not have any items at the moment.' addControl={<Button a11yTitle='Add item' />} />
-
-//{
-//    rollResult.map((cur, i) => (
-//        <SVGIcon key={i} viewBox='0 0 130 108' type='logo'>
-//            {DiceIcon[cur]}
-//        </SVGIcon>
-//    ))
-//}
-
-//<BoxItem>
-//    <Box
-//        direction='row'
-//    >
-//        {
-//            rollResult.map((cur, i) => (
-//                <SVGIcon key={i} viewBox='0 0 130 108' type='logo'>
-//                    {DiceIcon[cur]}
-//                </SVGIcon>
-//            ))
-//        }
-//    </Box>
-//</BoxItem>
-
-
-DiceResult.propTypes = {
+Result.propTypes = {
     rollResult: PropTypes.arrayOf(PropTypes.number),
 };
 
-export default DiceResult;
+export default Result;
