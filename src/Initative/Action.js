@@ -1,11 +1,15 @@
 import { keyMirror } from '../tools';
 
 export const ACTION_TYPES = keyMirror([
-    "OPEN_APP",
+    'OPEN_MODAL',
+    'CLOSE_MODAL',
 ]);
 
-
-export const initativeActions = {
-    openAdd: () => ({}),
+export const actions = {
+    openModal: () => ({
+        type: ACTION_TYPES.OPEN_MODAL,
+    }),
+    closeModal: () => ({
+        type: ACTION_TYPES.CLOSE_MODAL,
+    }),
 };
-

@@ -5,7 +5,7 @@ import { reducer as searchIndexReducer } from '../SearchIndex';
 import { routing } from './routingReducer';
 import { reducer as appReducer } from '../App';
 import { reducer as diceReducer, initState as diceInitState } from '../Dice';
-import { reducer as initativeReducer } from '../Initative';
+import { reducer as iniReducer } from '../Initative';
 import { createTranslationReducer } from '../translation';
 import { reducer as settingsReducer, createSettingsInitState } from '../Settings';
 import languages from './languages';
@@ -19,22 +19,22 @@ const settingsInitState = createSettingsInitState(defaultDiceCount, curLang);
 export const initState = {
     app: undefined,
     dice: diceInitState.set('diceCount', settingsInitState.defaultDiceCount),
-    initative: undefined,
     resources: undefined,
     routing: undefined,
     search: undefined,
     setting: settingsInitState,
     translation: undefined,
+    initative: undefined,
 };
 
 
 export const rootReducer = combineReducers({
     app: appReducer,
     dice: diceReducer,
-    initative: initativeReducer,
     resources: searchIndexReducer,
     routing,
     search,
     setting: settingsReducer,
     translation: createTranslationReducer(settingsInitState.curLang, languages),
+    initative: iniReducer,
 });
