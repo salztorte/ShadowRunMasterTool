@@ -4,7 +4,7 @@ import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 
 import Toolbar from '../Componets/Toolbar.jsx';
-import SideMenuItems from './SideMenuItems.jsx';
+import MenuItems from './MenuItems.jsx';
 
 
 const getMenuItems = trans => [{
@@ -42,7 +42,7 @@ const SideMenu = ({
                 full='vertical'
             >
                 <Toolbar title={translate.TITLE} />
-                <SideMenuItems
+                <MenuItems
                     menuItems={getMenuItems(translate)}
                     onClick={(path) => {
                         goToRoute(path);

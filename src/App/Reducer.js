@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { ACTION_TYPES } from './AppActions';
+import { ACTION_TYPES } from './Actions';
 
 const State = Record({
     isOpen: false,

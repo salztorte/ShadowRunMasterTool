@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
-import { appInitState, appReducer } from './AppReducer';
-import { ACTION_TYPES } from './AppActions';
+import { appInitState, appReducer } from './Reducer';
+import { ACTION_TYPES } from './Actions';
 
 describe('App reducer', () => {
     it('should return the initial state', () => {

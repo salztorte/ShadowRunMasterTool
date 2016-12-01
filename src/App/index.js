@@ -1,5 +1,5 @@
 import App from './App.jsx';
 
-export { appActions } from './AppActions';
-export { appReducer } from './AppReducer';
+export { appActions } from './Actions';
+export { appReducer } from './Reducer';
 export default App;

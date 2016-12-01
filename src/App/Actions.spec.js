@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { ACTION_TYPES, appActions } from './AppActions';
+import { ACTION_TYPES, appActions } from './Actions';
 
 describe('AppActions', () => {
     it('openMenu', () => {

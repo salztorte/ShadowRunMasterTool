@@ -3,18 +3,15 @@ import { connect } from 'react-redux';
 
 import Article from 'grommet/components/Article';
 import Page from 'grommet/components/App';
-import Box from 'grommet/components/Box';
 
 import { routerActions } from 'react-router-redux';
 
 import backgroundSkyline from '../Resources/Background/Skyline.jpg';
 
-
-import Toolbar from '../Componets/Toolbar.jsx';
-import SideMenu from './SideMenu.jsx';
+import Menu from './Menu.jsx';
 import { searchIndexActions } from '../SearchIndex';
 
-import { appActions } from './AppActions';
+import { appActions } from './Actions';
 
 export const App = ({
     children,
@@ -28,7 +25,7 @@ export const App = ({
             centered={false}
         >
             {isOpen ? (
-                <SideMenu
+                <Menu
                     translate={translate}
                     goToRoute={routerPush}
                     closeMenu={closeMenu}
@@ -40,27 +37,14 @@ export const App = ({
                 flex={'shrink'}
                 texture={backgroundSkyline}
                 style={{
-                backgroundAttachment: 'fixed',
-            }}
+                    backgroundAttachment: 'fixed',
+                }}
             >
                 {children}
             </Article>
         </Page>
     );
 
-//<Toolbar
-//    title={getTitleFromPath(menu, path)}
-//    showMenuIcon
-///>
-//<Box>
-//{children}
-//</Box>
-
-//background-image: url(http://localhost:63342/ShadowRunMasterTool/build/8e9d6e7ad65b37816385250ed799e836.jpg);
-
-//style={{
-//    backgroundImage: backgroundSkyline,
-//}}
 
 App.propTypes = {
     children: PropTypes.element,
