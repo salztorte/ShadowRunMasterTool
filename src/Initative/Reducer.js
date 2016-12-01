@@ -2,7 +2,7 @@ import { Record } from 'immutable';
 import { ACTION_TYPES } from './InitativeAction';
 
 const State = Record({
-    entry: [],
+    openAdd: false,
 });
 
 export const initativeInitState = new State();

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Content from '../Componets/Content.jsx';
 import Header from './Header.jsx';
-//import BoxItem from '../Componets/BoxItem.jsx';
 
 const Initative = ({
     translate,
