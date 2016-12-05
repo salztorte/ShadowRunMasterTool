@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { CHANGE_LANG } from './Action';
-import { translationInitState, createTranslationReducer } from './Reducer';
+import { InitState, createTranslationReducer } from './Reducer';
 
 const de = {
     hello: 'Hallo',
@@ -18,7 +18,7 @@ describe('translate reducer', () => {
     let initState;
     beforeEach(() => {
         reducer = createTranslationReducer('de', lang);
-        initState = translationInitState.set('translate', de);
+        initState = InitState.set('translate', de);
     });
 
 
@@ -31,7 +31,7 @@ describe('translate reducer', () => {
             type: CHANGE_LANG,
             payload: 'en',
         };
-        const expectResult = translationInitState.set('translate', en);
+        const expectResult = InitState.set('translate', en);
 
         expect(reducer(initState, incommingAction)).to.eql(expectResult);
     });

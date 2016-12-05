@@ -4,7 +4,7 @@ import configureMockStore from 'redux-mock-store';
 import Menu from 'grommet/components/icons/base/Menu';
 import thunk from 'redux-thunk';
 
-import { diceInitState } from './DiceReducer';
+import { diceInitState } from './Reducer';
 import { ACTION_TYPES, actions } from './Actions';
 
 const middlewares = [thunk];

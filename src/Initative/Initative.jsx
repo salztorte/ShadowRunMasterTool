@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 import Content from '../Componets/Content.jsx';
 import Header from './Header.jsx';
 
-import { action } from './Action';
+import { action } from './Actions';
 
 const Initative = ({
     translate,
-    openAdd,
-    closeAdd,
     }) =>
     (
         <Content
@@ -17,15 +15,12 @@ const Initative = ({
         >
             <Header
                 translate={translate}
-                add={openAdd}
             />
 
         </Content>
     );
 
 Initative.propTypes = {
-    closeAdd: PropTypes.func,
-    openAdd: PropTypes.func,
     translate: PropTypes.object,
 };
 
@@ -34,8 +29,6 @@ const mapStateToProps = state => ({
 });
 
 const actionList = {
-    closeAdd: action.closeAdd,
-    openAdd: action.openAdd,
 };
 
 export default connect(mapStateToProps, actionList)(Initative);

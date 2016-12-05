@@ -6,7 +6,7 @@ const State = Record({
     curLang: 'GER',
 });
 
-export const createSettingsInitState = (dice, lang) => {
+export const createInitState = (dice, lang) => {
     const newDice = (dice && dice !== 'undefined') ? dice : 15;
     const newLang = (lang && lang !== 'undefined') ? lang : 'GER';
     return new State().set('defaultDiceCount', newDice)
@@ -18,7 +18,7 @@ const actionHandlers = {
     [ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT]: (state, action) => state.set('defaultDiceCount', action.payload),
 };
 
-export const reducer = (state = createSettingsInitState(), action) => {
+export const reducer = (state = createInitState(), action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

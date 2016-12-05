@@ -1,23 +1,23 @@
 import { expect } from 'chai';
 
-import { ACTION_TYPES, appActions } from './Actions';
+import { ACTION_TYPES, actions } from './Actions';
 
-describe('AppActions', () => {
-    it('openMenu', () => {
+describe('InitativeActions', () => {
+    it('openModal', () => {
         const expectedAction = {
             type: ACTION_TYPES.OPEN_MENU,
             payload: true,
         };
 
-        expect(appActions.openMenu()).to.deep.equal(expectedAction);
+        expect(actions.openMenu()).to.deep.equal(expectedAction);
     });
 
-    it('closeMenu', () => {
+    it('closeModal', () => {
         const expectedAction = {
             type: ACTION_TYPES.CLOSE_MENU,
             payload: false,
         };
-        expect(appActions.closeMenu()).to
+        expect(actions.closeMenu()).to
                                       .deep
                                       .equal(expectedAction);
     });

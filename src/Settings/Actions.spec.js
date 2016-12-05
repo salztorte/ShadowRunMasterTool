@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { createSettingsInitState } from './SettingsReducer';
-import { ACTION_TYPES, settingsActions } from './Actions';
+import { createInitState } from './Reducer';
+import { ACTION_TYPES, actions } from './Actions';
 
 const middlewares = [thunk];
 
@@ -19,14 +19,14 @@ describe('DiceActions', () => {
             type: ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT,
             payload: 20,
         };
-        expect(settingsActions.changeDefaultDiceCount(20)).to
+        expect(actions.changeDefaultDiceCount(20)).to
                                                           .deep
                                                           .equal(expectedAction);
     });
 
     it('change default dice count', () => {
-        const store = mockStore(createSettingsInitState());
-        store.dispatch(settingsActions.changeLang('EN'));
+        const store = mockStore(createInitState());
+        store.dispatch(actions.changeLang('EN'));
         const resAction = store.getActions();
 
         expect(resAction).to
