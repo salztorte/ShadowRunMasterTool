@@ -1,11 +1,11 @@
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
 
+
 const State = Record({
     isNewEntryOpen: false,
     Entrys: [],
 });
-
 export const initState = new State();
 
 const actionHandlers = {

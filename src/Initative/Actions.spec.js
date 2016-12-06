@@ -20,14 +20,14 @@ describe('AppActions', () => {
                                        .equal(expectedAction);
     });
 
-    it('setNewEntry', () => {
-        const expectedAction = {
-            type: ACTION_TYPES.SET_NEW_ENTRY,
-            name: 'test',
-            iniValue: 5,
-        };
-        expect(actions.setNewEntry('test', 5)).to
-                                              .deep
-                                              .equal(expectedAction);
-    });
+//    it('setNewEntry', () => {
+//        const expectedAction = {
+//            type: ACTION_TYPES.SET_NEW_ENTRY,
+//            name: 'test',
+//            iniValue: 5,
+//        };
+//        expect(actions.setNewEntry('test', 5)).to
+//                                              .deep
+//                                              .equal(expectedAction);
+//    });
 });

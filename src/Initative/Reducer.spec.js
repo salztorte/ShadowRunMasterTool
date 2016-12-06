@@ -29,20 +29,20 @@ describe('Initative reducer', () => {
     });
 
 
-    it('should handel SET_NEW_ENTRY', () => {
-        const entry = {
-            name: 'Test',
-            iniValue: 15,
-        };
-
-        const incommingAction = {
-            type: ACTION_TYPES.SET_NEW_ENTRY,
-            name: entry.name,
-            iniValue: entry.iniValue,
-        };
-        expect(reducer(initState, incommingAction).Entrys).to
-                                                          .be
-                                                          .eql([entry]);
-    });
+//    it('should handel SET_NEW_ENTRY', () => {
+//        const entry = {
+//            name: 'Test',
+//            iniValue: 15,
+//        };
+//
+//        const incommingAction = {
+//            type: ACTION_TYPES.SET_NEW_ENTRY,
+//            name: entry.name,
+//            iniValue: entry.iniValue,
+//        };
+//        expect(reducer(initState, incommingAction).Entrys).to
+//                                                          .be
+//                                                          .eql([entry]);
+//    });
 });
 
