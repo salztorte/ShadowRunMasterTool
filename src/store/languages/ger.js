@@ -43,5 +43,11 @@ export default {
         TITLE: MENU.INITATIVE,
         NEXT_BUTTON: 'Nächster',
         ORDER: 'Initative Reihenfolge',
+        NEW_ENTRY: {
+            NAME: 'Name',
+            INI_VALUE: 'Initativewert',
+            SAVE: 'Speichern',
+            CANCEL: 'Abbrechen',
+        },
     },
 };

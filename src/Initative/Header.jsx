@@ -39,7 +39,9 @@ const InitativeHeader = ({
             >
                 <Title>{ translate.ORDER}</Title>
                 <Box />
-                <Box onClick={add}>
+                <Box
+                    onClick={add}
+                >
                     <Add />
                 </Box>
             </Header>

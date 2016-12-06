@@ -5,8 +5,8 @@ import { ACTION_TYPES } from './Actions';
 describe('DiceReducer', () => {
     it('should return the initial state', () => {
         expect(reducer(undefined, {})).to
-                                          .be
-                                          .eql(initState);
+                                      .be
+                                      .eql(initState);
     });
 
     it('should handel CHANGE_DICE_COUNT', () => {
@@ -16,8 +16,8 @@ describe('DiceReducer', () => {
         };
 
         expect(reducer(initState, inAction).diceCount).to
-                                                          .be
-                                                          .equal(20);
+                                                      .be
+                                                      .equal(20);
     });
 
     it('should handel CLEAR_ROLLS', () => {
@@ -27,8 +27,8 @@ describe('DiceReducer', () => {
         const inState = initState;
         inState.set('rollResult', [1, 5, 6, 4, 3, 4, 6]);
         expect(reducer(inState, inAction).rollResult.length).to
-                                                                .be
-                                                                .equal(0);
+                                                            .be
+                                                            .equal(0);
     });
 
     it('should handel show and hide POPOVER', () => {

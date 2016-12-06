@@ -1,20 +1,20 @@
 import { expect } from 'chai';
 
-import { appInitState, reducer } from './Reducer';
+import { initState, reducer } from './Reducer';
 import { ACTION_TYPES } from './Actions';
 
 describe('App reducer', () => {
     it('should return the initial state', () => {
-        expect(reducer (undefined, {})).to
+        expect(reducer(undefined, {})).to
                                          .deep
-                                         .equal(appInitState);
+                                         .equal(initState);
     });
 
     it('should handel OPEN_MENU', () => {
         const incommingAction = {
             type: ACTION_TYPES.OPEN_MENU,
         };
-        expect(reducer (appInitState, incommingAction)).to
+        expect(reducer(initState, incommingAction)).to
                                                          .have
                                                          .deep
                                                          .property('isOpen', true);
@@ -24,7 +24,7 @@ describe('App reducer', () => {
         const incommingAction = {
             type: ACTION_TYPES.CLOSE_MENU,
         };
-        expect(reducer (appInitState, incommingAction)).to
+        expect(reducer(initState, incommingAction)).to
                                                          .have
                                                          .deep
                                                          .property('isOpen', false);

@@ -5,7 +5,7 @@ const State = Record({
     isOpen: false,
 });
 
-export const appInitState = new State();
+export const initState = new State();
 
 const actionHandlers = {
     [ACTION_TYPES.OPEN_MENU]: state => state.set('isOpen', true),
@@ -13,7 +13,7 @@ const actionHandlers = {
 };
 
 
-export const reducer = (state = appInitState, action) => {
+export const reducer = (state = initState, action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

@@ -5,7 +5,6 @@ export const ACTION_TYPES = keyMirror([
     'CLOSE_MENU',
 ]);
 
-
 export const actions = {
     openMenu: () => ({
         type: ACTION_TYPES.OPEN_MENU,
