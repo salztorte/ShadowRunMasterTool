@@ -5,6 +5,7 @@ const State = Record({
     translate: {},
 });
 
+
 export const InitState = new State();
 
 

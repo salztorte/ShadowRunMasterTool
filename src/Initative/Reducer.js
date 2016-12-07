@@ -16,6 +16,7 @@ const actionHandlers = {
         entrys.push({
             name: action.name,
             iniValue: action.iniValue,
+            pass: 0,
         });
         return state.set('Entrys', entrys.sort((a, b) => b.iniValue - a.iniValue));
     },

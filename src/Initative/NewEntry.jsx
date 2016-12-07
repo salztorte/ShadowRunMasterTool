@@ -8,7 +8,6 @@ import NumberInput from 'grommet/components/NumberInput';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 
-
 const NewEntry = ({
     onSubmit,
     onClose,
@@ -18,6 +17,7 @@ const NewEntry = ({
         name: '',
         iniValue: 0,
     };
+    let textInputError = '';
 
     return (
         <Layer
@@ -26,17 +26,17 @@ const NewEntry = ({
         >
             <Form
                 style={{ width: '100%' }}
-
                 pad={{ vertical: 'small' }}
             >
                 <FormField
                     style={{ width: '100%' }}
                     label={translate.NAME}
+                    error={textInputError}
                 >
                     <TextInput
-                        defaultValue={''}
-                        onDOMChange={event => {
+                        onDOMChange={(event) => {
                             EntryValues.name = event.target.value;
+                            textInputError = '';
                         }}
                         style={{ width: '100%' }}
                     />
@@ -47,6 +47,7 @@ const NewEntry = ({
                 >
                     <NumberInput
                         min={0}
+                        defaultValue={0}
                         onChange={event => {
                             EntryValues.iniValue = event.target.value;
                         }}
@@ -61,8 +62,12 @@ const NewEntry = ({
                     <Button
                         type='button'
                         onClick={() => {
-                            onSubmit(EntryValues);
-                            onClose();
+                            if (EntryValues.name.length > 0) {
+                                onSubmit(EntryValues);
+                                onClose();
+                            } else {
+                                textInputError = translate.ERROR.NAME;
+                            }
                         }}
                         label={translate.SAVE}
                     />
@@ -71,13 +76,7 @@ const NewEntry = ({
         </Layer>
     );
 };
-//<NumberInput
-//    value={`${diceCount}`}
-//    onChange={(event) => { changeDiceCount(parseInt(event.target.value)); }}
-//    style={{ width: '100%' }}
-///>
 
-//<Paragraph> {translate.TEXT_POPOVER.replace('COUNT', result.succsess)}</Paragraph>
 
 NewEntry.propTypes = {
     onClose: PropTypes.func,

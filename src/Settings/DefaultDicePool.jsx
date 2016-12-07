@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
@@ -13,13 +12,9 @@ const DefaultDicePool = ({
     defaultDice,
     }) =>
     (
-        <BoxItem>
-            <Heading
-                tag='h4'
-                strong
-            >
-                {translate.HEADLINE}
-            </Heading>
+        <BoxItem
+            label={translate.HEADLINE}
+        >
             <Form
                 style={{ width: '100%' }}
                 pad={{ vertical: 'small' }}

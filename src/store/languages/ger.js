@@ -42,13 +42,16 @@ export default {
     INITATIVE: {
         TITLE: MENU.INITATIVE,
         NEXT_BUTTON: 'Nächster',
-        NEW_ROUND_BUTTON: 'Neu Runde',
+        NEW_ROUND_BUTTON: 'Neue Runde',
         ORDER: 'Initative Reihenfolge',
         NEW_ENTRY: {
             NAME: 'Name',
             INI_VALUE: 'Initativewert',
             SAVE: 'Speichern',
             CANCEL: 'Abbrechen',
+            ERROR: {
+                NAME: 'Bitte geb einen Namen ein',
+            },
         },
     },
 };

@@ -16,13 +16,9 @@ const LanguagesSwitcher = ({
     langArray,
     }) =>
     (
-        <BoxItem>
-            <Heading
-                tag='h4'
-                strong
-            >
-                {translate.HEADLINE}
-            </Heading>
+        <BoxItem
+            label={translate.HEADLINE}
+        >
             <LanguagesButton
                 languages={langArray}
                 translate={translate}

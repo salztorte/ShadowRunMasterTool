@@ -16,13 +16,9 @@ const Input = ({
     rollDice,
     }) =>
     (
-        <BoxItem>
-            <Heading
-                tag='h4'
-                strong
-            >
-                {translate.DICE_POOL}
-            </Heading>
+        <BoxItem
+            label={translate.DICE_POOL}
+        >
             <Form
                 style={{ width: '100%' }}
                 pad={{ vertical: 'small' }}
