@@ -28,7 +28,7 @@ const Input = ({
                 >
                     <NumberInput
                         value={`${diceCount}`}
-                        onChange={(event) => { changeDiceCount(parseInt(event.target.value)); }}
+                        onChange={(event) => { changeDiceCount(parseInt(event.target.value), 10); }}
                         style={{ width: '100%' }}
                     />
                 </FormField>

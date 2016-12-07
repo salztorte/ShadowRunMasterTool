@@ -4,8 +4,8 @@ import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 
 import Toolbar from '../Componets/Toolbar.jsx';
-import MenuItems from './MenuItems.jsx';
-
+import Anchor from 'grommet/components/Anchor';
+import Menu from 'grommet/components/Menu';
 
 const getMenuItems = trans => [{
     title: trans.SEARCH,
@@ -41,17 +41,25 @@ const SideMenu = ({
                 style={{ width: '100%' }}
                 full='vertical'
             >
-                <Toolbar title={translate.TITLE} />
-                <MenuItems
-                    menuItems={getMenuItems(translate)}
-                    onClick={(path) => {
-                        goToRoute(path);
-                        closeMenu();
-                    }}
-                />
+                <Toolbar title={translate.TITLE}/>
+                <Menu primary>
+                    {getMenuItems(translate).map(cur =>
+                        <Anchor
+                            label={cur.title}
+                            key={cur.title}
+                            onClick={() => {
+                                 goToRoute(cur.path);
+                                closeMenu();
+                            }}
+
+                        />
+                    )}
+                </Menu>
+
             </Box>
         </Layer>
     );
+
 
 SideMenu.propTypes = {
     closeMenu: PropTypes.func,

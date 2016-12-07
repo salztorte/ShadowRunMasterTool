@@ -13,24 +13,16 @@ const Impressum = ({
             title={translate.TITLE}
             pad={'small'}
         >
-            <Heading
-                tag='h1'
-            >
+            <Heading tag='h1'>
                 {'Shadowrun Mastertool'}
             </Heading>
-            <Paragraph
-                size='large'
-            >
+            <Paragraph size='large'>
                 Version 0.1.0
             </Paragraph>
-            <Heading
-                tag='h2'
-            >
+            <Heading tag='h2'>
                 {`${translate.DEVELOPER}:`}
             </Heading>
-            <Paragraph
-                size='large'
-            >
+            <Paragraph size='large'>
                 Oliver Franzen
             </Paragraph>
             <br />
