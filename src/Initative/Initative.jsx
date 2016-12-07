@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 import Content from '../Componets/Content.jsx';
 import Header from './Header.jsx';
+
 import NewEntry from './NewEntry.jsx';
+import List from './List.jsx';
 
 import { actions } from './Actions';
 
@@ -13,6 +15,7 @@ const Initative = ({
     closeNewEntry,
     isEntryOpen,
     setNewEntry,
+    entrys,
     }) =>
     (
         <Content
@@ -22,7 +25,9 @@ const Initative = ({
                 translate={translate}
                 add={() => openNewEntry()}
             />
-
+            <List
+                entrys={entrys}
+            />
 
             {isEntryOpen ? <NewEntry
                 translate={translate.NEW_ENTRY}
@@ -35,6 +40,7 @@ const Initative = ({
 
 Initative.propTypes = {
     translate: PropTypes.object,
+    entrys: PropTypes.array,
     isEntryOpen: PropTypes.bool,
     openNewEntry: PropTypes.func,
     setNewEntry: PropTypes.func,
@@ -43,6 +49,7 @@ Initative.propTypes = {
 
 const mapStateToProps = state => ({
     isEntryOpen: state.initative.isNewEntryOpen,
+    entrys: state.initative.Entrys,
     translate: state.translation.translate.INITATIVE,
 });
 

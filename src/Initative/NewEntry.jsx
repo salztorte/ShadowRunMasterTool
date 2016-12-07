@@ -6,23 +6,28 @@ import Layer from 'grommet/components/Layer';
 import TextInput from 'grommet/components/TextInput';
 import NumberInput from 'grommet/components/NumberInput';
 import Button from 'grommet/components/Button';
+import Box from 'grommet/components/Box';
+
 
 const NewEntry = ({
     onSubmit,
     onClose,
     translate,
-    }) =>
-    (
+    }) => {
+    const EntryValues = {
+        name: '',
+        iniValue: 0,
+    };
+
+    return (
         <Layer
             algin='top'
             onClose={onClose}
         >
             <Form
                 style={{ width: '100%' }}
+
                 pad={{ vertical: 'small' }}
-                onSubmit={(event) => {
-                    console.log(event.target.value);
-                }}
             >
                 <FormField
                     style={{ width: '100%' }}
@@ -30,6 +35,9 @@ const NewEntry = ({
                 >
                     <TextInput
                         defaultValue={''}
+                        onDOMChange={event => {
+                            EntryValues.name = event.target.value;
+                        }}
                         style={{ width: '100%' }}
                     />
                 </FormField>
@@ -39,18 +47,30 @@ const NewEntry = ({
                 >
                     <NumberInput
                         min={0}
+                        onChange={event => {
+                            EntryValues.iniValue = event.target.value;
+                        }}
                         style={{ width: '100%' }}
                     />
                 </FormField>
-                <Button
-                    type='submit'
-                    onClick={() => {'blub'}}
-                    label={translate.SAVE}
-                />
+                <Box
+                    pad={{ vertical: 'small' }}
+                    primary
+                    fill
+                >
+                    <Button
+                        type='button'
+                        onClick={() => {
+                            onSubmit(EntryValues);
+                            onClose();
+                        }}
+                        label={translate.SAVE}
+                    />
+                </Box>
             </Form>
         </Layer>
     );
-
+};
 //<NumberInput
 //    value={`${diceCount}`}
 //    onChange={(event) => { changeDiceCount(parseInt(event.target.value)); }}
@@ -66,3 +86,4 @@ NewEntry.propTypes = {
 };
 
 export default NewEntry;
+

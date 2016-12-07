@@ -28,6 +28,15 @@ const InitativeHeader = ({
                 <Button
                     type='button'
                     onClick={next}
+                    label={translate.NEW_ROUND_BUTTON}
+                    primary
+                    fill
+                />
+            </Header>
+            <Header {...headerProps}>
+                <Button
+                    type='button'
+                    onClick={next}
                     label={translate.NEXT_BUTTON}
                     primary
                     fill

@@ -4,6 +4,8 @@ export const ACTION_TYPES = keyMirror([
     'OPEN_NEW_ENTRY',
     'CLOSE_NEW_ENTRY',
     'SET_NEW_ENTRY',
+    'NEW_ROUND',
+    'NEXT'
 ]);
 
 export const actions = {
@@ -13,9 +15,15 @@ export const actions = {
     closeNewEntry: () => ({
         type: ACTION_TYPES.CLOSE_NEW_ENTRY,
     }),
-    setNewEntry: (name, iniValue) => ({
+    setNewEntry: entry => ({
         type: ACTION_TYPES.SET_NEW_ENTRY,
-        name,
-        iniValue,
+        name: entry.name,
+        iniValue: entry.iniValue,
+    }),
+    newRound: () => ({
+        type: ACTION_TYPES.NEW_ROUND,
+    }),
+    next: () => ({
+        type: ACTION_TYPES.NEXT,
     }),
 };

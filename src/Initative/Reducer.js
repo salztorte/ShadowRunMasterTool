@@ -17,8 +17,10 @@ const actionHandlers = {
             name: action.name,
             iniValue: action.iniValue,
         });
-        return state.set('Entrys', entrys);
+        return state.set('Entrys', entrys.sort((a, b) => b.iniValue - a.iniValue));
     },
+    [ACTION_TYPES.NEW_ROUND]: () => ({}),
+    [ACTION_TYPES.NEXT]: () => ({}),
 };
 
 export const reducer = (state = initState, action) => {

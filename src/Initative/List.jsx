@@ -4,9 +4,8 @@ import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 
 
-const SearchList = ({
-    bookSelector,
-    filteredIdArray,
+const iniList = ({
+    entrys,
     }) =>
     (
         <List>
@@ -15,17 +14,15 @@ const SearchList = ({
                 elementHeight={40}
             >
                 {
-                    filteredIdArray.map(cur => (
+                    entrys.map((cur, i) => (
                         <ListItem
                             justify='between'
-                            key={cur}
+                            key={i}
                         >
                             <span>
-                                {bookSelector[cur].term}
+                                {cur.name}
                             </span>
-                            <span className='secondary'>
-                                {bookSelector[cur].pages}
-                            </span>
+
                         </ListItem>
                     ))
                 }
@@ -33,9 +30,14 @@ const SearchList = ({
         </List>
     );
 
-SearchList.propTypes = {
-    bookSelector: PropTypes.object.isRequired,
-    filteredIdArray: PropTypes.arrayOf(PropTypes.any).isRequired,
+
+//<span className='secondary'>
+//                                {cur.pages}
+//                            </span>
+
+iniList.propTypes = {
+    entrys: PropTypes.any,
+//    filteredIdArray: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
-export default SearchList;
+export default iniList ;

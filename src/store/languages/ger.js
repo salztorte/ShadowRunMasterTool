@@ -42,6 +42,7 @@ export default {
     INITATIVE: {
         TITLE: MENU.INITATIVE,
         NEXT_BUTTON: 'Nächster',
+        NEW_ROUND_BUTTON: 'Neu Runde',
         ORDER: 'Initative Reihenfolge',
         NEW_ENTRY: {
             NAME: 'Name',
