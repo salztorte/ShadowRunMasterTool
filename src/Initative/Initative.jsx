@@ -13,6 +13,7 @@ const Initative = ({
     translate,
     openNewEntry,
     closeNewEntry,
+    changeNewEntry,
     isEntryOpen,
     setNewEntry,
     entrys,
@@ -32,6 +33,7 @@ const Initative = ({
             {isEntryOpen ? <NewEntry
                 translate={translate.NEW_ENTRY}
                 onClose={closeNewEntry}
+                onChange={changeNewEntry}
                 onSubmit={setNewEntry}
             /> : null}
 
@@ -45,6 +47,7 @@ Initative.propTypes = {
     openNewEntry: PropTypes.func,
     setNewEntry: PropTypes.func,
     closeNewEntry: PropTypes.func,
+    changeNewEntry: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -56,6 +59,7 @@ const mapStateToProps = state => ({
 const actionList = {
     openNewEntry: actions.openNewEntry,
     closeNewEntry: actions.closeNewEntry,
+    changeNewEntry: actions.changeNewEntry,
     setNewEntry: actions.setNewEntry,
 };
 

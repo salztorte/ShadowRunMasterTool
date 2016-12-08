@@ -11,15 +11,10 @@ import Box from 'grommet/components/Box';
 const NewEntry = ({
     onSubmit,
     onClose,
+    onChange,
     translate,
-    }) => {
-    const EntryValues = {
-        name: '',
-        iniValue: 0,
-    };
-    let textInputError = '';
-
-    return (
+    }) =>
+    (
         <Layer
             algin='top'
             onClose={onClose}
@@ -31,13 +26,9 @@ const NewEntry = ({
                 <FormField
                     style={{ width: '100%' }}
                     label={translate.NAME}
-                    error={textInputError}
                 >
                     <TextInput
-                        onDOMChange={(event) => {
-                            EntryValues.name = event.target.value;
-                            textInputError = '';
-                        }}
+                        onDOMChange={(event) => onChange('name', event.target.value)}
                         style={{ width: '100%' }}
                     />
                 </FormField>
@@ -48,9 +39,7 @@ const NewEntry = ({
                     <NumberInput
                         min={0}
                         defaultValue={0}
-                        onChange={event => {
-                            EntryValues.iniValue = event.target.value;
-                        }}
+                        onChange={event => onChange('iniValue', event.target.value)}
                         style={{ width: '100%' }}
                     />
                 </FormField>
@@ -62,12 +51,8 @@ const NewEntry = ({
                     <Button
                         type='button'
                         onClick={() => {
-                            if (EntryValues.name.length > 0) {
-                                onSubmit(EntryValues);
-                                onClose();
-                            } else {
-                                textInputError = translate.ERROR.NAME;
-                            }
+                            onSubmit();
+                            onClose();
                         }}
                         label={translate.SAVE}
                     />
@@ -75,12 +60,12 @@ const NewEntry = ({
             </Form>
         </Layer>
     );
-};
 
 
 NewEntry.propTypes = {
     onClose: PropTypes.func,
     onSubmit: PropTypes.func,
+    onChange: PropTypes.func,
     translate: PropTypes.object,
 };
 

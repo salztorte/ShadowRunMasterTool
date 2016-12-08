@@ -19,6 +19,17 @@ describe('AppActions', () => {
                                        .deep
                                        .equal(expectedAction);
     });
+
+    it('checkInput', () => {
+        const expectedAction = {
+            type: ACTION_TYPES.CHECK_INPUT,
+            input: 'test',
+        };
+        expect(actions.checkInput('test')).to
+                                          .deep
+                                          .equal(expectedAction);
+    });
+
     it('newRound', () => {
         const expectedAction = {
             type: ACTION_TYPES.NEW_ROUND,
@@ -31,14 +42,9 @@ describe('AppActions', () => {
     it('setNewEntry', () => {
         const expectedAction = {
             type: ACTION_TYPES.SET_NEW_ENTRY,
-            name: 'test',
-            iniValue: 5,
         };
-        expect(actions.setNewEntry({
-            name: 'test',
-            iniValue: 5,
-        })).to
-           .deep
-           .equal(expectedAction);
+        expect(actions.setNewEntry()).to
+                                     .deep
+                                     .equal(expectedAction);
     });
 });
