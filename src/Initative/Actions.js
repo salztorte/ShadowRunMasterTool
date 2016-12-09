@@ -23,10 +23,6 @@ export const actions = {
         key,
         value,
     }),
-    checkInput: input => ({
-        type: ACTION_TYPES.CHECK_INPUT,
-        input,
-    }),
     newRound: () => ({
         type: ACTION_TYPES.NEW_ROUND,
     }),

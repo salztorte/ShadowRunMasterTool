@@ -12,6 +12,7 @@ const NewEntry = ({
     onSubmit,
     onClose,
     onChange,
+    isError,
     translate,
     }) =>
     (
@@ -26,6 +27,7 @@ const NewEntry = ({
                 <FormField
                     style={{ width: '100%' }}
                     label={translate.NAME}
+                    error={isError ? translate.ERROR.NAME : null}
                 >
                     <TextInput
                         onDOMChange={(event) => onChange('name', event.target.value)}
@@ -52,7 +54,6 @@ const NewEntry = ({
                         type='button'
                         onClick={() => {
                             onSubmit();
-                            onClose();
                         }}
                         label={translate.SAVE}
                     />
@@ -67,6 +68,7 @@ NewEntry.propTypes = {
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
     translate: PropTypes.object,
+    isError: PropTypes.bool,
 };
 
 export default NewEntry;
