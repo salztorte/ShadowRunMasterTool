@@ -18,6 +18,7 @@ const Initative = ({
     setNewEntry,
     entrys,
     errors,
+    newEntry,
     }) =>
     (
         <Content
@@ -37,6 +38,7 @@ const Initative = ({
                 onChange={changeNewEntry}
                 onSubmit={setNewEntry}
                 isError={errors.newEntry}
+                newEntry={newEntry}
             /> : null}
 
         </Content>
@@ -44,6 +46,7 @@ const Initative = ({
 
 Initative.propTypes = {
     translate: PropTypes.object,
+    newEntry: PropTypes.object,
     errors: PropTypes.any,
     entrys: PropTypes.array,
     isEntryOpen: PropTypes.bool,
@@ -58,6 +61,7 @@ const mapStateToProps = state => ({
     entrys: state.initative.Entrys,
     translate: state.translation.translate.INITATIVE,
     errors: state.initative.isError,
+    newEntry: state.initative.NewEntry,
 });
 
 const actionList = {

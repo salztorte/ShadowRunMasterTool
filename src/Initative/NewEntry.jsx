@@ -18,6 +18,7 @@ const NewEntry = ({
     onChange,
     isError,
     translate,
+    newEntry,
     }) =>
     (
         <Layer
@@ -37,6 +38,7 @@ const NewEntry = ({
                     <TextInput
                         onDOMChange={event => onChange('name', event.target.value)}
                         style={{ width: '100%' }}
+                        value={newEntry.name}
                     />
                 </FormField>
                 <FormField
@@ -45,7 +47,7 @@ const NewEntry = ({
                 >
                     <NumberInput
                         min={0}
-                        defaultValue={0}
+                        value={newEntry.iniValue}
                         onChange={event => onChange('iniValue', event.target.value)}
                         style={{ width: '100%' }}
                     />
@@ -73,6 +75,7 @@ NewEntry.propTypes = {
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
     translate: PropTypes.object,
+    newEntry: PropTypes.object,
     isError: PropTypes.bool,
 };
 
