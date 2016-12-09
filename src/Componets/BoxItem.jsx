@@ -1,9 +1,10 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
-const BoxItem = ({
+const BoxItem: Function = ({
     label,
     children,
     }) =>

@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -7,7 +8,7 @@ import Box from 'grommet/components/Box';
 
 import { actions } from '../App';
 
-const Toolbar = ({
+const Toolbar: Function = ({
     openMenu,
     title,
     icon,

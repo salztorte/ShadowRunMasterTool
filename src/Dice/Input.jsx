@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Button from 'grommet/components/Button';
@@ -9,7 +10,7 @@ import Paragraph from 'grommet/components/Paragraph';
 
 import BoxItem from '../Componets/BoxItem.jsx';
 
-const Input = ({
+const Input: Function = ({
     translate,
     changeDiceCount,
     diceCount,
@@ -28,7 +29,7 @@ const Input = ({
                 >
                     <NumberInput
                         value={`${diceCount}`}
-                        onChange={(event) => { changeDiceCount(parseInt(event.target.value), 10); }}
+                        onChange={event => changeDiceCount(parseInt(event.target.value, 10))}
                         style={{ width: '100%' }}
                     />
                 </FormField>
@@ -36,7 +37,7 @@ const Input = ({
             <Button
                 type='button'
                 onClick={() => {
-                    rollDice(diceCount);
+                    rollDice();
                 }}
                 label={translate.ROLL_BUTTON}
                 primary

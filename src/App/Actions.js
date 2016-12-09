@@ -1,18 +1,19 @@
+// @flow
 import { keyMirror } from '../tools';
 
 export const ACTION_TYPES = keyMirror([
-    'OPEN_MENU',
-    'CLOSE_MENU',
+    'TOGGLE_MENU',
 ]);
 
+export type Action =  { type: ACTION_TYPES.TOGGLE_MENU, payload: boolean }
+
 export const actions = {
-    openMenu: () => ({
-        type: ACTION_TYPES.OPEN_MENU,
+    openMenu: () : Action => ({
+        type: ACTION_TYPES.TOGGLE_MENU,
         payload: true,
     }),
-    closeMenu: () => ({
-        type: ACTION_TYPES.CLOSE_MENU,
+    closeMenu: (): Action => ({
+        type: ACTION_TYPES.TOGGLE_MENU,
         payload: false,
     }),
 };
-

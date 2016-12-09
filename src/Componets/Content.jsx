@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
@@ -5,7 +6,7 @@ import Menu from 'grommet/components/icons/base/Menu';
 import Toolbar from './Toolbar.jsx';
 
 
-const Content = ({
+const Content: Function = ({
     title,
     children,
     pad,
@@ -33,6 +34,5 @@ Content.propTypes = {
 Content.defaultProps = {
     pad: 'none',
 };
-
 
 export default Content;

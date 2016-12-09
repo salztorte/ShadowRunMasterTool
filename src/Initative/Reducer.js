@@ -1,5 +1,7 @@
+// @flow
 import { Record } from 'immutable';
 import { ACTION_TYPES as AT } from './Actions';
+import type { Action } from './Actions'
 
 const Entry = Record({
     name: '',
@@ -16,9 +18,9 @@ const State = Record({
     Entrys: [],
 });
 
-export const initState = new State();
+export const initState: State = new State();
 
-const setNewEntry = (state) => {
+const setNewEntry = (state : State) => {
     if (state.NewEntry.name.trim().length === 0) {
         return state.set('isError', Object.assign(state.isError, { newEntry: true }));
     }
@@ -29,15 +31,15 @@ const setNewEntry = (state) => {
 };
 
 const actionHandlers = {
-    [AT.TOGGEL_NEW_ENTRY]: (state, { payload }) => state.set('isNewEntryOpen', payload),
-    [AT.CHANGE_NEW_ENTRY]: (state, { key, value }) => state.set('isError', Object.assign(state.isError, { newEntry: false }))
-                                                           .set('NewEntry', state.NewEntry.set(key, value)),
+    [AT.TOGGEL_NEW_ENTRY]: (state, action: Action) => state.set('isNewEntryOpen', action.payload),
+    [AT.CHANGE_NEW_ENTRY]: (state, action: Action) => state.set('isError', Object.assign(state.isError, { newEntry: false }))
+                                                           .set('NewEntry', state.NewEntry.set(action.key, action.value)),
     [AT.SET_NEW_ENTRY]: setNewEntry,
     [AT.NEW_ROUND]: () => ({}),
     [AT.NEXT]: () => ({}),
 };
 
-export const reducer = (state = initState, action) => {
+export const reducer = (state: State = initState, action: Action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

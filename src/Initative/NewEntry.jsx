@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import FormField from 'grommet/components/FormField';
@@ -9,10 +10,7 @@ import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
-
-
-
-const NewEntry = ({
+const NewEntry: Function = ({
     onSubmit,
     onClose,
     onChange,

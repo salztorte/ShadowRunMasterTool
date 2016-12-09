@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -5,11 +6,9 @@ import { actions } from './Actions';
 import Input from './Input.jsx';
 import Result from './Result.jsx';
 import ResultPopover from './ResultPopover.jsx';
-
 import Content from '../Componets/Content.jsx';
 
-
-const Dice = ({
+const Dice: Function = ({
     changeDiceCount,
     diceCount,
     hidePopover,

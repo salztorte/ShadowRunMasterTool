@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -5,7 +6,7 @@ import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import Content from '../Componets/Content.jsx';
 
-const Impressum = ({
+const Impressum: Function = ({
     translate,
     }) =>
     (

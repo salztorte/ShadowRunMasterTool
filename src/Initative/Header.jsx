@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Button from 'grommet/components/Button';
@@ -17,7 +18,7 @@ const headerProps = {
     fixed: true,
 };
 
-const InitativeHeader = ({
+const InitativeHeader: Function = ({
     add,
     next,
     translate,

@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
@@ -24,7 +25,7 @@ const getMenuItems = trans => [{
     path: 'impressum',
 }];
 
-const SideMenu = ({
+const SideMenu: Function = ({
     closeMenu,
     goToRoute,
     translate,

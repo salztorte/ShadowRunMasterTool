@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -9,7 +10,7 @@ import List from './List.jsx';
 
 import { actions } from './Actions';
 
-const Initative = ({
+const Initative: Function = ({
     translate,
     openNewEntry,
     closeNewEntry,
@@ -43,6 +44,7 @@ const Initative = ({
 
         </Content>
     );
+
 
 Initative.propTypes = {
     translate: PropTypes.object,

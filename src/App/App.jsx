@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -5,7 +6,6 @@ import Article from 'grommet/components/Article';
 import Page from 'grommet/components/App';
 
 import { routerActions } from 'react-router-redux';
-
 import backgroundSkyline from '../Resources/Background/Skyline.jpg';
 
 import Menu from './Menu.jsx';
@@ -13,7 +13,7 @@ import Menu from './Menu.jsx';
 
 import { actions } from './Actions';
 
-export const App = ({
+export const App: Function = ({
     children,
     closeMenu,
     isOpen,
@@ -54,17 +54,15 @@ App.propTypes = {
     translate: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps  = state => ({
     bookIndex: state.resources.bookIndex,
     isOpen: state.app.isOpen,
     translate: state.translation.translate.MENU,
 });
-const actionList = {
+const actionList  = {
     closeMenu: actions.closeMenu,
-//    generateData: searchIndexActions.generateData,
     openMenu: actions.openMenu,
     routerPush: routerActions.push,
-//    searchData: searchIndexActions.searchData,
 };
 
 export default connect(mapStateToProps, actionList)(App);

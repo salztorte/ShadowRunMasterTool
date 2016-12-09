@@ -1,9 +1,11 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Layer from 'grommet/components/Layer';
 import Paragraph from 'grommet/components/Paragraph';
 
-const ResultObj = function (rollResult) {
+
+const ResultObj  = function (rollResult: number[]) {
     this.succsess = rollResult.filter(v => v >= 5).length;
     this.ones = rollResult.filter(v => v === 1).length;
     this.allRolls = rollResult.length;
@@ -11,7 +13,7 @@ const ResultObj = function (rollResult) {
     this.isCrit = this.isSlip && this.ones > this.succsess;
 };
 
-const ResultPopover = ({
+const ResultPopover: Function  = ({
     onClose,
     rollResult,
     translate,

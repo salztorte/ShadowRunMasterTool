@@ -4,7 +4,7 @@ import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 
 
-const iniList = ({
+const iniList= ({
     entrys,
     }) =>
     (

@@ -1,20 +1,20 @@
+// @flow
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
+import type { Action } from './Actions';
 
 const State = Record({
     isOpen: false,
 });
 
-export const initState = new State();
+export const initState: State = new State();
 
 const actionHandlers = {
-    [ACTION_TYPES.OPEN_MENU]: state => state.set('isOpen', true),
-    [ACTION_TYPES.CLOSE_MENU]: state => state.set('isOpen', false),
+    [ACTION_TYPES.TOGGLE_MENU]: (state: State, action: Action) => state.set('isOpen', action.payload),
 };
 
-
-export const reducer = (state = initState, action) => {
-    const { type } = action;
+export const reducer : State= (state: State = initState, action: Action) => {
+    const type: string  = action.type;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);
     }
