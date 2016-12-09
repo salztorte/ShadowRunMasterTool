@@ -45,6 +45,7 @@ export default {
         NEW_ROUND_BUTTON: 'Neue Runde',
         ORDER: 'Initative Reihenfolge',
         NEW_ENTRY: {
+            TITLE: 'TITLE',
             NAME: 'Name',
             INI_VALUE: 'Initativewert',
             SAVE: 'Speichern',

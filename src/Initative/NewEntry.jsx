@@ -7,6 +7,10 @@ import TextInput from 'grommet/components/TextInput';
 import NumberInput from 'grommet/components/NumberInput';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
+import Heading from 'grommet/components/Heading';
+
+
+
 
 const NewEntry = ({
     onSubmit,
@@ -20,6 +24,7 @@ const NewEntry = ({
             algin='top'
             onClose={onClose}
         >
+            <Heading>{translate.TITLE}</Heading>
             <Form
                 style={{ width: '100%' }}
                 pad={{ vertical: 'small' }}
@@ -30,7 +35,7 @@ const NewEntry = ({
                     error={isError ? translate.ERROR.NAME : null}
                 >
                     <TextInput
-                        onDOMChange={(event) => onChange('name', event.target.value)}
+                        onDOMChange={event => onChange('name', event.target.value)}
                         style={{ width: '100%' }}
                     />
                 </FormField>

@@ -37,7 +37,6 @@ const iniList = ({
 
 iniList.propTypes = {
     entrys: PropTypes.any,
-//    filteredIdArray: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 export default iniList ;

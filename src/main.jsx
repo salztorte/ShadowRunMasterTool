@@ -18,16 +18,18 @@ const store = configureStore();
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
 
+
+
 render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/" component={App}>
-                <IndexRedirect to="/initative" />
-                <Route path="search" component={Search} />
-                <Route path="dicecup" component={Dice} />
-                <Route path="initative" component={Initative} />
-                <Route path="settings" component={Settings} />
-                <Route path="impressum" component={Impressum} />
+            <Route path='/' component={App}>
+                <IndexRedirect to='/initative' />
+                <Route path='search' component={Search} />
+                <Route path='dicecup' component={Dice} />
+                <Route path='initative' component={Initative} />
+                <Route path='settings' component={Settings} />
+                <Route path='impressum' component={Impressum} />
             </Route>
         </Router>
     </Provider>
