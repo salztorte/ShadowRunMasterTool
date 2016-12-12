@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import { applyMiddleware, createStore, compose } from 'redux';
 import { hashHistory } from 'react-router';
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
@@ -8,7 +8,7 @@ import { rootReducer, initState } from './reducers';
 import { searchTool } from '../Search';
 import subscriber from './subscriber';
 
-const middleware = [
+const middleware: Array<Function> = [
     routerMiddleware(hashHistory),
     thunk,
 ];
@@ -22,7 +22,7 @@ store.subscribe(() => subscriber(store));
 
 export const configureStore = () => store;
 
-export const configureHistory = _store => (
+export const configureHistory = (_store: store) => (
     syncHistoryWithStore(hashHistory, _store, {
         selectLocationState: state => state.routing.toJS(),
     })

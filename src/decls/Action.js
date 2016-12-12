@@ -7,5 +7,7 @@ type Action =  {
     isOpen?: boolean,
     count?: number,
     key?: string,
+    lang?: string,
     value?: number,
 };
+

@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import React, { PropTypes } from 'react';
 
 import NumberInput from 'grommet/components/NumberInput';
@@ -7,7 +7,7 @@ import Form from 'grommet/components/Form';
 
 import BoxItem from '../Componets/BoxItem.jsx';
 
-const DefaultDicePool = ({
+const DefaultDicePool: Function = ({
     translate,
     onChange,
     defaultDice,

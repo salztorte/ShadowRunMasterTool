@@ -1,23 +1,19 @@
-// @flow weak
+// @flow
 import { keyMirror } from '../tools';
 import { changeLang } from '../translation';
 
-export const ACTION_TYPES = keyMirror([
+export const ACTION_TYPES:ActionTypes = keyMirror([
     'CHANGE_DEFAULT_DICE_COUNT',
     'CHANGE_LANG',
 ]);
 
-
-export const actions = {
-    changeLang: lang => (dispatch) => {
-        dispatch(changeLang(lang));
-        dispatch({
-            type: ACTION_TYPES.CHANGE_LANG,
-            payload: lang,
-        });
-    },
-    changeDefaultDiceCount: count => ({
+export const actions:Actions = {
+    changeLang: (lang: string): Action=> ({
+        type: ACTION_TYPES.CHANGE_LANG,
+        lang,
+    }),
+    changeDefaultDiceCount: (count:number):Action=> ({
         type: ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT,
-        payload: count,
+        count,
     }),
 };

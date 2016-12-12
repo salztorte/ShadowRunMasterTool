@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -10,7 +10,7 @@ import Content from '../Componets/Content.jsx';
 
 const langArray = ['GER', 'EN'];
 
-const Settings = ({
+const Settings: Function = ({
     changeLang,
     changeDefaultDiceCount,
     curLang,

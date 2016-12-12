@@ -1,10 +1,10 @@
-// @flow weak
+// @flow
 import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
 import Button from 'grommet/components/Button';
 import BoxItem from '../Componets/BoxItem.jsx';
 
-const LanguagesSwitcher = ({
+const LanguagesSwitcher: Function = ({
     translate,
     changeLang,
     langArray,

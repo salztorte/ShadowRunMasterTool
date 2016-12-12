@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
 
@@ -7,19 +7,19 @@ const State = Record({
     curLang: 'GER',
 });
 
-export const createInitState = (dice, lang) => {
+export const createInitState: State = (dice: number, lang: string) => {
     const newDice = (dice && dice !== 'undefined') ? dice : 15;
     const newLang = (lang && lang !== 'undefined') ? lang : 'GER';
     return new State().set('defaultDiceCount', newDice)
                       .set('curLang', newLang);
 };
 
-const actionHandlers = {
-    [ACTION_TYPES.CHANGE_LANG]: (state, action) => state.set('curLang', action.payload),
-    [ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT]: (state, action) => state.set('defaultDiceCount', action.payload),
+const actionHandlers: {[key:string]: State} = {
+    [ACTION_TYPES.CHANGE_LANG]: (state: State, action: Action) => state.set('curLang', action.lang),
+    [ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT]: (state: State, action: Action) => state.set('defaultDiceCount', action.count),
 };
 
-export const reducer = (state = createInitState(), action) => {
+export const reducer: State = (state: State = createInitState(), action: Action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

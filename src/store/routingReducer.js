@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import { Record } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
@@ -8,7 +8,7 @@ const State = Record({
 });
 export const initState = new State();
 
-export function routing(state = initState, { type, payload }) {
+export const routing: State = (state: State = initState, { type, payload }) => {
     if (type === LOCATION_CHANGE) {
         return state.merge({
             location: payload.pathname,
@@ -16,4 +16,4 @@ export function routing(state = initState, { type, payload }) {
         });
     }
     return state;
-}
+};
