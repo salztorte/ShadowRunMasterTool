@@ -29,15 +29,6 @@ const InitativeHeader: Function = ({
                 <Button
                     type='button'
                     onClick={next}
-                    label={translate.START_ROUND}
-                    primary
-                    fill
-                />
-            </Header>
-            <Header {...headerProps}>
-                <Button
-                    type='button'
-                    onClick={next}
                     label={translate.NEW_ROUND_BUTTON}
                     primary
                     fill

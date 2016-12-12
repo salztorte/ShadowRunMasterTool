@@ -13,11 +13,11 @@ export const ACTION_TYPES: ActionTypes = keyMirror([
 export const actions: Actions = {
     closeNewEntry: (): Action => ({
         type: ACTION_TYPES.TOGGEL_NEW_ENTRY,
-        payload: false,
+        isOpen: false,
     }),
     openNewEntry: (): Action => ({
         type: ACTION_TYPES.TOGGEL_NEW_ENTRY,
-        payload: true,
+        isOpen: true,
     }),
     changeNewEntry: (key: string, value: number): Action => ({
         type: ACTION_TYPES.CHANGE_NEW_ENTRY,
