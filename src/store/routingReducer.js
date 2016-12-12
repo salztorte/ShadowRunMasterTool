@@ -1,3 +1,4 @@
+// @flow weak
 import { Record } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 

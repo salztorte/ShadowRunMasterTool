@@ -1,3 +1,4 @@
+// @flow weak
 import React, { PropTypes } from 'react';
 import Box from 'grommet/components/Box';
 import Button from 'grommet/components/Button';

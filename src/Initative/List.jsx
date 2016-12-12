@@ -1,10 +1,11 @@
+// @flow waek
 import React, { PropTypes } from 'react';
 import InfiniteScroll from 'react-infinite';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 
 
-const iniList= ({
+const iniList: Function = ({
     entrys,
     }) =>
     (

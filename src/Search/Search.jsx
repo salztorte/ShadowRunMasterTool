@@ -1,15 +1,16 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
 
-import { actions } from '../SearchIndex';
-import { filteredIdArray, bookSelector } from './Action';
+import { filteredIdArray, bookSelector, actions } from './Actions';
+
 import Input from './Input.jsx';
 import List from './List.jsx';
 
-
 import Content from '../Componets/Content.jsx';
+
 const Search = ({
     _bookSelector,
     _filteredIdArray,

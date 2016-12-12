@@ -1,3 +1,4 @@
+// @flow weak
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
 

@@ -1,7 +1,8 @@
+// @flow weak
 import { combineReducers } from 'redux';
 import { reducer as search } from 'redux-search';
 
-import { reducer as searchIndexReducer } from '../SearchIndex';
+import { reducer as searchIndexReducer } from '../Search';
 import { routing } from './routingReducer';
 import { reducer as appReducer } from '../App';
 import { reducer as diceReducer, initState as diceInitState } from '../Dice';

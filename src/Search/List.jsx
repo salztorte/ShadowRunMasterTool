@@ -1,10 +1,11 @@
+//@flow
 import React, { PropTypes } from 'react';
 import InfiniteScroll from 'react-infinite';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 
 
-const SearchList = ({
+const SearchList: Function = ({
     bookSelector,
     filteredIdArray,
     }) =>

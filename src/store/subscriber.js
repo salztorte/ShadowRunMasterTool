@@ -1,3 +1,4 @@
+// @flow weak
 const preVal = {
     lang: localStorage.getItem('lang'),
     defaultDice: localStorage.getItem('defaultDice'),

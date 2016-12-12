@@ -1,36 +1,26 @@
-//TODO
+//@flow
 import { keyMirror } from '../tools';
-
-export const ACTION_TYPES = keyMirror([
+export const ACTION_TYPES: ActionTypes = keyMirror([
     'CHANGE_DICE_COUNT',
     'CLEAR_ROLLS',
     'ROLL_DICE',
     'TOGGLE_POPOVER',
 ]);
-
-export type Action ={
-    type: ACTION_TYPES.TOGGLE_POPOVER
-        | ACTION_TYPES.CHANGE_DICE_COUNT
-        | ACTION_TYPES.CLEAR_ROLLS
-        | ACTION_TYPES.ROLL_DICE,
-    payload: any,
-};
-
-export const actions = {
-    clearRoll: ():Action => ({ type: ACTION_TYPES.CLEAR_ROLLS }),
-    changeDiceCount: (count:number) => ({
+export const actions:Actions = {
+    clearRoll: (): Action => ({ type: ACTION_TYPES.CLEAR_ROLLS }),
+    changeDiceCount:(count:number): Action => ({
         type: ACTION_TYPES.CHANGE_DICE_COUNT,
-        payload: count,
+        count,
     }),
-    rollDice: ():Action => ({
+    rollDice: (): Action => ({
         type: ACTION_TYPES.ROLL_DICE,
     }),
-    showPopover: ():Action => ({
+    showPopover: (): Action => ({
         type: ACTION_TYPES.TOGGLE_POPOVER,
-        payload: true,
+        isOpen: true,
     }),
-    hidePopover: ():Action => ({
+    hidePopover: (): Action => ({
         type: ACTION_TYPES.TOGGLE_POPOVER,
-        payload: false,
+        isOpen: false,
     }),
 };

@@ -1,3 +1,4 @@
+// @flow weak
 import { Record } from 'immutable';
 import { CHANGE_LANG } from './Action';
 

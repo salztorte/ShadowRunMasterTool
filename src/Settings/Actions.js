@@ -1,3 +1,4 @@
+// @flow weak
 import { keyMirror } from '../tools';
 import { changeLang } from '../translation';
 

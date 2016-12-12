@@ -1,3 +1,4 @@
+// @flow weak
 /* eslint no-param-reassign: 0 */
 import bookIndex from './bookIndex';
 

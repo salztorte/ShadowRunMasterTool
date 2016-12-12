@@ -1,8 +1,9 @@
+// @flow weak
 import { Record, OrderedMap } from 'immutable';
 import { ACTION_TYPES } from './Actions';
-import { searchIndexName, loadBookData } from './BookIndex';
+import { searchIndexName, loadBookData } from '../Resources/BookIndex';
 
-const State = Record({
+export const State = Record({
     [searchIndexName]: OrderedMap(),
 });
 
@@ -15,7 +16,7 @@ const actionHandlers = {
 };
 
 
-export const reducer = (state = initState, action) => {
+export const reducer: State = (state = initState, action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

@@ -1,6 +1,7 @@
+// @flow weak
 import { reduxSearch } from 'redux-search';
 
-import { searchIndexName, searchIndex } from './BookIndex';
+import { searchIndexName, searchIndex } from '../Resources/BookIndex';
 
 export const searchTool = reduxSearch({
     resourceIndexes: {

@@ -1,10 +1,11 @@
+// @flow weak
 import { applyMiddleware, createStore, compose } from 'redux';
 import { hashHistory } from 'react-router';
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 import { rootReducer, initState } from './reducers';
-import { searchTool } from '../SearchIndex';
+import { searchTool } from '../Search';
 import subscriber from './subscriber';
 
 const middleware = [

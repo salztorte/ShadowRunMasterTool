@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
@@ -6,7 +7,7 @@ import Form from 'grommet/components/Form';
 import TextInput from 'grommet/components/TextInput';
 import Header from 'grommet/components/Header';
 
-const SearchInput = ({
+const SearchInput: Function = ({
     onChange,
     }) =>
     (

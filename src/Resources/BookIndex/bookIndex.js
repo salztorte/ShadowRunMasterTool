@@ -1,3 +1,4 @@
+// @flow weak
 const bookIndex = [
     { term: 'Abbruchhaus', pages: '370' },
     { term: 'Abdruckscanner', pages: '363' },

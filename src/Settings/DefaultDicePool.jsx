@@ -1,3 +1,4 @@
+// @flow weak
 import React, { PropTypes } from 'react';
 
 import NumberInput from 'grommet/components/NumberInput';

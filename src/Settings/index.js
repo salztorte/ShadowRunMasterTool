@@ -1,3 +1,4 @@
+// @flow weak
 import Settings from './Settings.jsx';
 
 export { createInitState, reducer } from './Reducer';

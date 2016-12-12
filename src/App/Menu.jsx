@@ -1,4 +1,4 @@
-// @flow
+//@flow
 import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
@@ -8,7 +8,12 @@ import Toolbar from '../Componets/Toolbar.jsx';
 import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
 
-const getMenuItems = trans => [{
+type MenuItems= {
+    title: string,
+    path: string,
+};
+
+const getMenuItems = (trans): MenuItems[] => [{
     title: trans.SEARCH,
     path: 'search',
 }, {
