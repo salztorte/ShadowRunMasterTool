@@ -2,10 +2,12 @@
 import { Record } from 'immutable';
 import { ACTION_TYPES as AT } from './Actions';
 
+
+
 const Entry = Record({
     name: '',
     iniValue: 0,
-    pass: 0,
+    pass: 1,
 });
 
 const State = Record({
@@ -14,7 +16,23 @@ const State = Record({
         newEntry: false,
     },
     NewEntry: new Entry(),
-    Entrys: [],
+    Entrys: [
+        new Entry({
+            name: 'A',
+            iniValue: 20,
+            pass: 0,
+        }),
+        new Entry({
+            name: 'B',
+            iniValue: 15,
+            pass: 0,
+        }),
+        new Entry({
+            name: 'C',
+            iniValue: 10,
+            pass: 0,
+        }),
+    ],
 });
 
 export const initState: State = new State();

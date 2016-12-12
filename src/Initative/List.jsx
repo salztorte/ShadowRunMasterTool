@@ -1,11 +1,15 @@
 // @flow waek
 import React, { PropTypes } from 'react';
 import InfiniteScroll from 'react-infinite';
+import Box from 'grommet/components/Box';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 
+import Add from 'grommet/components/icons/base/Add';
+import Subtract from 'grommet/components/icons/base/Subtract';
 
-const iniList: Function = ({
+
+const iniList:Function = ({
     entrys,
     }) =>
     (
@@ -20,10 +24,9 @@ const iniList: Function = ({
                             justify='between'
                             key={i}
                         >
-                            <span>
-                                {cur.name}
-                            </span>
-
+                            <Box>
+                                {`${cur.name} (${cur.iniValue}, Pass ${cur.pass})`}
+                            </Box>
                         </ListItem>
                     ))
                 }
