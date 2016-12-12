@@ -9,11 +9,13 @@ const Entry = Record({
     pass: 1,
 });
 
+const isError = Record({
+    newEntry: false,
+});
+
 const State = Record({
     isNewEntryOpen: false,
-    isError: {
-        newEntry: false,
-    },
+    isError: new isError(),
     NewEntry: new Entry(),
     Entrys: [
         new Entry({
@@ -38,7 +40,8 @@ export const initState:State = new State();
 
 const setNewEntry = (state) => {
     if (state.NewEntry.name.trim().length === 0) {
-        return state.set('isError', Object.assign(state.isError, { newEntry: true }));
+        const newError = state.isError.set('newEntry', true);
+        return state.set('isError', newError);
     }
 
     const sortArray = [...state.Entrys, state.NewEntry].sort((a, b) => b.iniValue - a.iniValue);
@@ -49,7 +52,7 @@ const setNewEntry = (state) => {
 const actionHandlers = {
     [AT.TOGGEL_NEW_ENTRY]: (state:State, action:Action) => state.set('isNewEntryOpen', action.isOpen),
     [AT.CHANGE_NEW_ENTRY]: (state:State, action:Action) => (
-        state.set('isError', Object.assign(state.isError, { newEntry: false }))
+        state.set('isError', state.isError.set('newEntry', false))
              .set('NewEntry', state.NewEntry.set(action.key, action.value))
     ),
     [AT.SET_NEW_ENTRY]: setNewEntry,
