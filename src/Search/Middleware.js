@@ -8,6 +8,6 @@ export const searchTool = reduxSearch({
         [searchIndexName]: searchIndex,
     },
     resourceSelector: (name, state) => (
-        state.resources.get(name)
+        state.searchIndex.get(name)
     ),
 });

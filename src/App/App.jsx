@@ -55,7 +55,7 @@ App.propTypes = {
 };
 
 const mapStateToProps  = state => ({
-    bookIndex: state.resources.bookIndex,
+    bookIndex: state.searchIndex.bookIndex,
     isOpen: state.app.isOpen,
     translate: state.translation.translate.MENU,
 });

@@ -20,7 +20,7 @@ const settingsInitState = createInitState(defaultDiceCount, curLang);
 export const initState = {
     app: undefined,
     dice: diceInitState.set('diceCount', settingsInitState.defaultDiceCount),
-    resources: undefined,
+    searchIndex: undefined,
     routing: undefined,
     search: undefined,
     setting: settingsInitState,
@@ -32,7 +32,7 @@ export const initState = {
 export const rootReducer = combineReducers({
     app: appReducer,
     dice: diceReducer,
-    resources: searchIndexReducer,
+    searchIndex: searchIndexReducer,
     routing,
     search,
     setting: settingsReducer,
