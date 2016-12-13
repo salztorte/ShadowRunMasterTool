@@ -11,27 +11,44 @@ const output = outputDir => ({
     publicPath: './',
 });
 
+const resolve = {
+    extensions: ['.js', ',jsx', '.scss', '.css'],
+    modules: ['node_modules'],
+};
+
 const loaders = {
     bable: {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
     },
     jpg: {
         test: /\.jpg$/,
-        loader: 'file-loader?mimetype=image/jpg',
+        loader: 'file-loader',
+        query: {
+            mimetype: 'image/jpg',
+        },
     },
     sass: {
-        test: /\.scss$/,
-        loader: 'style!css!sass?outputStyle=compressed',
+        test: /\.scss?$/,
+        use: [
+            'style-loader',
+            'css-loader',
+            {
+                loader: 'sass-loader',
+                query: {
+                    includePaths: ['./node_modules'],
+                },
+            },
+        ],
     },
     svg: {
         test: /\.svg$/,
-        loader: 'babel?presets[]=es2015,presets[]=react!svg-react',
+        loader: 'babel-loader!svg-react-loader',
     },
 };
 const plugins = {
-    wbpDev: fileName => {
+    htmlWpPlugin: fileName => {
         const name = fileName || './index.html';
         return new HtmlWebpackPlugin({
             filename: name,
@@ -39,8 +56,11 @@ const plugins = {
             template: path.resolve('src', name),
         });
     },
-    provide: provide => new webpack.ProvidePlugin(provide),
-    uglify: () => new webpack.optimize.UglifyJsPlugin(),
+    uglify: () => new webpack.optimize.UglifyJsPlugin({
+        compress: true,
+        comments: false,
+        sourceMap: false,
+    }),
     setEnvProd: () => new webpack.DefinePlugin({
         'process.env': {
             NODE_ENV: JSON.stringify('production'),
@@ -52,4 +72,5 @@ module.exports = {
     loaders,
     plugins,
     output,
+    resolve,
 };

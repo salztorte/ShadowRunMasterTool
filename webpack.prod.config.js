@@ -1,23 +1,25 @@
 /* eslint object-shorthand: 0
  import/no-extraneous-dependencies: 0 */
-
 const config = require('./webpack.config');
-const devConf = require('./webpack.dev.config');
-
 const plugins = config.plugins;
-const output = config.output;
+const loaders = config.loaders;
 
 module.exports = {
-    entry: devConf.entry,
-    output: output('build'),
-    resolve: devConf.resolve,
+    entry: ['babel-polyfill', './src/main.jsx'],
+    output: config.output('build'),
+    resolve: config.resolve,
     plugins: [
-        plugins.wbpDev(),
+        plugins.htmlWpPlugin(),
         plugins.uglify(),
         plugins.setEnvProd(),
     ],
     module: {
-        loaders: devConf.module.loaders,
+        rules: [
+            loaders.bable,
+            loaders.jpg,
+            loaders.sass,
+            loaders.svg,
+        ],
     },
-    sassLoader: devConf.sassLoader,
 };
+
