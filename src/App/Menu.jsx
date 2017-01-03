@@ -3,10 +3,11 @@ import React, { PropTypes } from 'react';
 
 import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
-
-import Toolbar from '../Componets/Toolbar.jsx';
 import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
+
+import Toolbar from '../Componets/Toolbar.jsx';
+
 
 type MenuItems= {
     title: string,
@@ -47,14 +48,14 @@ const SideMenu: Function = ({
                 style={{ width: '100%' }}
                 full='vertical'
             >
-                <Toolbar title={translate.TITLE}/>
+                <Toolbar title={translate.TITLE} />
                 <Menu primary>
                     {getMenuItems(translate).map(cur =>
                         <Anchor
                             label={cur.title}
                             key={cur.title}
                             onClick={() => {
-                                 goToRoute(cur.path);
+                                goToRoute(cur.path);
                                 closeMenu();
                             }}
 
@@ -70,7 +71,7 @@ const SideMenu: Function = ({
 SideMenu.propTypes = {
     closeMenu: PropTypes.func,
     goToRoute: PropTypes.func,
-    translate: PropTypes.object,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
 export default SideMenu;

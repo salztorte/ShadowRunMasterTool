@@ -5,10 +5,12 @@ import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
 import Layer from 'grommet/components/Layer';
 import TextInput from 'grommet/components/TextInput';
-import NumberInput from 'grommet/components/NumberInput';
+//import NumberInput from 'grommet/components/NumberInput';
 import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
+
+import { Entry as EntryType } from './Reducer';
 
 const NewEntry: Function = ({
     onSubmit,
@@ -74,7 +76,7 @@ NewEntry.propTypes = {
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
     translate: PropTypes.object,
-    newEntry: PropTypes.object,
+    newEntry: PropTypes.instanceOf(EntryType),
     isError: PropTypes.bool,
 };
 

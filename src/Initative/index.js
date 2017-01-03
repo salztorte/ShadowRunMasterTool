@@ -1,5 +1,5 @@
 // @flow
 import Initative from './Initative.jsx';
-export { reducer } from './Reducer';
 
+export { reducer } from './Reducer';
 export default Initative;

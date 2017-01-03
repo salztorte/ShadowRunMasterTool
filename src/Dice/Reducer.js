@@ -15,20 +15,21 @@ const rollDice = (state: State): State => {
     for (let i = 0; i < state.diceCount; i++) {
         result.push(Math.floor((Math.random() * 6) + 1));
     }
-    result.sort((a, b) => b - a)
-    return state.set('rollResult', result);;
+    result.sort((a, b) => b - a);
+    return state.set('rollResult', result);
 };
 
 
-const actionHandlers: {[key:string]: State}= {
-    [ACTION_TYPES.CHANGE_DICE_COUNT]: (state:State, action:Action) => state.set('diceCount', action.isOpen)
+const actionHandlers: {[key: string]: State} = {
+    [ACTION_TYPES.CHANGE_DICE_COUNT]: (state: State, action: Action) => state.set('diceCount', action.isOpen)
                                                                            .set('rollResult', []),
-    [ACTION_TYPES.ROLL_DICE]: state => rollDice,
+    [ACTION_TYPES.ROLL_DICE]: state => rollDice(state).set('isPopoverOpen', true),
     [ACTION_TYPES.CLEAR_ROLLS]: state => state.set('rollResult', []),
     [ACTION_TYPES.SHOW_POPOVER]: (state, action) => state.set('isPopoverOpen', action.isOpen),
 };
 
-export const reducer = (state:State = initState, action:Action) => {
+
+export const reducer = (state: State = initState, action: Action) => {
     const type: string = action.type;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

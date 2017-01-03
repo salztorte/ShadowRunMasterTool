@@ -15,7 +15,6 @@ const Dice: Function = ({
     isPopoverOpen,
     rollDice,
     rollResult,
-    showPopover,
     translate,
     }) =>
     (
@@ -24,9 +23,9 @@ const Dice: Function = ({
                 translate={translate}
                 changeDiceCount={changeDiceCount}
                 diceCount={diceCount}
-                rollDice={(count) => {
+                rollDice={count => {
                     rollDice(count);
-                    showPopover();
+//                    showPopover();
                 }}
             />
             <Result
@@ -47,8 +46,7 @@ Dice.propTypes = {
     isPopoverOpen: PropTypes.bool,
     rollDice: PropTypes.func.isRequired,
     rollResult: PropTypes.arrayOf(PropTypes.number),
-    showPopover: PropTypes.func.isRequired,
-    translate: PropTypes.object,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
 const mapStateToProps = state => ({
@@ -62,7 +60,6 @@ const actionList = {
     changeDiceCount: actions.changeDiceCount,
     hidePopover: actions.hidePopover,
     rollDice: actions.rollDice,
-    showPopover: actions.showPopover,
 };
 
 export default connect(mapStateToProps, actionList)(Dice);

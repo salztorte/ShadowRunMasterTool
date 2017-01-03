@@ -14,7 +14,7 @@ export const createInitState: State = (dice: number, lang: string) => {
                       .set('curLang', newLang);
 };
 
-const actionHandlers: {[key:string]: State} = {
+const actionHandlers: {[key: string]: State} = {
     [ACTION_TYPES.CHANGE_LANG]: (state: State, action: Action) => state.set('curLang', action.lang),
     [ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT]: (state: State, action: Action) => state.set('defaultDiceCount', action.count),
 };

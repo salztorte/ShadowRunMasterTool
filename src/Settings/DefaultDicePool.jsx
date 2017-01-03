@@ -34,9 +34,9 @@ const DefaultDicePool: Function = ({
     );
 
 DefaultDicePool.propTypes = {
-    translate: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired,
-    defaultDice: PropTypes.number.isRequired,
+    translate: PropTypes.objectOf(PropTypes.string),
+    onChange: PropTypes.func,
+    defaultDice: PropTypes.number,
 };
 
 export default DefaultDicePool;

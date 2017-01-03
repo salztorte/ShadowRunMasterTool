@@ -31,11 +31,12 @@ const Search = ({
         </Content>
     );
 
+//noinspection Eslint
 Search.propTypes = {
-    _bookSelector: PropTypes.object.isRequired,
-    _filteredIdArray: PropTypes.arrayOf(PropTypes.any).isRequired,
-    searchData: PropTypes.func.isRequired,
-    translate: PropTypes.object,
+    _bookSelector: PropTypes.object,
+    _filteredIdArray: PropTypes.arrayOf(PropTypes.any),
+    searchData: PropTypes.func,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
 const selectors = createSelector(
@@ -46,7 +47,7 @@ const selectors = createSelector(
     })
 );
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     const { _filteredIdArray, _bookSelector } = selectors(state);
     return {
         _filteredIdArray,

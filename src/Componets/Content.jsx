@@ -27,8 +27,8 @@ const Content: Function = ({
 
 Content.propTypes = {
     title: PropTypes.string,
-    children: PropTypes.any,
-    pad: PropTypes.any,
+    children: PropTypes.arrayOf(PropTypes.element),
+    pad: PropTypes.string,
 };
 
 Content.defaultProps = {

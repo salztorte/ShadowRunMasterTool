@@ -5,7 +5,7 @@ import Layer from 'grommet/components/Layer';
 import Paragraph from 'grommet/components/Paragraph';
 
 
-const ResultObj  = function (rollResult: number[]) {
+const ResultObj = function (rollResult: number[]) {
     this.succsess = rollResult.filter(v => v >= 5).length;
     this.ones = rollResult.filter(v => v === 1).length;
     this.allRolls = rollResult.length;
@@ -13,7 +13,7 @@ const ResultObj  = function (rollResult: number[]) {
     this.isCrit = this.isSlip && this.ones > this.succsess;
 };
 
-const ResultPopover: Function  = ({
+const ResultPopover: Function = ({
     onClose,
     rollResult,
     translate,
@@ -21,7 +21,7 @@ const ResultPopover: Function  = ({
     const result = new ResultObj(rollResult);
     return (
         <Layer
-            algin="top"
+            algin='top'
             onClose={onClose}
         >
             <Paragraph> {translate.TEXT_POPOVER.replace('COUNT', result.succsess)}</Paragraph>
@@ -36,7 +36,7 @@ const ResultPopover: Function  = ({
 ResultPopover.propTypes = {
     onClose: PropTypes.func,
     rollResult: PropTypes.arrayOf(PropTypes.number),
-    translate: PropTypes.object,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
 export default ResultPopover;

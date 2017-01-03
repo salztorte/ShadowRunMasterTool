@@ -59,6 +59,7 @@ const InitativeHeader: Function = ({
         </Box>
     );
 
+//noinspection Eslint
 InitativeHeader.propTypes = {
     add: PropTypes.func,
     next: PropTypes.func,

@@ -51,15 +51,16 @@ App.propTypes = {
     closeMenu: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
     routerPush: PropTypes.func,
-    translate: PropTypes.object,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
-const mapStateToProps  = state => ({
+const mapStateToProps = state => ({
     bookIndex: state.searchIndex.bookIndex,
     isOpen: state.app.isOpen,
     translate: state.translation.translate.MENU,
 });
-const actionList  = {
+
+const actionList = {
     closeMenu: actions.closeMenu,
     openMenu: actions.openMenu,
     routerPush: routerActions.push,

@@ -11,7 +11,7 @@ const changeHandler = (curVal, key) => {
     }
 };
 
-export default (store) => {
+export default store => {
     const state = store.getState();
     const curVal = {
         lang: state.translation.curLang,

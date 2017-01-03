@@ -34,8 +34,9 @@ const SearchList: Function = ({
         </List>
     );
 
+//noinspection Eslint,Eslint
 SearchList.propTypes = {
-    bookSelector: PropTypes.object.isRequired,
+    bookSelector: PropTypes.object,
     filteredIdArray: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 

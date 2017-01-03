@@ -1,4 +1,5 @@
 //import styles
+//noinspection Eslint
 import 'grommet/scss/vanilla/index';
 
 import React from 'react';
@@ -17,7 +18,6 @@ import Settings from './Settings';
 const store = configureStore();
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
-
 
 
 render(

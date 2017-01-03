@@ -4,7 +4,6 @@ import React, { PropTypes } from 'react';
 import Button from 'grommet/components/Button';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
-import Heading from 'grommet/components/Heading';
 import NumberInput from 'grommet/components/NumberInput';
 import Paragraph from 'grommet/components/Paragraph';
 
@@ -57,7 +56,7 @@ Input.propTypes = {
     diceCount: PropTypes.number.isRequired,
     changeDiceCount: PropTypes.func.isRequired,
     rollDice: PropTypes.func.isRequired,
-    translate: PropTypes.object,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
 

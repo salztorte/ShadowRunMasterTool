@@ -1,5 +1,5 @@
 // @flow weak
-import { getSearchSelectors, createSearchAction  } from 'redux-search';
+import { getSearchSelectors, createSearchAction } from 'redux-search';
 import { createSelector } from 'reselect';
 
 import { loadBookData } from '../Resources/BookIndex';

@@ -12,6 +12,7 @@ describe('Resource reducer', () => {
         const incommingAction = {
             type: ACTION_TYPES.CLEAR_DATA,
         };
+        //noinspection Eslint
         expect(reducer(initState, incommingAction).bookIndex).to.be.empty;
     });
 

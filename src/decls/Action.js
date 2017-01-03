@@ -1,8 +1,8 @@
-type ActionTypes = {[key:string]: string};
+type ActionTypes = {[key: string]: string};
 
-type Actions = {[key:string]: Function};
+type Actions = {[key: string]: Function};
 
-type Action =  {
+type Action = {
     type: string,
     isOpen?: boolean,
     count?: number,

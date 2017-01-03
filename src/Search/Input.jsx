@@ -1,7 +1,6 @@
 // @flow
 import React, { PropTypes } from 'react';
 
-import Box from 'grommet/components/Box';
 import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
 import TextInput from 'grommet/components/TextInput';

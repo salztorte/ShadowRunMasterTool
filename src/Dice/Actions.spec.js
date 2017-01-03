@@ -1,7 +1,5 @@
-/* eslint import/no-extraneous-dependencies: 0 */
 import { expect } from 'chai';
 import configureMockStore from 'redux-mock-store';
-import Menu from 'grommet/components/icons/base/Menu';
 import thunk from 'redux-thunk';
 
 import { diceInitState } from './Reducer';

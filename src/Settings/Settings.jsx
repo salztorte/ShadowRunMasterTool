@@ -3,17 +3,17 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import { actions } from './Actions';
-import LanguagesSwitcher from './LanguagesSwitcher.jsx';
+//import LanguagesSwitcher from './LanguagesSwitcher.jsx';
 import DefaultDicePool from './DefaultDicePool.jsx';
 
 import Content from '../Componets/Content.jsx';
 
-const langArray = ['GER', 'EN'];
+//const langArray = ['GER', 'EN'];
 
 const Settings: Function = ({
-    changeLang,
+//    changeLang,
     changeDefaultDiceCount,
-    curLang,
+//    curLang,
     defaultDice,
     translate,
     }) =>
@@ -22,7 +22,7 @@ const Settings: Function = ({
             <DefaultDicePool
                 translate={translate.DICE_POOL}
                 defaultDice={defaultDice}
-                onChange={(event) => {
+                onChange={event => {
                     changeDefaultDiceCount(event.target.value);
                 }}
             />
@@ -36,11 +36,11 @@ const Settings: Function = ({
 ///>
 
 Settings.propTypes = {
-    changeDefaultDiceCount: PropTypes.func.isRequired,
-    changeLang: PropTypes.func.isRequired,
-    defaultDice: PropTypes.number.isRequired,
-    curLang: PropTypes.string.isRequired,
-    translate: PropTypes.object.isRequired,
+    changeDefaultDiceCount: PropTypes.func,
+//    changeLang: PropTypes.func,
+    defaultDice: PropTypes.number,
+//    curLang: PropTypes.string,
+    translate: PropTypes.objectOf(PropTypes.string),
 };
 
 const mapStateToProps = state => ({
@@ -50,7 +50,7 @@ const mapStateToProps = state => ({
 });
 
 const actionList = {
-    changeLang: actions.changeLang,
+//    changeLang: actions.changeLang,
     changeDefaultDiceCount: actions.changeDefaultDiceCount,
 };
 export default connect(mapStateToProps, actionList)(Settings);

@@ -4,9 +4,10 @@ import InfiniteScroll from 'react-infinite';
 import Box from 'grommet/components/Box';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
+import { Entry as EntryType } from './Reducer';
 
-import Add from 'grommet/components/icons/base/Add';
-import Subtract from 'grommet/components/icons/base/Subtract';
+//import Add from 'grommet/components/icons/base/Add';
+//import Subtract from 'grommet/components/icons/base/Subtract';
 
 
 const iniList:Function = ({
@@ -40,7 +41,7 @@ const iniList:Function = ({
 //                            </span>
 
 iniList.propTypes = {
-    entrys: PropTypes.any,
+    entrys: PropTypes.arrayOf(EntryType),
 };
 
 export default iniList ;

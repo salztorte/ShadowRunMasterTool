@@ -1,9 +1,10 @@
 /* eslint object-shorthand: 0
  import/no-extraneous-dependencies: 0 */
 const webpack = require('webpack');
+//noinspection CodeAssistanceForCoreModules
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+//const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const output = outputDir => ({
     path: path.resolve(outputDir),

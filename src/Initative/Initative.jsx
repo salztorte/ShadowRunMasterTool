@@ -1,7 +1,6 @@
 // @flow
 import React, { PropTypes } from 'react';
-import { Record } from 'immutable';
-import { recordOf } from 'react-immutable-proptypes';
+
 import { connect } from 'react-redux';
 
 import Content from '../Componets/Content.jsx';
@@ -13,15 +12,14 @@ import List from './List.jsx';
 
 import { isOpen as isOpenType,
          isError as isErrorType,
-         Entry as EntryType
+         Entry as EntryType,
        } from './Reducer';
 
 import { actions } from './Actions';
 
 const Initative: Function = ({
     translate,
-    openNewEntry,
-    closeNewEntry,
+    toggleModal,
     changeNewEntry,
     isOpen,
     setNewEntry,
@@ -29,7 +27,7 @@ const Initative: Function = ({
     errors,
     newEntry,
     newRound,
-    next
+    next,
     }) =>
     (
         <Content
@@ -37,7 +35,7 @@ const Initative: Function = ({
         >
             <Header
                 translate={translate}
-                add={() => openNewEntry()}
+                add={() => toggleModal('newEntry', true)}
                 next={() => next()}
                 newRound={() => newRound()}
             />
@@ -47,28 +45,28 @@ const Initative: Function = ({
 
             {isOpen.newEntry ? <NewEntry
                 translate={translate.NEW_ENTRY}
-                onClose={closeNewEntry}
+                onClose={() => toggleModal('newEntry', false)}
                 onChange={changeNewEntry}
                 onSubmit={setNewEntry}
                 isError={errors.newEntry}
                 newEntry={newEntry}
             /> : null}
 
-            {isOpen.setIni ? <SetIni
-            /> : null}
-
         </Content>
     );
 
+
+//{isOpen.setIni ? <SetIni
+//    isError={errors.setInit}
+///> : null}
 
 Initative.propTypes = {
     translate: PropTypes.object,
     newEntry: PropTypes.instanceOf(EntryType),
     errors: PropTypes.instanceOf(isErrorType),
-    entrys: PropTypes.array,
+    entrys: PropTypes.arrayOf(EntryType),
     isOpen: PropTypes.instanceOf(isOpenType),
-    openNewEntry: PropTypes.func,
-    setNewEntry: PropTypes.func,
+    toggleModal: PropTypes.func,
     closeNewEntry: PropTypes.func,
     changeNewEntry: PropTypes.func,
     next: PropTypes.func,
@@ -84,8 +82,7 @@ const mapStateToProps = state => ({
 });
 
 const actionList = {
-    openNewEntry: actions.openNewEntry,
-    closeNewEntry: actions.closeNewEntry,
+    toggleModal: actions.toggleModal,
     changeNewEntry: actions.changeNewEntry,
     setNewEntry: actions.setNewEntry,
     newRound: actions.newRound,

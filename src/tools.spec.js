@@ -1,5 +1,6 @@
-import { expect } from 'chai';
-import { keyMirror } from './tools';
+//eslint import/no-extraneous-dependencies: 0
+//import { expect } from 'chai';
+//import { keyMirror } from './tools';
 
 describe('Tools', () => {
     describe('keymirror', () => {
@@ -16,6 +17,3 @@ describe('Tools', () => {
 //        });
     });
 });
-
-
-//mocha --compilers js:babel-core/register .\src\tools.spec.js

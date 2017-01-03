@@ -32,7 +32,7 @@ describe('DiceReducer', () => {
     });
 
     it('should handel show and hide POPOVER', () => {
-        let incommingShowAction = {
+        const incommingShowAction = {
             type: ACTION_TYPES.SHOW_POPOVER,
         };
         const incommingHideAction = {
@@ -43,7 +43,9 @@ describe('DiceReducer', () => {
         const showResult = reducer(initState, incommingShowAction);
         const hideResult = reducer(showResult, incommingHideAction);
 
+        //noinspection Eslint
         expect(showResult.isPopoverOpen).to.be.true;
+        //noinspection Eslint
         expect(hideResult.isPopoverOpen).to.be.false;
     });
 });

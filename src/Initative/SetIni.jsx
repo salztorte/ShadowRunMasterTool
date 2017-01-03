@@ -1,36 +1,38 @@
 // @flow
 import React, { PropTypes } from 'react';
 
-import FormField from 'grommet/components/FormField';
+//import FormField from 'grommet/components/FormField';
 import Form from 'grommet/components/Form';
 import Layer from 'grommet/components/Layer';
-import TextInput from 'grommet/components/TextInput';
-import NumberInput from 'grommet/components/NumberInput';
-import Button from 'grommet/components/Button';
-import Box from 'grommet/components/Box';
+//import TextInput from 'grommet/components/TextInput';
+//import NumberInput from 'grommet/components/NumberInput';
+//import Button from 'grommet/components/Button';
+//import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
 const SetInit: Function = ({
-    onSubmit,
-    onClose,
-    onChange,
+//    onSubmit,
+//    onClose,
+//    onChange,
     isError,
-    translate,
-    newEntry,
+//    translate,
+//    newEntry,
     }) =>
     (
         <Layer
             algin='top'
-            onClose={onClose}
         >
             <Heading>{'Hallo Welt'}</Heading>
             <Form
                 style={{ width: '100%' }}
                 pad={{ vertical: 'small' }}
             >
+                {isError}
             </Form>
         </Layer>
     );
+
+//{isError}
 
 //
 //<FormField
@@ -58,6 +60,19 @@ const SetInit: Function = ({
 ///>
 //</Box>
 
+//<Layer
+//    algin='top'
+//    onClose={onClose}
+//>
+//    <Heading>{'Hallo Welt'}</Heading>
+//    <Form
+//        style={{ width: '100%' }}
+//        pad={{ vertical: 'small' }}
+//    >
+//        {isError}
+//    </Form>
+//</Layer>
+
 //<FormField
 //    style={{ width: '100%' }}
 //    label={translate.INI_VALUE}
@@ -77,7 +92,7 @@ SetInit.propTypes = {
 //    onChange: PropTypes.func,
 //    translate: PropTypes.object,
 //    newEntry: PropTypes.object,
-//    isError: PropTypes.bool,
+    isError: PropTypes.bool,
 };
 
 export default SetInit;

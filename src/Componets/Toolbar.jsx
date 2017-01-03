@@ -37,7 +37,7 @@ const Toolbar: Function = ({
 Toolbar.propTypes = {
     openMenu: PropTypes.func,
     title: PropTypes.string,
-    icon: PropTypes.any,
+    icon: PropTypes.element,
 };
 
 const mapStateToProps = () => ({});

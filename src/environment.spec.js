@@ -9,6 +9,7 @@ describe('the environment', () => {
     });
     it('should be able to write to console', () => {
         expect(console).not.to.be.equal(null);
+        //noinspection Eslint
         console.log('ConsoleTest', 'Hello World!');
     });
 
