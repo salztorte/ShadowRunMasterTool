@@ -54,5 +54,12 @@ export default {
                 NAME: 'Bitte geb einen Namen ein',
             },
         },
+        SET_INI: {
+            TITLE: 'TITLE',
+            INI_VALUE: 'Initativewert',
+            ERROR: {
+                NAME: 'Bitte geb einen validen Wert ein',
+            },
+        },
     },
 };

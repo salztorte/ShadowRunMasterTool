@@ -37,7 +37,7 @@ const Initative: Function = ({
                 translate={translate}
                 add={() => toggleModal('newEntry', true)}
                 next={() => next()}
-                newRound={() => newRound()}
+                newRound={() => toggleModal('setIni', true)}
             />
             <List
                 entrys={entrys}
@@ -52,13 +52,14 @@ const Initative: Function = ({
                 newEntry={newEntry}
             /> : null}
 
+            {isOpen.setIni ? <SetIni
+                isError={errors.setInit}
+                onClose={() => toggleModal('setIni', false)}
+                translate={translate.SET_INI}
+            /> : null}
+
         </Content>
     );
-
-
-//{isOpen.setIni ? <SetIni
-//    isError={errors.setInit}
-///> : null}
 
 Initative.propTypes = {
     translate: PropTypes.object,
@@ -67,7 +68,6 @@ Initative.propTypes = {
     entrys: PropTypes.arrayOf(EntryType),
     isOpen: PropTypes.instanceOf(isOpenType),
     toggleModal: PropTypes.func,
-    closeNewEntry: PropTypes.func,
     changeNewEntry: PropTypes.func,
     next: PropTypes.func,
     newRound: PropTypes.func,
