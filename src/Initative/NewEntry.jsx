@@ -39,17 +39,6 @@ const NewEntry: Function = ({
                         value={newEntry.name}
                     />
                 </FormField>
-                <FormField
-                    style={{ width: '100%' }}
-                    label={translate.INI_VALUE}
-                >
-                    <NumberInput
-                        min={0}
-                        value={newEntry.iniValue}
-                        onChange={event => onChange('iniValue', event.target.value)}
-                        style={{ width: '100%' }}
-                    />
-                </FormField>
                 <Box
                     pad={{ vertical: 'small' }}
                     primary
@@ -66,6 +55,18 @@ const NewEntry: Function = ({
             </Form>
         </Layer>
     );
+
+//<FormField
+//    style={{ width: '100%' }}
+//    label={translate.INI_VALUE}
+//>
+//    <NumberInput
+//        min={0}
+//        value={newEntry.iniValue}
+//        onChange={event => onChange('iniValue', event.target.value)}
+//        style={{ width: '100%' }}
+//    />
+//</FormField>
 
 
 NewEntry.propTypes = {

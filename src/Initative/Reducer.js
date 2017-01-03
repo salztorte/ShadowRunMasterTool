@@ -3,18 +3,22 @@ import { Record } from 'immutable';
 import { ACTION_TYPES as AT } from './Actions';
 
 
-const Entry = Record({
+export const Entry = Record({
     name: '',
     iniValue: 0,
-    pass: 1,
+    pass: 0,
 });
 
-const isError = Record({
+export const isError = Record({
     newEntry: false,
 });
 
+export const isOpen = Record({
+    newEntry: false,
+    setIni: false
+})
 const State = Record({
-    isNewEntryOpen: false,
+    isOpen : new isOpen(),
     isError: new isError(),
     NewEntry: new Entry(),
     Entrys: [
@@ -50,14 +54,18 @@ const setNewEntry = (state) => {
 };
 
 const actionHandlers = {
-    [AT.TOGGEL_NEW_ENTRY]: (state:State, action:Action) => state.set('isNewEntryOpen', action.isOpen),
+    [AT.TOGGEL_MODAL]: (state:State, action:Action) => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
     [AT.CHANGE_NEW_ENTRY]: (state:State, action:Action) => (
         state.set('isError', state.isError.set('newEntry', false))
              .set('NewEntry', state.NewEntry.set(action.key, action.value))
     ),
     [AT.SET_NEW_ENTRY]: setNewEntry,
-    [AT.NEW_ROUND]: () => ({}),
-    [AT.NEXT]: () => ({}),
+    [AT.NEW_ROUND]: () => {
+        console.log("New Round");
+    },
+    [AT.NEXT]: () => {
+        console.log("Next");
+    },
 };
 
 export const reducer:State = (state:State = initState, action) => {

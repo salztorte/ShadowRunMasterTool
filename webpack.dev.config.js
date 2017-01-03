@@ -1,6 +1,8 @@
 /* eslint object-shorthand: 0
  import/no-extraneous-dependencies: 0 */
+const webpack = require('webpack');
 const config = require('./webpack.config');
+
 const plugins = config.plugins;
 const loaders = config.loaders;
 

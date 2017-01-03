@@ -21,6 +21,7 @@ const headerProps = {
 const InitativeHeader: Function = ({
     add,
     next,
+    newRound,
     translate,
     }) =>
     (
@@ -28,7 +29,7 @@ const InitativeHeader: Function = ({
             <Header {...headerProps}>
                 <Button
                     type='button'
-                    onClick={next}
+                    onClick={newRound}
                     label={translate.NEW_ROUND_BUTTON}
                     primary
                     fill
@@ -61,12 +62,8 @@ const InitativeHeader: Function = ({
 InitativeHeader.propTypes = {
     add: PropTypes.func,
     next: PropTypes.func,
+    newRound: PropTypes.func,
     translate: PropTypes.object,
-};
-
-InitativeHeader.defaultProps = {
-    add: () => ({}),
-    next: () => ({}),
 };
 
 export default InitativeHeader;
