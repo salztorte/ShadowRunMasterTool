@@ -51,15 +51,14 @@ const Initative: Function = ({
                 isError={errors.newEntry}
                 newEntry={newEntry}
             /> : null}
-
-            {isOpen.setIni ? <SetIni
-                isError={errors.setInit}
-                onClose={() => toggleModal('setIni', false)}
-                translate={translate.SET_INI}
-            /> : null}
-
         </Content>
     );
+
+//{isOpen.setIni ? <SetIni
+//    isError={errors.setInit}
+//    onClose={() => toggleModal('setIni', false)}
+//    translate={translate.SET_INI}
+///> : null}
 
 Initative.propTypes = {
     translate: PropTypes.object,
