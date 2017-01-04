@@ -14,9 +14,9 @@ export const createTranslationReducer = (firstLang, langJson) => {
     const initState = InitState.set('translate', langJson[firstLang]);
 
     return (state = initState, { type, payload }) => {
-        if (type === CHANGE_LANG) {
+        if (type === CHANGE_LANG)
             return state.set('translate', langJson[payload]);
-        }
+
         return state;
     };
 };

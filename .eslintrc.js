@@ -21,6 +21,7 @@ module.exports = {
     },
     rules: {
         'arrow-parens': ['error', 'as-needed'],
+        'curly': ['error', 'multi-or-nest'],
         'func-names': ['error', 'as-needed'],
         'import/extensions': ['error', {
             jsx: 'always',

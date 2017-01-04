@@ -12,9 +12,9 @@ export const initState:State = new State();
 
 const rollDice = (state: State): State => {
     const result = [];
-    for (let i = 0; i < state.diceCount; i++) {
+    for (let i = 0; i < state.diceCount; i++)
         result.push(Math.floor((Math.random() * 6) + 1));
-    }
+
     result.sort((a, b) => b - a);
     return state.set('rollResult', result);
 };
@@ -31,8 +31,8 @@ const actionHandlers: {[key: string]: State} = {
 
 export const reducer = (state: State = initState, action: Action) => {
     const type: string = action.type;
-    if (type in actionHandlers) {
+    if (type in actionHandlers)
         return actionHandlers[type](state, action);
-    }
+
     return state;
 };

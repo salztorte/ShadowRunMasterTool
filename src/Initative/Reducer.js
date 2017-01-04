@@ -1,12 +1,11 @@
 // @flow
-
 import { Record } from 'immutable';
 import { ACTION_TYPES as AT } from './Actions';
 
 export const Entry = Record({
     name: '',
     iniValue: 0,
-    pass: 0,
+    pass: 1,
 });
 export const isError = Record({
     newEntry: false,
@@ -15,7 +14,6 @@ export const isOpen = Record({
     newEntry: false,
     setIni: false,
 });
-
 const State = Record({
     isOpen: new isOpen(),
     isError: new isError(),
@@ -23,45 +21,49 @@ const State = Record({
     Entrys: [
         new Entry({
             name: 'A',
-            iniValue: 25,
-            pass: 0,
+            iniValue: 35,
+            pass: 1,
         }),
         new Entry({
             name: 'B',
             iniValue: 20,
-            pass: 0,
+            pass: 1,
         }),
         new Entry({
             name: 'C',
             iniValue: 15,
-            pass: 0,
+            pass: 1,
         }),
     ],
 });
 export const initState:State = new State();
 
-const sortEntry:boolean = (a, b) => b.iniValue - a.iniValue;
+const sortEntry:boolean = (a: Entry, b: Entry) => {
+    if (b.iniValue === 0)
+        return 0;
+    const x = a.pass - b.pass;
+    return x === 0 ? b.iniValue - a.iniValue : x;
+};
+
 
 const setNewEntry:State = (state: State) => {
-    if (state.NewEntry.name.trim().length === 0) {
-        const newError = state.isError.set('newEntry', true);
-        return state.set('isError', newError);
-    }
+    if (state.NewEntry.name.trim().length === 0)
+        return state.update(['isError', 'newEntry'], true);
+
     const sortArray = state.NewEntry
                            .concatToArray(state.Entrys)
                            .sort(sortEntry);
     return state.set('Entrys', sortArray)
                 .set('NewEntry', new Entry());
 };
-
-const next = (state: State) => {
-    const firstEntry: Entry = state.Entrys[0];
-    const changedEntrys: Array<Entry> = state.Entrys
-                                             .shift()
-                                             .set('iniValue', firstEntry.iniValue >= 10 ? firstEntry.iniValue - 10 : 0)
-                                             .set('pass', firstEntry.pass + 1)
-                                             .concatToArray(state.Entrys)
-                                             .sort(sortEntry);
+const next:State = (state: State) => {
+    const firstEntry:Entry = state.Entrys[0];
+    const changedEntrys:Array<Entry> = state.Entrys
+                                            .shift()
+                                            .set('iniValue', firstEntry.iniValue >= 10 ? firstEntry.iniValue - 10 : 0)
+                                            .set('pass', firstEntry.pass + 1)
+                                            .concatToArray(state.Entrys)
+                                            .sort(sortEntry);
 
     return state.set('Entrys', changedEntrys);
 };
@@ -69,8 +71,8 @@ const next = (state: State) => {
 const actionHandlers = {
     [AT.TOGGLE_MODAL]: (state: State, action: Action) => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
     [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action) => (
-        state.set('isError', state.isError.set('newEntry', false))
-             .set('NewEntry', state.NewEntry.set(action.key, action.value))
+        state.update(['isError', 'newEntry'], false)
+             .update(['NewEntry', action.key], action.value)
     ),
     [AT.SET_NEW_ENTRY]: setNewEntry,
     [AT.NEXT]: next,
@@ -78,8 +80,8 @@ const actionHandlers = {
 
 export const reducer:State = (state: State = initState, action) => {
     const { type } = action;
-    if (type in actionHandlers) {
+    if (type in actionHandlers)
         return actionHandlers[type](state, action);
-    }
+
     return state;
 };

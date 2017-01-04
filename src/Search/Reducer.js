@@ -7,7 +7,6 @@ export const State = Record({
     [searchIndexName]: OrderedMap(),
 });
 
-
 export const initState = new State().set(searchIndexName, loadBookData);
 
 const actionHandlers = {
@@ -19,8 +18,8 @@ const actionHandlers = {
 
 export const reducer: State = (state = initState, action) => {
     const { type } = action;
-    if (type in actionHandlers) {
+    if (type in actionHandlers)
         return actionHandlers[type](state, action);
-    }
+
     return state;
 };

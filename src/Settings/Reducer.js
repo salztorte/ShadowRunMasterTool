@@ -21,8 +21,8 @@ const actionHandlers: {[key: string]: State} = {
 
 export const reducer: State = (state: State = createInitState(), action: Action) => {
     const { type } = action;
-    if (type in actionHandlers) {
+    if (type in actionHandlers)
         return actionHandlers[type](state, action);
-    }
+
     return state;
 };
