@@ -3,6 +3,8 @@ import { keyMirror } from '../tools';
 
 export const ACTION_TYPES:ActionTypes = keyMirror([
     'CHANGE_NEW_ENTRY',
+    'INCREASE_INI',
+    'DECREASE_INI',
     'NEW_ROUND',
     'NEXT',
     'SET_NEW_ENTRY',
@@ -15,7 +17,15 @@ export const actions:Actions = {
         key,
         value,
     }),
-    newRound: (): Action => ({
+    increaseIni: (key: number): Action => ({
+        type: ACTION_TYPES.INCREASE_INI,
+        key,
+    }),
+    decreaseIni: (key: number): Action => ({
+        type: ACTION_TYPES.DECREASE_INI,
+        key,
+    }),
+    newRound: (key: number): Action => ({
         type: ACTION_TYPES.NEW_ROUND,
     }),
     next: (): Action => ({

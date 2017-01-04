@@ -31,6 +31,8 @@ const Initative: Function = ({
     newEntry,
     newRound,
     next,
+    increaseIni,
+    decreaseIni,
     }) =>
     (
         <Content
@@ -45,6 +47,8 @@ const Initative: Function = ({
             />
             <List
                 entrys={entrys}
+                increaseIni={increaseIni}
+                decreaseIni={decreaseIni}
             />
 
             {isOpen.newEntry ? <NewEntry
@@ -75,6 +79,8 @@ Initative.propTypes = {
     next: PropTypes.func,
     newRound: PropTypes.func,
     setNewEntry: PropTypes.func,
+    increaseIni: PropTypes.func,
+    decreaseIni: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -91,6 +97,8 @@ const actionList = {
     setNewEntry: actions.setNewEntry,
     newRound: actions.newRound,
     next: actions.next,
+    increaseIni: actions.increaseIni,
+    decreaseIni: actions.decreaseIni,
 };
 
 export default connect(mapStateToProps, actionList)(Initative);

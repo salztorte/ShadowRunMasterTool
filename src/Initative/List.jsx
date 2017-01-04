@@ -2,16 +2,18 @@
 import React, { PropTypes } from 'react';
 import InfiniteScroll from 'react-infinite';
 import Box from 'grommet/components/Box';
+import Button from 'grommet/components/Button';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
+import Add from 'grommet/components/icons/base/Add';
+import Subtract from 'grommet/components/icons/base/Subtract';
+
 import { Entry as EntryType } from './Reducer';
-
-//import Add from 'grommet/components/icons/base/Add';
-//import Subtract from 'grommet/components/icons/base/Subtract';
-
 
 const iniList:Function = ({
     entrys,
+    increaseIni,
+    decreaseIni,
     }) =>
     (
         <List>
@@ -26,9 +28,24 @@ const iniList:Function = ({
                             key={i}
                             colorIndex={cur.iniValue === 0 ? 'grey-3-a' : ''}
                         >
-                            <Box>
+                            <span>
                                 {`${cur.name} (${cur.iniValue}, Pass ${cur.pass})`}
-                            </Box>
+                            </span>
+                            <span className='secondary'>
+                                <Button
+                                    icon={<Add />}
+                                    onClick={() => increaseIni(i)}
+                                    primary
+                                />
+                                <Button
+                                    style={{
+                                        marginLeft: '10px',
+                                    }}
+                                    icon={<Subtract />}
+                                    onClick={() => decreaseIni(i)}
+                                    primary
+                                />
+                            </span>
                         </ListItem>
                     ))
                 }
@@ -36,13 +53,14 @@ const iniList:Function = ({
         </List>
     );
 
-
 //<span className='secondary'>
 //                                {cur.pages}
 //                            </span>
 
 iniList.propTypes = {
     entrys: PropTypes.arrayOf(EntryType),
+    increaseIni: PropTypes.func,
+    decreaseIni: PropTypes.func,
 };
 
 export default iniList ;
