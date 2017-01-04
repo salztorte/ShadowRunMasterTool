@@ -25,7 +25,7 @@ export const actions:Actions = {
         type: ACTION_TYPES.DECREASE_INI,
         key,
     }),
-    newRound: (key: number): Action => ({
+    newRound: (): Action => ({
         type: ACTION_TYPES.NEW_ROUND,
     }),
     next: (): Action => ({

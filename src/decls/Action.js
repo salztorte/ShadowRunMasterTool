@@ -6,7 +6,7 @@ type Action = {
     type: string,
     isOpen?: boolean,
     count?: number,
-    key?: string|number,
+    key?: string | number,
     lang?: string,
     value?: number,
 };

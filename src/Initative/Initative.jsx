@@ -13,7 +13,7 @@ import List from './List.jsx';
 import { isOpen as isOpenType,
          isError as isErrorType,
          Entry as EntryType,
-       } from './Reducer';
+       } from './InitState';
 
 import { actions } from './Actions';
 
@@ -50,7 +50,6 @@ const Initative: Function = ({
                 increaseIni={increaseIni}
                 decreaseIni={decreaseIni}
             />
-
             {isOpen.newEntry ? <NewEntry
                 translate={translate.NEW_ENTRY}
                 onClose={() => toggleModal('newEntry', false)}

@@ -26,17 +26,7 @@ const SetInit:Function = ({
                 style={{ width: '100%' }}
                 pad={{ vertical: 'small' }}
             >
-                <FormField
-                    style={{ width: '100%' }}
-                    label={translate.INI_VALUE}
-                >
-                    <NumberInput
-                        min={0}
-                        value={newEntry.iniValue}
-                        onChange={event => onChange('iniValue', event.target.value)}
-                        style={{ width: '100%' }}
-                    />
-                </FormField>
+
                 <Box
                     pad={{ vertical: 'small' }}
                     primary
@@ -53,6 +43,20 @@ const SetInit:Function = ({
             </Form>
         </Layer>
     );
+
+//<FormField
+//    style={{ width: '100%' }}
+//    label={translate.INI_VALUE}
+//>
+//    <NumberInput
+//        min={0}
+//        value={newEntry.iniValue}
+//        onChange={event => onChange('iniValue', event.target.value)}
+//        style={{ width: '100%' }}
+//    />
+//</FormField>
+
+
 //
 //<FormField
 //    style={{ width: '100%' }}
