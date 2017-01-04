@@ -4,7 +4,7 @@
  */
 import { Record } from 'immutable';
 
-Record.prototype.concatToArray = function concatToArray(a) {
+Record.prototype.concatToArray = function concatToArray(a: Array) {
     return [this].concat(a);
 };
 export const keyMirror = (keys: string[]): ActionTypes => keys.reduce((res, cur) => {

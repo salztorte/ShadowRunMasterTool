@@ -13,7 +13,7 @@ const SetInit:Function = ({
     onSubmit,
     onClose,
     onChange,
-    isError,
+//    isError,
     translate,
     }) =>
     (

@@ -55,14 +55,13 @@ const setNewEntry:State = (state: State) => {
 };
 
 const next = (state: State) => {
-    const entrys:Array<Entry> = state.Entrys;
-    const firstEntry: Entry = entrys[0];
-    const iniValue:number = firstEntry.iniValue >= 10 ? firstEntry.iniValue - 10 : 0;
-    const changedEntrys: Array<Entry> = entrys.shift()
-                                              .set('iniValue', iniValue)
-                                              .set('pass', firstEntry.pass + 1)
-                                              .concatToArray(entrys)
-                                              .sort(sortEntry);
+    const firstEntry: Entry = state.Entrys[0];
+    const changedEntrys: Array<Entry> = state.Entrys
+                                             .shift()
+                                             .set('iniValue', firstEntry.iniValue >= 10 ? firstEntry.iniValue - 10 : 0)
+                                             .set('pass', firstEntry.pass + 1)
+                                             .concatToArray(state.Entrys)
+                                             .sort(sortEntry);
 
     return state.set('Entrys', changedEntrys);
 };
