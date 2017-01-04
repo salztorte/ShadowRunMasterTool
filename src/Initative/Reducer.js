@@ -46,13 +46,10 @@ const changeIniVal:State = (state: State, key: number, val) => {
     return state.set('Entrys', changedEntrys);
 };
 
-
 const actionHandlers = {
     [AT.TOGGLE_MODAL]: (state: State, action: Action): State => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
-    [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => (
-        state.update(['isError', 'newEntry'], false)
-             .update(['NewEntry', action.key], action.value)
-    ),
+    [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'newEntry'], false)
+                                                                         .update(['NewEntry', action.key], action.value),
     [AT.SET_NEW_ENTRY]: setNewEntry,
     [AT.NEXT]: next,
     [AT.INCREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, 1),

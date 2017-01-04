@@ -47,7 +47,6 @@ export default {
         NEW_ENTRY: {
             TITLE: 'TITLE',
             NAME: 'Name',
-            INI_VALUE: 'Initativewert',
             SAVE: 'Speichern',
             CANCEL: 'Abbrechen',
             ERROR: {
@@ -57,6 +56,7 @@ export default {
         SET_INI: {
             TITLE: 'TITLE',
             INI_VALUE: 'Initativewert',
+            SAVE: 'Speichern',
             ERROR: {
                 NAME: 'Bitte geb einen validen Wert ein',
             },

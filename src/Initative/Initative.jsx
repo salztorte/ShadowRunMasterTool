@@ -11,16 +11,16 @@ import SetIni from './SetIni.jsx';
 import List from './List.jsx';
 
 import { isOpen as isOpenType,
-         isError as isErrorType,
-         Entry as EntryType,
-       } from './InitState';
+    isError as isErrorType,
+    Entry as EntryType,
+} from './InitState';
 
 import { actions } from './Actions';
 
 
 const isRound = entrys => !entrys.every(cur => cur.iniValue === 0);
 
-const Initative: Function = ({
+const Initative:Function = ({
     translate,
     toggleModal,
     changeNewEntry,
@@ -58,14 +58,15 @@ const Initative: Function = ({
                 isError={errors.newEntry}
                 newEntry={newEntry}
             /> : null}
+
+            {isOpen.setIni ? <SetIni
+                isError={errors.setInit}
+                onClose={() => toggleModal('setIni', false)}
+                translate={translate.SET_INI}
+            /> : null}
         </Content>
     );
 
-//{isOpen.setIni ? <SetIni
-//    isError={errors.setInit}
-//    onClose={() => toggleModal('setIni', false)}
-//    translate={translate.SET_INI}
-///> : null}
 
 Initative.propTypes = {
     translate: PropTypes.object,
