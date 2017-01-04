@@ -71,7 +71,7 @@ const SideMenu: Function = ({
 SideMenu.propTypes = {
     closeMenu: PropTypes.func,
     goToRoute: PropTypes.func,
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 export default SideMenu;

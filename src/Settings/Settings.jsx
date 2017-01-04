@@ -40,7 +40,7 @@ Settings.propTypes = {
 //    changeLang: PropTypes.func,
     defaultDice: PropTypes.number,
 //    curLang: PropTypes.string,
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

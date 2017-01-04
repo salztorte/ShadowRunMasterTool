@@ -40,7 +40,7 @@ const Impressum: Function = ({
     );
 
 Impressum.propTypes = {
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

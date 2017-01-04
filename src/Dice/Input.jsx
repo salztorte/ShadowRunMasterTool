@@ -56,7 +56,7 @@ Input.propTypes = {
     diceCount: PropTypes.number.isRequired,
     changeDiceCount: PropTypes.func.isRequired,
     rollDice: PropTypes.func.isRequired,
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 

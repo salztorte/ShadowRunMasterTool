@@ -12,10 +12,6 @@ const actionHandlers:{[key: string]: State} = {
     [ACTION_TYPES.TOGGLE_MENU]: (state: State, action: Action): State => state.set('isOpen', action.isOpen),
 };
 
-export const reducer = (state: State = initState, action: Action): State => {
-    const type:string = action.type;
-    if (type in actionHandlers)
-        return actionHandlers[type](state, action);
-
-    return state;
-};
+export const reducer:State = (state: State = initState, action) => (
+    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
+);

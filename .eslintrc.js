@@ -5,7 +5,7 @@ module.exports = {
     ],
     plugins: [
         'react',
-        'flowtype'
+        'flowtype',
     ],
     env: {
         browser: true,
@@ -39,8 +39,10 @@ module.exports = {
         'jsx-quotes': ['error', 'prefer-single'],
         'linebreak-style': 'off',
         'new-cap': 'off',
+        'no-param-reassign': 'warn',
         'no-plusplus': 'off',
         'no-unused-expressions': 'warn',
+        'flowtype/use-flow-type': 'error',
         'no-unused-vars': ['warn', {
             'vars': 'all',
             'args': 'after-used',
@@ -52,5 +54,10 @@ module.exports = {
         'react/jsx-indent': ['warn', 4],
         'react/jsx-indent-props': ['warn', 4],
         'spaced-comment': 'off',
+    },
+    settings: {
+        flowtype: {
+            onlyFilesWithFlowAnnotation: true,
+        },
     },
 };

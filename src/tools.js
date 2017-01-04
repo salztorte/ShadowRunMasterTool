@@ -1,7 +1,4 @@
-/* eslint no-param-reassign: 0,
- no-restricted-syntax: 0,
- guard-for-in: 0,
- */
+// @flow
 import { Record } from 'immutable';
 
 Record.prototype.concatToArray = function concatToArray(a: Array) {
@@ -14,6 +11,12 @@ Record.prototype.update = function update(path: Array<string>, val: any) {
 };
 
 export const keyMirror = (keys: string[]): ActionTypes => keys.reduce((res, cur) => {
-    res[cur] = cur;
-    return res;
+    const newKeys = res;
+    newKeys[cur] = cur;
+    return newKeys;
 }, {});
+
+
+export function square(x = 2) {
+    return x * 'x';
+}

@@ -40,3 +40,4 @@ jspm_packages
 
 /build/
 /testHelpers/browser.js
+/src/**/*.spec.js

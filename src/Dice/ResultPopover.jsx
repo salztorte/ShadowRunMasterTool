@@ -36,7 +36,7 @@ const ResultPopover: Function = ({
 ResultPopover.propTypes = {
     onClose: PropTypes.func,
     rollResult: PropTypes.arrayOf(PropTypes.number),
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 export default ResultPopover;

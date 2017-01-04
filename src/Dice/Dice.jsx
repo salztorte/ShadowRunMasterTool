@@ -46,7 +46,7 @@ Dice.propTypes = {
     isPopoverOpen: PropTypes.bool,
     rollDice: PropTypes.func.isRequired,
     rollResult: PropTypes.arrayOf(PropTypes.number),
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

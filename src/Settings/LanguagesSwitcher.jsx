@@ -38,7 +38,7 @@ const LanguagesSwitcher: Function = ({
 
 
 LanguagesSwitcher.propTypes = {
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
     changeLang: PropTypes.func,
     langArray: PropTypes.arrayOf(PropTypes.string),
 };

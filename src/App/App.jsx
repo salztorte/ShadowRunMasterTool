@@ -51,7 +51,7 @@ App.propTypes = {
     closeMenu: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
     routerPush: PropTypes.func,
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

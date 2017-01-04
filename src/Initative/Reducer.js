@@ -1,11 +1,10 @@
 // @flow
-import State from './InitState';
-
+import State, { Entry } from './InitState';
 import { ACTION_TYPES as AT } from './Actions';
 
 export const initState:State = new State();
 
-const sortEntry:boolean = (a: Entry, b: Entry) => {
+const sortEntry = (a: Entry, b: Entry) => {
     if (b.iniValue === 0)
         return 0;
 
@@ -45,7 +44,6 @@ const changeIniVal:State = (state: State, key: number, val) => {
 
     return state.set('Entrys', changedEntrys);
 };
-
 const actionHandlers = {
     [AT.TOGGLE_MODAL]: (state: State, action: Action): State => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
     [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'newEntry'], false)
@@ -55,12 +53,7 @@ const actionHandlers = {
     [AT.INCREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, 1),
     [AT.DECREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, -1),
 };
+export const reducer:State = (state: State = initState, action) => (
+    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
+);
 
-export const reducer:State = (state: State = initState, action) => {
-    const { type } = action;
-    if (type in actionHandlers)
-        return actionHandlers[type](state, action);
-
-
-    return state;
-};

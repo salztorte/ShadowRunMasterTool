@@ -36,7 +36,7 @@ Search.propTypes = {
     _bookSelector: PropTypes.object,
     _filteredIdArray: PropTypes.arrayOf(PropTypes.any),
     searchData: PropTypes.func,
-    translate: PropTypes.objectOf(PropTypes.string),
+    translate: PropTypes.object,
 };
 
 const selectors = createSelector(
