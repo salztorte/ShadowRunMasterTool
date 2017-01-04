@@ -13,7 +13,7 @@ import Menu from './Menu.jsx';
 
 import { actions } from './Actions';
 
-export const App: Function = ({
+export const App:Function = ({
     children,
     closeMenu,
     isOpen,

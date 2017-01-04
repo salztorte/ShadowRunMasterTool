@@ -10,7 +10,7 @@
     "build:dev": "npm run clean:build && webpack --progress --colors --config webpack.dev.config.js",
     "build:prod": "npm run clean:build && webpack --progress --colors --config webpack.prod.config.js",
     "clean:build": "rimraf build",
-    "lint": "eslint src --config .eslintrc.js",
+    "lint": "eslint src --config .eslintrc.js --fix",
     "test": "mocha --compilers js:babel-core/register -w testHelpers/browser.js --recursive src/**/*.spec.js",
     "test:watch": "npm run test -- --watch",
     "flow": "flow"
@@ -28,7 +28,8 @@
   "homepage": "https://github.com/salztorte/ShadowRunMasterTool#readme",
   "dependencies": {
     "grommet": "^1.0.1",
-    "immutable": "3.7.5",
+    "immutable": "3.7.5"
+  ,
     "onsenui": "^2.0.3",
     "react": "^15.3.2",
     "react-addons-shallow-compare": "^15.3.2",

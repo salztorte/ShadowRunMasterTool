@@ -42,7 +42,6 @@ describe('DiceReducer', () => {
 
         const showResult = reducer(initState, incommingShowAction);
         const hideResult = reducer(showResult, incommingHideAction);
-
         //noinspection Eslint
         expect(showResult.isPopoverOpen).to.be.true;
         //noinspection Eslint

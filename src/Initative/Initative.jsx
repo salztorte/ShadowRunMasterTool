@@ -17,6 +17,9 @@ import { isOpen as isOpenType,
 
 import { actions } from './Actions';
 
+
+const isRound = entrys => !entrys.every(cur => cur.iniValue === 0);
+
 const Initative: Function = ({
     translate,
     toggleModal,
@@ -38,6 +41,7 @@ const Initative: Function = ({
                 add={() => toggleModal('newEntry', true)}
                 next={() => next()}
                 newRound={() => toggleModal('setIni', true)}
+                isRound={isRound(entrys)}
             />
             <List
                 entrys={entrys}
@@ -70,6 +74,7 @@ Initative.propTypes = {
     changeNewEntry: PropTypes.func,
     next: PropTypes.func,
     newRound: PropTypes.func,
+    setNewEntry: PropTypes.func,
 };
 
 const mapStateToProps = state => ({

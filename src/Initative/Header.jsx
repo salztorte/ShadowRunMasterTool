@@ -20,6 +20,7 @@ const headerProps = {
 
 const InitativeHeader: Function = ({
     add,
+    isRound,
     next,
     newRound,
     translate,
@@ -27,22 +28,21 @@ const InitativeHeader: Function = ({
     (
         <Box>
             <Header {...headerProps}>
-                <Button
-                    type='button'
-                    onClick={newRound}
-                    label={translate.NEW_ROUND_BUTTON}
-                    primary
-                    fill
-                />
-            </Header>
-            <Header {...headerProps}>
-                <Button
-                    type='button'
-                    onClick={next}
-                    label={translate.NEXT_BUTTON}
-                    primary
-                    fill
-                />
+                {isRound ?
+                    <Button
+                        type='button'
+                        onClick={next}
+                        label={translate.NEXT_BUTTON}
+                        primary
+                        fill
+                    /> : <Button
+                        type='button'
+                        onClick={newRound}
+                        label={translate.NEW_ROUND_BUTTON}
+                        primary
+                        fill
+                    />
+                }
             </Header>
             <Header
                 {...headerProps}
@@ -57,14 +57,14 @@ const InitativeHeader: Function = ({
                 </Box>
             </Header>
         </Box>
-    );
+);
 
-//noinspection Eslint
 InitativeHeader.propTypes = {
     add: PropTypes.func,
     next: PropTypes.func,
     newRound: PropTypes.func,
     translate: PropTypes.object,
+    isRound: PropTypes.bool,
 };
 
 export default InitativeHeader;

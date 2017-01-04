@@ -21,29 +21,35 @@ module.exports = {
     },
     rules: {
         'arrow-parens': ['error', 'as-needed'],
+        'func-names': ['error', 'as-needed'],
+        'import/extensions': ['error', {
+            jsx: 'always',
+            js: 'never'
+        }],
+        'import/no-extraneous-dependencies': ['error', {
+            devDependencies: ['**/*.spec.js'],
+        }],
+        'import/no-named-as-default': 'off',
+        'import/no-named-as-default-member': 'off',
+        'import/prefer-default-export': 'off',
+        indent: ['error', 4, {
+            SwitchCase: 1,
+        }],
+        'jsx-quotes': ['error', 'prefer-single'],
+        'linebreak-style': 'off',
         'new-cap': 'off',
-        indent: ['error', 4, {SwitchCase: 1}],
-        'spaced-comment': 'off',
+        'no-plusplus': 'off',
+        'no-unused-expressions': 'warn',
+        'no-unused-vars': ['warn', {
+            'vars': 'all',
+            'args': 'after-used',
+            'varsIgnorePattern': 'React|ActionTypes|Actions|Action',
+        }],
+        'react/forbid-prop-types': ['warn', {
+            'forbid': ['any', 'array']
+        }],
         'react/jsx-indent': ['warn', 4],
         'react/jsx-indent-props': ['warn', 4],
-        'jsx-quotes': ['error', 'prefer-single'],
-        'import/extensions': ['error', {'jsx': 'always', 'js': 'never'}],
-        'import/prefer-default-export': 'off',
-        'import/no-named-as-default': 'off',
-        'import/no-named-as-default-member' : 'off',
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.js"]}],
-        'no-plusplus': 'off',
-        'no-unused-vars': [
-            'warn',
-            {
-                'vars': 'all',
-                'args': 'after-used',
-                'varsIgnorePattern': 'React|ActionTypes|Actions|Action',
-            }
-        ],
-        'react/forbid-prop-types' : ['warn',{'forbid':['any', 'array']}],
-        'linebreak-style': 'off',
-        'func-names': ['error', 'as-needed'],
+        'spaced-comment': 'off',
     },
-
 };

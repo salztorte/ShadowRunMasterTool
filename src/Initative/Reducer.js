@@ -1,4 +1,5 @@
 // @flow
+
 import { Record } from 'immutable';
 import { ACTION_TYPES as AT } from './Actions';
 
@@ -14,6 +15,7 @@ export const isOpen = Record({
     newEntry: false,
     setIni: false,
 });
+
 const State = Record({
     isOpen: new isOpen(),
     isError: new isError(),
@@ -36,38 +38,38 @@ const State = Record({
         }),
     ],
 });
-
 export const initState:State = new State();
 
 const sortEntry:boolean = (a, b) => b.iniValue - a.iniValue;
 
-const setNewEntry:State = (state:State)=> {
+const setNewEntry:State = (state: State) => {
     if (state.NewEntry.name.trim().length === 0) {
         const newError = state.isError.set('newEntry', true);
         return state.set('isError', newError);
     }
-
-    const sortArray = [...state.Entrys, state.NewEntry].sort(sortEntry);
+    const sortArray = state.NewEntry
+                           .concatToArray(state.Entrys)
+                           .sort(sortEntry);
     return state.set('Entrys', sortArray)
                 .set('NewEntry', new Entry());
 };
 
-const next = (state:State) => {
+const next = (state: State) => {
     const entrys:Array<Entry> = state.Entrys;
-    let iniValue:number = entrys[0].iniValue;
-    if (iniValue < 10) {
-        iniValue = 0;
-    } else {
-        iniValue -= 10;
-    }
+    const firstEntry: Entry = entrys[0];
+    const iniValue:number = firstEntry.iniValue >= 10 ? firstEntry.iniValue - 10 : 0;
+    const changedEntrys: Array<Entry> = entrys.shift()
+                                              .set('iniValue', iniValue)
+                                              .set('pass', firstEntry.pass + 1)
+                                              .concatToArray(entrys)
+                                              .sort(sortEntry);
 
-    const firstEntry:Entry = entrys.shift().set('iniValue', iniValue);
-    return state.set('Entrys', [...entrys, firstEntry].sort(sortEntry));
+    return state.set('Entrys', changedEntrys);
 };
 
 const actionHandlers = {
-    [AT.TOGGLE_MODAL]: (state:State, action:Action) => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
-    [AT.CHANGE_NEW_ENTRY]: (state:State, action:Action) => (
+    [AT.TOGGLE_MODAL]: (state: State, action: Action) => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
+    [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action) => (
         state.set('isError', state.isError.set('newEntry', false))
              .set('NewEntry', state.NewEntry.set(action.key, action.value))
     ),
@@ -75,7 +77,7 @@ const actionHandlers = {
     [AT.NEXT]: next,
 };
 
-export const reducer:State = (state:State = initState, action) => {
+export const reducer:State = (state: State = initState, action) => {
     const { type } = action;
     if (type in actionHandlers) {
         return actionHandlers[type](state, action);

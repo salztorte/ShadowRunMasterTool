@@ -24,6 +24,7 @@ const iniList:Function = ({
                         <ListItem
                             justify='between'
                             key={i}
+                            colorIndex={cur.iniValue === 0 ? 'grey-3-a' : ''}
                         >
                             <Box>
                                 {`${cur.name} (${cur.iniValue}, Pass ${cur.pass})`}
