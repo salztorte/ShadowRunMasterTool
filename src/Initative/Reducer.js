@@ -32,7 +32,7 @@ const next:State = (state: State) => {
 };
 const changeIniVal:State = (state: State, key: number, val) => {
     const oldEntry = state.Entrys[key];
-    if(oldEntry.iniValue == 0)
+    if (oldEntry.iniValue === 0)
         return state;
 
     let newIniVal = oldEntry.iniValue + val;
