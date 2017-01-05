@@ -17,13 +17,12 @@ const enhancer = compose(
     searchTool
 );
 
-const store = createStore(rootReducer, initState, enhancer);
-store.subscribe(() => subscriber(store));
+export const Store = createStore(rootReducer, initState, enhancer);
+Store.subscribe(() => subscriber(Store));
 
-export const configureStore = () => store;
-
-export const configureHistory = (_store: store) => (
-    syncHistoryWithStore(hashHistory, _store, {
+//export const configureStore = () => store;
+export const configureHistory = (store: Store) => (
+    syncHistoryWithStore(hashHistory, store, {
         selectLocationState: state => state.routing.toJS(),
     })
 );

@@ -1,1 +1,3 @@
-export { configureHistory, configureStore } from './configStore';
+//@flow
+export { configureHistory, Store } from './configStore';
+//configureStore

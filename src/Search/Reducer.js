@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 import { Record, OrderedMap } from 'immutable';
 import { ACTION_TYPES } from './Actions';
 import { searchIndexName, loadBookData } from '../Resources/BookIndex';

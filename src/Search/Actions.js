@@ -1,14 +1,16 @@
-// @flow weak
+// @flow
 import { getSearchSelectors, createSearchAction } from 'redux-search';
 import { createSelector } from 'reselect';
 
+import { State } from './Reducer';
 import { loadBookData } from '../Resources/BookIndex';
 import { keyMirror } from '../tools';
 
 
-export const resources = state => state.searchIndex;
-export const resourceSelector = (resourceName, state) => state.searchIndex.get(resourceName);
-
+export const resources = (state: State) => state.searchIndex;
+export const resourceSelector = (resourceName: string, state: State) => (
+    state.searchIndex.get(resourceName)
+);
 
 export const bookSelector = createSelector([resources], _resources => _resources.bookIndex);
 

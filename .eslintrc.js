@@ -43,10 +43,10 @@ module.exports = {
         'no-plusplus': 'off',
         'no-unused-expressions': 'warn',
         'flowtype/use-flow-type': 'error',
-        'no-unused-vars': ['warn', {
+        'no-unused-vars': ['error', {
             'vars': 'all',
             'args': 'after-used',
-            'varsIgnorePattern': 'React|ActionTypes|Actions|Action',
+            'varsIgnorePattern': 'React|ActionTypes|Actions|Action|Symbol',
         }],
         'react/forbid-prop-types': ['warn', {
             'forbid': ['any', 'array']

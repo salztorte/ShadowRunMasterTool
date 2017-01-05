@@ -6,8 +6,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRedirect } from 'react-router';
-import { configureStore, configureHistory } from './store';
-
+import { Store, configureHistory } from './store';
+//configureStore
 import App from './App';
 import Search from './Search';
 import Impressum from './Impressum';
@@ -15,7 +15,8 @@ import Initative from './Initative';
 import Dice from './Dice';
 import Settings from './Settings';
 
-const store = configureStore();
+//const store = configureStore();
+const store = Store;
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
 

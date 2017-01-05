@@ -1,2 +1,2 @@
-// @flow weak
-export { loadBookData, searchIndex, searchIndexName } from './bookRegister';
+// @flow
+export { loadBookData, searchIndex, searchIndexName, IndexEntry } from './bookRegister';

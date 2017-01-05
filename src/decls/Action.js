@@ -10,6 +10,7 @@ type Action = {
     key?: string | number,
     name?: string,
     lang?: string,
+    payload?: any,
     value?: number,
 };
 

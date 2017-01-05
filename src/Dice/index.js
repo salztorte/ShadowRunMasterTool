@@ -1,3 +1,4 @@
+//@flow
 import Dice from './Dice.jsx';
 import { actions } from './Actions';
 

@@ -1,7 +1,6 @@
-// @flow
 import { Record } from 'immutable';
 
-Record.prototype.concatToArray = function concatToArray(a: Array) {
+Record.prototype.concatToArray = function concatToArray(a: Array<any>) {
     return [this].concat(a);
 };
 Record.prototype.update = function update(path: Array<string>, val: any) {
@@ -10,13 +9,8 @@ Record.prototype.update = function update(path: Array<string>, val: any) {
     return this.set(path[0], this.get(path[0]).update(path.slice(1), val));
 };
 
-export const keyMirror = (keys: string[]): ActionTypes => keys.reduce((res, cur) => {
+export const keyMirror = keys => keys.reduce((res, cur) => {
     const newKeys = res;
     newKeys[cur] = cur;
     return newKeys;
 }, {});
-
-
-export function square(x = 2) {
-    return x * 'x';
-}

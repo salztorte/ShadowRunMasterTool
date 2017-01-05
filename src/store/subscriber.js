@@ -1,4 +1,4 @@
-// @flow weak
+// @flow
 const preVal = {
     lang: localStorage.getItem('lang'),
     defaultDice: localStorage.getItem('defaultDice'),
@@ -11,12 +11,8 @@ const changeHandler = (curVal, key) => {
     }
 };
 
-export default store => {
+export default (store: any) => {
     const state = store.getState();
-    const curVal = {
-        lang: state.translation.curLang,
-        defaultDice: state.dice.defaultCount,
-    };
-    changeHandler(curVal.lang, 'lang');
-    changeHandler(curVal.defaultDice, 'defaultDice');
+    changeHandler(state.translation.curLang, 'lang');
+    changeHandler(state.dice.defaultCount, 'defaultDice');
 };
