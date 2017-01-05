@@ -10,8 +10,8 @@ export const State = Record({
 export const initState = new State().set(searchIndexName, loadBookData);
 
 const actionHandlers = {
-    [ACTION_TYPES.CLEAR_DATA]: state => state.set(searchIndexName, {}),
-    [ACTION_TYPES.SET_DATA]: (state, { payload }) => state.set(searchIndexName, payload)
+    CLEAR_DATA: state => state.set(searchIndexName, {}),
+    SET_DATA: (state, { payload }) => state.set(searchIndexName, payload)
                                                           .set(searchIndexName, {}),
 };
 

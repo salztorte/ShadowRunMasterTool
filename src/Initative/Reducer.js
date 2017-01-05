@@ -32,6 +32,9 @@ const next:State = (state: State) => {
 };
 const changeIniVal:State = (state: State, key: number, val) => {
     const oldEntry = state.Entrys[key];
+    if(oldEntry.iniValue == 0)
+        return state;
+
     let newIniVal = oldEntry.iniValue + val;
     if (newIniVal < 0)
         newIniVal = 0;
@@ -44,6 +47,7 @@ const changeIniVal:State = (state: State, key: number, val) => {
 
     return state.set('Entrys', changedEntrys);
 };
+
 const actionHandlers = {
     [AT.TOGGLE_MODAL]: (state: State, action: Action): State => state.set('isOpen', state.isOpen.set(action.name, action.isOpen)),
     [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'newEntry'], false)
