@@ -16,40 +16,41 @@ export const isOpen = Record({
     setIni: false,
 });
 
-//const tmp = [
-//    new Entry({
-//        name: 'A',
-//        iniValue: 35,
-//        pass: 1,
-//    }),
-//    new Entry({
-//        name: 'B',
-//        iniValue: 20,
-//        pass: 1,
-//    }),
-//    new Entry({
-//        name: 'C',
-//        iniValue: 15,
-//        pass: 1,
-//    }),
-//];
 const tmp = [
     new Entry({
         name: 'A',
-        iniValue: 0,
+        iniValue: 35,
         pass: 1,
     }),
     new Entry({
         name: 'B',
-        iniValue: 0,
+        iniValue: 20,
         pass: 1,
     }),
     new Entry({
         name: 'C',
-        iniValue: 0,
+        iniValue: 15,
         pass: 1,
     }),
 ];
+
+//const tmp = [
+//    new Entry({
+//        name: 'A',
+//        iniValue: 0,
+//        pass: 1,
+//    }),
+//    new Entry({
+//        name: 'B',
+//        iniValue: 0,
+//        pass: 1,
+//    }),
+//    new Entry({
+//        name: 'C',
+//        iniValue: 0,
+//        pass: 1,
+//    }),
+//];
 
 export default Record({
     isOpen: new isOpen(),

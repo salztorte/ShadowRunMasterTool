@@ -22,14 +22,11 @@ const rollDice = (state: State): State => {
 
 
 const actionHandlers:{[key: string]: State} = {
-    [ACTION_TYPES.CHANGE_DICE_COUNT]: (state: State, action: Action) => {
-        console.log(action);
-        return state.set('diceCount', action.isOpen)
-             .set('rollResult', []);
-    },
+    [ACTION_TYPES.CHANGE_DICE_COUNT]: (state: State, action: Action) => state.set('diceCount', action.isOpen)
+                                                                           .set('rollResult', []),
     [ACTION_TYPES.ROLL_DICE]: (state: State) => rollDice(state).set('isPopoverOpen', true),
     [ACTION_TYPES.CLEAR_ROLLS]: (state: State) => state.set('rollResult', []),
-    [ACTION_TYPES.SHOW_POPOVER]: (state: State, action: Action) => state.set('isPopoverOpen', action.isOpen),
+    [ACTION_TYPES.TOGGLE_POPOVER]: (state: State, action: Action) => state.set('isPopoverOpen', action.isOpen),
 };
 
 export const reducer:State = (state = initState, action) => {
@@ -38,6 +35,4 @@ export const reducer:State = (state = initState, action) => {
         return actionHandlers[type](state, action);
     return state;
 };
-//export const reducer:State = (state: State = initState, action) => (
-//    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
-//);
+
