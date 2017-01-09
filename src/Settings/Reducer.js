@@ -1,6 +1,7 @@
 // @flow
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
+import { createReducer } from '../tools';
 
 const State = Record({
     defaultDiceCount: 15,
@@ -19,10 +20,4 @@ const actionHandlers: {[key: string]: State} = {
     [ACTION_TYPES.CHANGE_DEFAULT_DICE_COUNT]: (state: State, action: Action) => state.set('defaultDiceCount', action.count),
 };
 
-export const reducer: State = (state: State = createInitState(), action: Action) => {
-    const { type } = action;
-    if (type in actionHandlers)
-        return actionHandlers[type](state, action);
-
-    return state;
-};
+export const reducer: State = createReducer(createInitState, actionHandlers);

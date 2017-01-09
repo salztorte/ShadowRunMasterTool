@@ -1,6 +1,7 @@
 //@flow
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
+import { createReducer } from '../tools';
 
 const State = Record({
     isOpen: false,
@@ -12,6 +13,4 @@ const actionHandlers:{[key: string]: State} = {
     [ACTION_TYPES.TOGGLE_MENU]: (state: State, action: Action): State => state.set('isOpen', action.isOpen),
 };
 
-export const reducer:State = (state: State = initState, action) => (
-    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
-);
+export const reducer: State = createReducer(initState, actionHandlers);

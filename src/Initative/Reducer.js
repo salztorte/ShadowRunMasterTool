@@ -1,6 +1,7 @@
 // @flow
 import State, { Entry } from './InitState';
 import { ACTION_TYPES as AT } from './Actions';
+import { createReducer } from '../tools';
 
 export const initState:State = new State();
 
@@ -57,7 +58,9 @@ const actionHandlers = {
     [AT.INCREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, 1),
     [AT.DECREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, -1),
 };
-export const reducer:State = (state: State = initState, action) => (
-    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
-);
+//export const reducer:State = (state: State = initState, action) => (
+//    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
+//);
 
+
+export const reducer: State = createReducer(initState, actionHandlers);

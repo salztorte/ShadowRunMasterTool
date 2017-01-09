@@ -1,6 +1,7 @@
 //@flow
 import { Record } from 'immutable';
 import { ACTION_TYPES } from './Actions';
+import { createReducer } from '../tools';
 
 const State = Record({
     diceCount: 15,
@@ -20,7 +21,6 @@ const rollDice = (state: State): State => {
     return state.set('rollResult', result);
 };
 
-
 const actionHandlers:{[key: string]: State} = {
     [ACTION_TYPES.CHANGE_DICE_COUNT]: (state: State, action: Action) => state.set('diceCount', action.isOpen)
                                                                            .set('rollResult', []),
@@ -29,10 +29,5 @@ const actionHandlers:{[key: string]: State} = {
     [ACTION_TYPES.TOGGLE_POPOVER]: (state: State, action: Action) => state.set('isPopoverOpen', action.isOpen),
 };
 
-export const reducer:State = (state = initState, action) => {
-    const { type } = action;
-    if (type in actionHandlers)
-        return actionHandlers[type](state, action);
-    return state;
-};
 
+export const reducer: State = createReducer(initState, actionHandlers);

@@ -14,3 +14,7 @@ export const keyMirror = keys => keys.reduce((res, cur) => {
     newKeys[cur] = cur;
     return newKeys;
 }, {});
+
+export const createReducer = (initState, actionHandlers) => (state = initState, action) => (
+    action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
+);
