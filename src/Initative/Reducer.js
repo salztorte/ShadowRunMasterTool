@@ -65,9 +65,9 @@ const changeIniVal:State = (state: State, key: number, val) => {
 
     const changedEntrys = state.Entrys
                                .splice(key, 1)[0]
-        .set('iniValue', newIniVal)
-        .concatToArray(state.Entrys)
-        .sort(sortEntry);
+                               .set('iniValue', newIniVal)
+                               .concatToArray(state.Entrys)
+                               .sort(sortEntry);
 
     return state.set('Entrys', changedEntrys);
 };
@@ -83,8 +83,8 @@ const actionHandlers = {
 
     [AT.OPEN_SET_INI]: (state: State): State => (
             (state.Entrys.length === 0) ? state : state.update(['isOpen', 'setIni'], true)
-                                                       .set('aktEntryIndex', 0)
                                                        .set('aktEntry', state.Entrys[0])
+                                                       .set('aktEntryIndex', 0)
         ),
     [AT.CLOSE_SET_INI]: (state: State): State => state.update(['isOpen', 'setIni'], false)
                                                         .set('aktEntryIndex', -1)
