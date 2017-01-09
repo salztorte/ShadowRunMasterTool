@@ -36,7 +36,7 @@ const NewEntry: Function = ({
                     error={isError ? translate.ERROR.NAME : null}
                 >
                     <TextInput
-                        onDOMChange={event => onChange('name', event.target.value)}
+                        onDOMChange={event => onChange(event.target.value)}
                         style={{ width: '100%' }}
                         value={newEntry.name}
                     />

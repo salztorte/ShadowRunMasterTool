@@ -9,36 +9,36 @@ import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
+import { Entry as EntryType } from './InitState';
+
 const SetInit:Function = ({
     onSubmit,
     onClose,
     onChange,
-//    isError,
+    isError,
     translate,
+    aktEntry,
     }) =>
     (
         <Layer
             algin='top'
             onClose={onClose}
         >
-            <Heading>{translate.TITLE}</Heading>
+            <Heading>{aktEntry.name}</Heading>
             <Form
                 style={{ width: '100%' }}
                 pad={{ vertical: 'small' }}
             >
-
                 <FormField
                     style={{ width: '100%' }}
                     label={translate.INI_VALUE}
+                    error={isError ? translate.ERROR.NAME : null}
                 >
                     <NumberInput
-                        min={0}
-
-                        onChange={event => onChange('iniValue', event.target.value)}
+                        onChange={event => onChange(event.target.value)}
                         style={{ width: '100%' }}
                     />
                 </FormField>
-
                 <Box
                     pad={{ vertical: 'small' }}
                     primary
@@ -46,9 +46,7 @@ const SetInit:Function = ({
                 >
                     <Button
                         type='button'
-                        onClick={() => {
-                            onSubmit();
-                        }}
+                        onClick={onSubmit}
                         label={translate.SAVE}
                     />
                 </Box>
@@ -56,67 +54,13 @@ const SetInit:Function = ({
         </Layer>
     );
 
-
-//value={newEntry.iniValue}
-
-//
-//<FormField
-//    style={{ width: '100%' }}
-//    label={translate.NAME}
-//    error={isError ? translate.ERROR.NAME : null}
-//>
-//    <TextInput
-//        onDOMChange={event => onChange('name', event.target.value)}
-//        style={{ width: '100%' }}
-//        value={newEntry.name}
-//    />
-//</FormField>
-//<Box
-//pad={{ vertical: 'small' }}
-//primary
-//fill
-//>
-//<Button
-//    type='button'
-//    onClick={() => {
-//                            onSubmit();
-//                        }}
-//    label={translate.SAVE}
-///>
-//</Box>
-
-//<Layer
-//    algin='top'
-//    onClose={onClose}
-//>
-//    <Heading>{'Hallo Welt'}</Heading>
-//    <Form
-//        style={{ width: '100%' }}
-//        pad={{ vertical: 'small' }}
-//    >
-//        {isError}
-//    </Form>
-//</Layer>
-
-//<FormField
-//    style={{ width: '100%' }}
-//    label={translate.INI_VALUE}
-//>
-//    <NumberInput
-//        min={0}
-//        value={newEntry.iniValue}
-//        onChange={event => onChange('iniValue', event.target.value)}
-//        style={{ width: '100%' }}
-//    />
-//</FormField>
-
-
 SetInit.propTypes = {
     onClose: PropTypes.func,
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
     translate: PropTypes.object,
-//    isError: PropTypes.bool,
+    aktEntry: PropTypes.instanceOf(EntryType),
+    isError: PropTypes.bool,
 };
 
 SetInit.defaultProps = {

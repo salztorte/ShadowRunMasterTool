@@ -19,20 +19,30 @@ import { actions } from './Actions';
 
 
 const isRound = entrys => !entrys.every(cur => cur.iniValue === 0);
+const isEntryEmpty = entrys => entrys.length === 0;
 
 const Initative:Function = ({
     translate,
-    toggleModal,
-    changeNewEntry,
-    isOpen,
-    setNewEntry,
-    entrys,
+
+    aktEntry,
+
     errors,
-    newEntry,
-    newRound,
+    entrys,
+    isOpen,
+
     next,
     increaseIni,
     decreaseIni,
+
+    openNewEntry,
+    closeNewEntry,
+    changeNewEntry,
+    setNewEntry,
+
+    closeSetIni,
+    openSetIni,
+    changeEntry,
+    setIni,
     }) =>
     (
         <Content
@@ -40,10 +50,11 @@ const Initative:Function = ({
         >
             <Header
                 translate={translate}
-                add={() => toggleModal('newEntry', true)}
+                add={openNewEntry}
                 next={() => next()}
-                newRound={() => toggleModal('setIni', true)}
+                newRound={openSetIni}
                 isRound={isRound(entrys)}
+                isEmpty={isEntryEmpty(entrys)}
             />
             <List
                 entrys={entrys}
@@ -52,16 +63,19 @@ const Initative:Function = ({
             />
             {isOpen.newEntry ? <NewEntry
                 translate={translate.NEW_ENTRY}
-                onClose={() => toggleModal('newEntry', false)}
+                onClose={closeNewEntry}
                 onChange={changeNewEntry}
                 onSubmit={setNewEntry}
                 isError={errors.newEntry}
-                newEntry={newEntry}
+                newEntry={aktEntry}
             /> : null}
 
             {isOpen.setIni ? <SetIni
                 isError={errors.setInit}
-                onClose={() => toggleModal('setIni', false)}
+                onClose={closeSetIni}
+                onChange={changeEntry}
+                onSubmit={setIni}
+                aktEntry={aktEntry}
                 translate={translate.SET_INI}
             /> : null}
         </Content>
@@ -70,32 +84,47 @@ const Initative:Function = ({
 
 Initative.propTypes = {
     translate: PropTypes.object,
-    newEntry: PropTypes.instanceOf(EntryType),
+
+    aktEntry: PropTypes.instanceOf(EntryType),
+
     errors: PropTypes.instanceOf(isErrorType),
     entrys: PropTypes.arrayOf(EntryType),
     isOpen: PropTypes.instanceOf(isOpenType),
-    toggleModal: PropTypes.func,
-    changeNewEntry: PropTypes.func,
+
     next: PropTypes.func,
-    newRound: PropTypes.func,
-    setNewEntry: PropTypes.func,
     increaseIni: PropTypes.func,
     decreaseIni: PropTypes.func,
+
+    openNewEntry: PropTypes.func,
+    closeNewEntry: PropTypes.func,
+    changeNewEntry: PropTypes.func,
+    setNewEntry: PropTypes.func,
+
+    closeSetIni: PropTypes.func,
+    openSetIni: PropTypes.func,
+    changeEntry: PropTypes.func,
+    setIni: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
     isOpen: state.initative.isOpen,
     entrys: state.initative.Entrys,
+    aktEntry: state.initative.aktEntry,
     translate: state.translation.translate.INITATIVE,
     errors: state.initative.isError,
-    newEntry: state.initative.NewEntry,
 });
 
 const actionList = {
-    toggleModal: actions.toggleModal,
+    openNewEntry: actions.openNewEntry,
+    closeNewEntry: actions.closeNewEntry,
     changeNewEntry: actions.changeNewEntry,
     setNewEntry: actions.setNewEntry,
-    newRound: actions.newRound,
+
+    openSetIni: actions.openSetIni,
+    closeSetIni: actions.closeSetIni,
+    changeEntry: actions.changeEntry,
+    setIni: actions.setIni,
+
     next: actions.next,
     increaseIni: actions.increaseIni,
     decreaseIni: actions.decreaseIni,

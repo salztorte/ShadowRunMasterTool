@@ -20,6 +20,7 @@ const headerProps = {
 
 const InitativeHeader: Function = ({
     add,
+    isEmpty,
     isRound,
     next,
     newRound,
@@ -65,6 +66,7 @@ InitativeHeader.propTypes = {
     newRound: PropTypes.func,
     translate: PropTypes.object,
     isRound: PropTypes.bool,
+    isEmpty: PropTypes.bool,
 };
 
 export default InitativeHeader;
