@@ -2,19 +2,21 @@
 import State, { Entry } from './InitState';
 import { ACTION_TYPES as AT } from './Actions';
 import { createReducer } from '../tools';
+import { createReducer } from '../tools';
 
 export const initState:State = new State();
 
 const sortEntry = (a: Entry, b: Entry) => {
     if (b.iniValue === 0)
         return 0;
-
     const x = a.pass - b.pass;
     return x === 0 ? b.iniValue - a.iniValue : x;
 };
+
 const setNewEntry:State = (state: State) => {
     if (state.aktEntry.name.trim().length === 0)
         return state.update(['isError', 'newEntry'], true);
+
     const sortArray = state.aktEntry
                            .concatToArray(state.Entrys)
                            .sort(sortEntry);
@@ -65,34 +67,37 @@ const changeIniVal:State = (state: State, key: number, val) => {
 
     const changedEntrys = state.Entrys
                                .splice(key, 1)[0]
-                               .set('iniValue', newIniVal)
-                               .concatToArray(state.Entrys)
-                               .sort(sortEntry);
+        .set('iniValue', newIniVal)
+        .concatToArray(state.Entrys)
+        .sort(sortEntry);
 
     return state.set('Entrys', changedEntrys);
 };
 
+const openSetIni:State = (state: State) => {
+    if (state.Entrys.length === 0)
+        return state;
+    return state.update(['isOpen', 'setIni'], true)
+                .set('aktEntry', state.Entrys[0])
+                .set('aktEntryIndex', 0);
+};
+
 const actionHandlers = {
     [AT.OPEN_NEW_ENTRY]: (state: State): State => state.update(['isOpen', 'newEntry'], true)
-                                                         .set('aktEntry', new Entry()),
+                                                     .set('aktEntry', new Entry()),
     [AT.CLOSE_NEW_ENTRY]: (state: State): State => state.update(['isOpen', 'newEntry'], false)
-                                                          .set('aktEntry', null),
+                                                      .set('aktEntry', null),
     [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'newEntry'], false)
-                                                                          .update(['aktEntry', 'name'], action.name),
+                                                                      .update(['aktEntry', 'name'], action.name),
     [AT.SET_NEW_ENTRY]: setNewEntry,
 
-    [AT.OPEN_SET_INI]: (state: State): State => (
-            (state.Entrys.length === 0) ? state : state.update(['isOpen', 'setIni'], true)
-                                                       .set('aktEntry', state.Entrys[0])
-                                                       .set('aktEntryIndex', 0)
-        ),
+    [AT.OPEN_SET_INI]: openSetIni,
     [AT.CLOSE_SET_INI]: (state: State): State => state.update(['isOpen', 'setIni'], false)
-                                                        .set('aktEntryIndex', -1)
-                                                        .set('aktEntry', null),
+                                                    .set('aktEntryIndex', -1)
+                                                    .set('aktEntry', null),
     [AT.CHANGE_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'setIni'], false)
-                                                                      .update(['aktEntry', 'iniValue'], action.value),
+                                                                  .update(['aktEntry', 'iniValue'], action.value),
     [AT.SET_INI]: setIni,
-
 
     [AT.NEXT]: next,
     [AT.INCREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, 1),
