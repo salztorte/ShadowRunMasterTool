@@ -16,18 +16,12 @@ export const actions:Actions = {
     rollDice: (): Action => ({
         type: ACTION_TYPES.ROLL_DICE,
     }),
-    showPopover: (): Action => {
-        console.log('true');
-        return {
-            type: ACTION_TYPES.TOGGLE_POPOVER,
-            isOpen: true,
-        };
-    },
-    hidePopover: (): Action => {
-        console.log('false');
-        return {
-            type: ACTION_TYPES.TOGGLE_POPOVER,
-            isOpen: false,
-        };
-    },
+    showPopover: (): Action => ({
+        type: ACTION_TYPES.TOGGLE_POPOVER,
+        isOpen: true,
+    }),
+    hidePopover: (): Action => ({
+        type: ACTION_TYPES.TOGGLE_POPOVER,
+        isOpen: false,
+    }),
 };

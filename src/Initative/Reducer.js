@@ -71,30 +71,26 @@ const changeIniVal:State = (state: State, key: number, val) => {
 
     return state.set('Entrys', changedEntrys);
 };
-const openSetIni:State = (state: State): State => {
-    if (state.Entrys.length !== 0) {
-        return state.update(['isOpen', 'setIni'], true)
-                    .set('aktEntryIndex', 0)
-                    .set('aktEntry', state.Entrys[0]);
-    }
-    return state;
-};
 
 const actionHandlers = {
     [AT.OPEN_NEW_ENTRY]: (state: State): State => state.update(['isOpen', 'newEntry'], true)
-                                                       .set('aktEntry', new Entry()),
+                                                         .set('aktEntry', new Entry()),
     [AT.CLOSE_NEW_ENTRY]: (state: State): State => state.update(['isOpen', 'newEntry'], false)
-                                                        .set('aktEntry', null),
+                                                          .set('aktEntry', null),
     [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'newEntry'], false)
-                                                                         .update(['aktEntry', 'name'], action.name),
+                                                                          .update(['aktEntry', 'name'], action.name),
     [AT.SET_NEW_ENTRY]: setNewEntry,
 
-    [AT.OPEN_SET_INI]: openSetIni,
+    [AT.OPEN_SET_INI]: (state: State): State => (
+            (state.Entrys.length === 0) ? state : state.update(['isOpen', 'setIni'], true)
+                                                       .set('aktEntryIndex', 0)
+                                                       .set('aktEntry', state.Entrys[0])
+        ),
     [AT.CLOSE_SET_INI]: (state: State): State => state.update(['isOpen', 'setIni'], false)
-                                                    .set('aktEntryIndex', -1)
-                                                    .set('aktEntry', null),
+                                                        .set('aktEntryIndex', -1)
+                                                        .set('aktEntry', null),
     [AT.CHANGE_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'setIni'], false)
-                                                                  .update(['aktEntry', 'iniValue'], action.value),
+                                                                      .update(['aktEntry', 'iniValue'], action.value),
     [AT.SET_INI]: setIni,
 
 
@@ -106,4 +102,5 @@ const actionHandlers = {
 //    [AT.NEW_ROUND]: (state: State): State => state.set('aktEntry', 0)
 //                                                  .update(['isOpen', 'setIni'], true),
 };
+
 export const reducer:State = createReducer(initState, actionHandlers);

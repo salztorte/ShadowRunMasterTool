@@ -45,7 +45,7 @@ export default {
         NEW_ROUND_BUTTON: 'Neue Runde',
         ORDER: 'Initative Reihenfolge',
         NEW_ENTRY: {
-            TITLE: 'TITLE',
+            TITLE: 'Hinzufügen',
             NAME: 'Name',
             SAVE: 'Speichern',
             CANCEL: 'Abbrechen',

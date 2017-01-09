@@ -15,7 +15,6 @@ import Initative from './Initative';
 import Dice from './Dice';
 import Settings from './Settings';
 
-//const store = configureStore();
 const store = Store;
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
@@ -25,7 +24,7 @@ render(
     <Provider store={store}>
         <Router history={history}>
             <Route path='/' component={App}>
-                <IndexRedirect to='/initative' />
+                <IndexRedirect to='/search' />
                 <Route path='search' component={Search} />
                 <Route path='dicecup' component={Dice} />
                 <Route path='initative' component={Initative} />

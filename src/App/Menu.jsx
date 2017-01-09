@@ -8,13 +8,11 @@ import Menu from 'grommet/components/Menu';
 
 import Toolbar from '../Componets/Toolbar.jsx';
 
-
 type MenuItems= {
     title: string,
     path: string,
 };
-
-const getMenuItems = (trans): MenuItems[] => [{
+const getMenuItems = (trans): Array<MenuItems> => [{
     title: trans.SEARCH,
     path: 'search',
 }, {
