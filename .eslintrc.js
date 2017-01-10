@@ -22,7 +22,6 @@ module.exports = {
     rules: {
         'arrow-parens': [2, 'as-needed'],
         'curly': [2, 'multi-or-nest'],
-        'func-names': [2, 'as-needed'],
         'import/extensions': [2, {
             jsx: 'always',
             js: 'never'
@@ -54,6 +53,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'spaced-comment': 0,
+        'func-names': [2, 'as-needed'],
     },
     settings: {
         flowtype: {
