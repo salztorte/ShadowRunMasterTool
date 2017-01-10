@@ -2,7 +2,6 @@
 import State, { Entry } from './InitState';
 import { ACTION_TYPES as AT } from './Actions';
 import { createReducer } from '../tools';
-import { createReducer } from '../tools';
 
 export const initState:State = new State();
 

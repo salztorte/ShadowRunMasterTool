@@ -20,40 +20,40 @@ module.exports = {
         },
     },
     rules: {
-        'arrow-parens': ['error', 'as-needed'],
-        'curly': ['error', 'multi-or-nest'],
-        'func-names': ['error', 'as-needed'],
-        'import/extensions': ['error', {
+        'arrow-parens': [2, 'as-needed'],
+        'curly': [2, 'multi-or-nest'],
+        'func-names': [2, 'as-needed'],
+        'import/extensions': [2, {
             jsx: 'always',
             js: 'never'
         }],
-        'import/no-extraneous-dependencies': ['error', {
+        'import/no-extraneous-dependencies': [2, {
             devDependencies: ['**/*.spec.js'],
         }],
-        'import/no-named-as-default': 'off',
-        'import/no-named-as-default-member': 'off',
-        'import/prefer-default-export': 'off',
-        indent: ['error', 4, {
+        'import/no-named-as-default': 0,
+        'import/no-named-as-default-member': 0,
+        'import/prefer-default-export': 0,
+        indent: [2, 4, {
             SwitchCase: 1,
         }],
-        'jsx-quotes': ['error', 'prefer-single'],
-        'linebreak-style': 'off',
-        'new-cap': 'off',
-        'no-param-reassign': 'warn',
-        'no-plusplus': 'off',
-        'no-unused-expressions': 'warn',
-        'flowtype/use-flow-type': 'error',
-        'no-unused-vars': ['error', {
+        'jsx-quotes': [2, 'prefer-single'],
+        'linebreak-style': 0,
+        'new-cap': 0,
+        'no-param-reassign': 2,
+        'no-plusplus': 0,
+        'no-unused-expressions': 2,
+        'flowtype/use-flow-type': 2,
+        'no-unused-vars': [2, {
             'vars': 'all',
             'args': 'after-used',
             'varsIgnorePattern': 'React|ActionTypes|Actions|Action|Symbol',
         }],
-        'react/forbid-prop-types': ['warn', {
+        'react/forbid-prop-types': [2, {
             'forbid': ['any', 'array']
         }],
-        'react/jsx-indent': ['warn', 4],
-        'react/jsx-indent-props': ['warn', 4],
-        'spaced-comment': 'off',
+        'react/jsx-indent': [2, 4],
+        'react/jsx-indent-props': [2, 4],
+        'spaced-comment': 0,
     },
     settings: {
         flowtype: {
