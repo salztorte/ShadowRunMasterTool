@@ -53,7 +53,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'spaced-comment': 0,
-        'func-names': [2, 'as-needed'],
+//        'func-names': [2, 'as-needed'],
     },
     settings: {
         flowtype: {
