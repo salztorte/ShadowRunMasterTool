@@ -7,6 +7,7 @@ export const ACTION_TYPES:ActionTypes = keyMirror([
     'ROLL_DICE',
     'TOGGLE_POPOVER',
 ]);
+
 export const actions:Actions = {
     clearRoll: (): Action => ({ type: ACTION_TYPES.CLEAR_ROLLS }),
     changeDiceCount: (count: number): Action => ({

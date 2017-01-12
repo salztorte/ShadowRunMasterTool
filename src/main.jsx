@@ -19,7 +19,6 @@ const store = Store;
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
 
-
 render(
     <Provider store={store}>
         <Router history={history}>
