@@ -3,6 +3,6 @@ node_js:
   - "6"
 cache: yarn
 install:
-  - yarn
+  - npm install
 script:
   yarn build:prod
