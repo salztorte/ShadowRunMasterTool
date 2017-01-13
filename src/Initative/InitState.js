@@ -17,7 +17,7 @@ export const isOpen = Record({
     setIni: false,
 });
 
-export default Record({
+export const State = Record({
     isOpen: new isOpen(),
     isError: new isError(),
     aktEntry: null,
