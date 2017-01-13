@@ -11,7 +11,7 @@
     "build:prod": "webpack --config webpack.prod.config.js",
     "build:prod2": "webpack --progress --colors --config webpack.prod.config.js",
     "clean:build": "rimraf build",
-    "lint": "eslint src --config .eslintrc.js --fix && flow",
+    "lint": "eslint src --config .eslintrc.js --fix",
     "flow": "flow"
   },
   "repository": {
