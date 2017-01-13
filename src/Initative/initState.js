@@ -7,6 +7,7 @@ export const Entry = Record({
     pass: 1,
 });
 
+
 export const isError = Record({
     newEntry: false,
     setIni: false,
