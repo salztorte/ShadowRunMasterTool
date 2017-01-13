@@ -10,7 +10,7 @@ import NewEntry from './NewEntry.jsx';
 import SetIni from './SetIni.jsx';
 import List from './List.jsx';
 
-import { isOpen as isOpenType, isError as isErrorType, Entry as EntryType } from './InitState';
+import { isOpen as isOpenType, isError as isErrorType, Entry as EntryType } from './InitState.js';
 
 import { actions } from './Actions';
 
