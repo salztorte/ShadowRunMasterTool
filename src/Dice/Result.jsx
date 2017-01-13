@@ -5,7 +5,7 @@ import Box from 'grommet/components/Box';
 import SVGIcon from 'grommet/components/SVGIcon';
 import BoxItem from '../Componets/BoxItem.jsx';
 
-import { Zero, One, Two, Three, Four, Five, Six } from '../Resources/Dice';
+import { Zero, One, Two, Three, Four, Five, Six } from './../Resources/Dice';
 //
 //const Icon: Function[] = [
 //    <Zero />,
