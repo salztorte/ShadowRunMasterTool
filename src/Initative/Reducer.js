@@ -1,5 +1,5 @@
 // @flow
-import State, { Entry } from './InitState.js';
+import State, { Entry } from './InitState';
 import { ACTION_TYPES as AT } from './Actions';
 import { createReducer } from '../tools';
 
