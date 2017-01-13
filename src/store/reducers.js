@@ -6,7 +6,7 @@ import { reducer as searchIndexReducer } from '../Search';
 import { routing } from './routingReducer';
 import { reducer as appReducer } from '../App';
 import { reducer as diceReducer, initState as diceInitState } from '../Dice';
-import { reducer as iniReducer } from '../Initative';
+//import { reducer as iniReducer } from '../Initative';
 import { createTranslationReducer } from '../translation';
 import { reducer as settingsReducer, createInitState } from '../Settings';
 import languages from './languages';
@@ -25,7 +25,7 @@ export const initState = {
     search: undefined,
     setting: settingsInitState,
     translation: undefined,
-    initative: undefined,
+//    initative: undefined,
 };
 
 
@@ -37,5 +37,5 @@ export const rootReducer = combineReducers({
     search,
     setting: settingsReducer,
     translation: createTranslationReducer(settingsInitState.curLang, languages),
-    initative: iniReducer,
+//    initative: iniReducer,
 });
