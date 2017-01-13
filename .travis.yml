@@ -8,3 +8,9 @@ install:
   - yarn install
 script:
   yarn build:prod
+
+group: stable
+dist: precise
+os: linux
+
+
