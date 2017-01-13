@@ -1,7 +1,32 @@
 // @flow
-import { State, Entry } from './InitState';
+import { Record } from 'immutable';
+//import { State, Entry } from './InitState';
 import { ACTION_TYPES as AT } from './Actions';
 import { createReducer } from '../tools';
+
+export const Entry = Record({
+    name: '',
+    iniValue: 0,
+    pass: 1,
+});
+
+export const isError = Record({
+    newEntry: false,
+    setIni: false,
+});
+
+export const isOpen = Record({
+    newEntry: false,
+    setIni: false,
+});
+
+export const State = Record({
+    isOpen: new isOpen(),
+    isError: new isError(),
+    aktEntry: null,
+    aktEntryIndex: -1,
+    Entrys: [],
+});
 
 export const initState:State = new State();
 

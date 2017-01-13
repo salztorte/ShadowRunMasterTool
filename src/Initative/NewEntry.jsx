@@ -10,7 +10,8 @@ import Button from 'grommet/components/Button';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
-import { Entry as EntryType } from './InitState';
+//import { Entry as EntryType } from './InitState';
+import { Entry as EntryType } from './Reducer';
 
 const NewEntry: Function = ({
     onSubmit,

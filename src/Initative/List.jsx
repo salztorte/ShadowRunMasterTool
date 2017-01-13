@@ -8,7 +8,8 @@ import ListItem from 'grommet/components/ListItem';
 import Add from 'grommet/components/icons/base/Add';
 import Subtract from 'grommet/components/icons/base/Subtract';
 
-import { Entry as EntryType } from './InitState';
+//import { Entry as EntryType } from './InitState';
+import { Entry as EntryType } from './Reducer';
 
 const iniList:Function = ({
     entrys,
