@@ -29,6 +29,7 @@ module.exports = {
         'import/no-extraneous-dependencies': [2, {
             devDependencies: ['**/*.spec.js'],
         }],
+        'import/no-unresolved': 1,
         'import/no-named-as-default': 0,
         'import/no-named-as-default-member': 0,
         'import/prefer-default-export': 0,
