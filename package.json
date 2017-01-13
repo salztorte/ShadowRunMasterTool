@@ -9,7 +9,6 @@
     "build:watch": "npm run build:dev -- --watch",
     "build:dev": "npm run clean:build && webpack --progress --colors --config webpack.dev.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
-    "build:prod2": "webpack --progress --colors --config webpack.prod.config.js",
     "clean:build": "rimraf build",
     "lint": "eslint src --config .eslintrc.js --fix",
     "flow": "flow"
