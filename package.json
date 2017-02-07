@@ -12,6 +12,7 @@
     "clean:build": "rimraf build",
     "lint": "eslint src --config .eslintrc.js --fix",
     "flow": "flow",
+//    "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js"
     "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js"
   },
   "repository": {
@@ -55,6 +56,7 @@
     "chai-immutable": "^1.6.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
+    "enzyme": "^2.7.1",
     "eslint": "^3.7.1",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-flowtype": "^2.29.2",
@@ -64,6 +66,7 @@
     "file-loader": "^0.9.0",
     "flow-bin": "^0.36.0",
     "html-webpack-plugin": "^2.22.0",
+    "jsdom": "^9.10.0",
     "mocha": "^3.2.0",
     "node-sass": "^3.11.1",
     "react-addons-test-utils": "^15.3.2",
