@@ -4,7 +4,10 @@ import { actions, ACTION_TYPES } from './Actions';
 
 describe('App Actions', () => {
     it('ACTION_TYPES', () => {
-        TOGGLE_MENU: 'TOGGLE_MENU'
+
+        expect(ACTION_TYPES).to.be.eql({
+            TOGGLE_MENU: 'TOGGLE_MENU',
+        })
     });
 
     it('openMenu', () => {

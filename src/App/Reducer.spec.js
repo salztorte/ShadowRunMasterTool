@@ -6,7 +6,7 @@ import { actions } from './Actions';
 
 chai.use(chaiImmutable);
 
-describe('Reducer Actions', () => {
+describe('App Reducer', () => {
     it('should return the initial state', () => {
         expect(reducer(undefined, {})).to
                    .deep
