@@ -11,7 +11,8 @@
     "build:prod": "webpack --config webpack.prod.config.js",
     "clean:build": "rimraf build",
     "lint": "eslint src --config .eslintrc.js --fix",
-    "flow": "flow"
+    "flow": "flow",
+    "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,6 @@
   "dependencies": {
     "grommet": "1.0.1",
     "immutable": "3.7.5",
-    "onsenui": "^2.0.3",
     "react": "^15.3.2",
     "react-addons-shallow-compare": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -44,7 +44,6 @@
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.1.1",
-    "babel-jest": "^16.0.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-plugin-transform-flow-strip-types": "^6.18.0",
@@ -52,6 +51,8 @@
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "eslint": "^3.7.1",
@@ -63,7 +64,7 @@
     "file-loader": "^0.9.0",
     "flow-bin": "^0.36.0",
     "html-webpack-plugin": "^2.22.0",
-    "jsdom": "^9.8.3",
+    "mocha": "^3.2.0",
     "node-sass": "^3.11.1",
     "react-addons-test-utils": "^15.3.2",
     "redux-mock-store": "^1.2.1",
