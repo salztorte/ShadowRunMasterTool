@@ -1,4 +1,5 @@
 import { Record } from 'immutable';
+import { connect as connector} from 'react-redux';
 
 Record.prototype.concatToArray = function concatToArray(a: Array<any>) {
     return [this].concat(a);
@@ -18,3 +19,11 @@ export const keyMirror = keys => keys.reduce((res, cur) => {
 export const createReducer = (initState, actionHandlers) => (state = initState, action) => (
     action.type in actionHandlers ? actionHandlers[action.type](state, action) : state
 );
+
+
+export const connect = (props, actions) => element => {
+    const conncetEle = connector(props, actions)(element);
+    conncetEle.displayName = element.displayName;
+    return conncetEle;
+};
+

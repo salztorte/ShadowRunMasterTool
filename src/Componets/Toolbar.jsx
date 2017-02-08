@@ -1,12 +1,12 @@
 // @flow
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 
 import Header from 'grommet/components/Header';
 import Title from 'grommet/components/Title';
 import Box from 'grommet/components/Box';
 
-import { actions } from '../App';
+import { connect } from '../tools';
+import { actions } from '../App/Actions';
 
 const Toolbar: Function = ({
     openMenu,
@@ -33,6 +33,8 @@ const Toolbar: Function = ({
             <Box />
         </Header>
     );
+
+Toolbar.displayName = 'Toolbar';
 
 Toolbar.propTypes = {
     openMenu: PropTypes.func,

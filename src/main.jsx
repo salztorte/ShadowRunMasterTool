@@ -7,6 +7,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRedirect } from 'react-router';
 import { Store, configureHistory } from './store';
+
 //configureStore
 import App from './App';
 import Search from './Search';
@@ -18,6 +19,8 @@ import Settings from './Settings';
 const store = Store;
 const history = configureHistory(store);
 const rootEl = document.getElementById('app');
+
+
 
 render(
     <Provider store={store}>

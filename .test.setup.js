@@ -4,7 +4,7 @@ var jsdom = require('jsdom').jsdom;
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
-global.document = jsdom('');
+global.document = jsdom('<!doctype html><html><body></body></html>');
 global.window = document.defaultView;
 Object.keys(document.defaultView).forEach((property) => {
     if (typeof global[property] === 'undefined') {
@@ -14,7 +14,7 @@ Object.keys(document.defaultView).forEach((property) => {
 });
 
 global.navigator = {
-    userAgent: 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    userAgent: 'node.js'
 };
 
-documentRef = document;
+//documentRef = document;

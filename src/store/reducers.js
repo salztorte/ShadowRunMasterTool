@@ -11,7 +11,7 @@ import { createTranslationReducer } from '../translation';
 import { reducer as settingsReducer, createInitState } from '../Settings';
 import languages from './languages';
 
-const defaultDiceCount = localStorage.getItem('defaultDice');
+const defaultDiceCount = localStorage.getItem('defaultDice')|15;
 const curLang = localStorage.getItem('lang');
 const settingsInitState = createInitState(defaultDiceCount, curLang);
 
@@ -28,7 +28,7 @@ export const initState = {
     initative: undefined,
 };
 
-
+console.log(settingsInitState.curLang, languages);
 export const rootReducer = combineReducers({
     app: appReducer,
     dice: diceReducer,

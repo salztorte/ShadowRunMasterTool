@@ -54,11 +54,14 @@ App.propTypes = {
     translate: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
-    bookIndex: state.searchIndex.bookIndex,
-    isOpen: state.app.isOpen,
-    translate: state.translation.translate.MENU,
-});
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        bookIndex: state.searchIndex.bookIndex,
+            isOpen: state.app.isOpen,
+        translate: state.translation.translate.MENU,
+    }
+};
 
 const actionList = {
     closeMenu: actions.closeMenu,

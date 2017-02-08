@@ -8,10 +8,12 @@ const State = Record({
     curLang: 'GER',
 });
 
-export const createInitState: State = (dice: number = 15, lang: string= 'GER') => (
-    new State().set('defaultDiceCount', dice)
-                      .set('curLang', lang)
-);
+export const createInitState: State = (dice: number = 15, lang: string= 'GER') => {
+    const newDice = (dice && dice !== 'undefined') ? dice : 15;
+    const newLang = (lang && lang !== 'undefined') ? lang : 'GER';
+    return new State().set('defaultDiceCount', newDice)
+               .set('curLang', newLang)
+};
 
 const actionHandlers: {[key: string]: State} = {
     [ACTION_TYPES.CHANGE_LANG]: (state: State, action: Action) => state.set('curLang', action.lang),
