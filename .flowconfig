@@ -1,5 +1,6 @@
 [ignore]
 node_modules/
+node_modules/redux-serch/website/
 
 [include]
 
@@ -8,3 +9,4 @@ node_modules/react-infinite/typelib
 src/decls/
 
 [options]
+all=false

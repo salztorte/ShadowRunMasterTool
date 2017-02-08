@@ -11,7 +11,7 @@ import { createTranslationReducer } from '../translation';
 import { reducer as settingsReducer, createInitState } from '../Settings';
 import languages from './languages';
 
-const defaultDiceCount = localStorage.getItem('defaultDice')|15;
+const defaultDiceCount = localStorage.getItem('defaultDice');
 const curLang = localStorage.getItem('lang');
 const settingsInitState = createInitState(defaultDiceCount, curLang);
 
