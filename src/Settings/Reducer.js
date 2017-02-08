@@ -8,7 +8,7 @@ const State = Record({
     curLang: 'GER',
 });
 
-export const createInitState: State = (dice: number = 15, lang: string= 'GER') => {
+export const createInitState: State = (dice: number, lang: string) => {
     const newDice = (dice && dice !== 'undefined') ? dice : 15;
     const newLang = (lang && lang !== 'undefined') ? lang : 'GER';
     return new State().set('defaultDiceCount', newDice)
