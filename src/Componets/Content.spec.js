@@ -8,12 +8,7 @@ import Content from './Content.jsx';
 describe('<Content/>', function () {
     it('should render a toolbar', function () {
         const wrapper = shallow(<Content title="Testtoolbar" />);
-        console.log(wrapper.find('Toolbar').length);
-        console.log(wrapper.find('Box').length);
-
-        console.log(Toolbar);
-
-//        expect(wrapper.find('Toolbar')).to.have.length(1);
+        expect(wrapper.find('Toolbar')).to.have.length(1);
 //        expect(wrapper.find('Box')).to.have.length(1);
     });
 
