@@ -11,7 +11,7 @@ const State = Record({
 
 export const initState:State = new State();
 
-const rollDice = (diceCount: number): number[]=> {
+const rollDice = (diceCount: number): number[] => {
     const result = [];
     for (let i = 0; i < diceCount; i++)
         result.push(Math.floor((Math.random() * 6) + 1));
