@@ -28,7 +28,6 @@ export const initState = {
     initative: undefined,
 };
 
-console.log(settingsInitState.curLang, languages);
 export const rootReducer = combineReducers({
     app: appReducer,
     dice: diceReducer,

@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { connect as connector} from 'react-redux';
+import { connect as connector } from 'react-redux';
 
 Record.prototype.concatToArray = function concatToArray(a: Array<any>) {
     return [this].concat(a);
