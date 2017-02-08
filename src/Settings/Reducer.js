@@ -12,7 +12,7 @@ export const createInitState: State = (dice: number, lang: string) => {
     const newDice = (dice && dice !== 'undefined') ? dice : 15;
     const newLang = (lang && lang !== 'undefined') ? lang : 'GER';
     return new State().set('defaultDiceCount', newDice)
-               .set('curLang', newLang)
+               .set('curLang', newLang);
 };
 
 const actionHandlers: {[key: string]: State} = {
