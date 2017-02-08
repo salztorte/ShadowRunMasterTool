@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": "./node_modules/.bin",
   "scripts": {
+    "pre-commit": [ "jshint", "coverage", "etc" ]
     "build": "npm run build:dev",
     "build:watch": "npm run build:dev -- --watch",
     "build:dev": "npm run clean:build && webpack --progress --colors --config webpack.dev.config.js",
@@ -14,6 +15,7 @@
     "flow": "flow",
     "test": "mocha .test.setup.js --compilers js:babel-core/register --recursive src/**/*.spec.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/salztorte/ShadowRunMasterTool.git"
