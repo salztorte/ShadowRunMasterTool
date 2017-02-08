@@ -12,7 +12,6 @@
     "clean:build": "rimraf build",
     "lint": "eslint src --config .eslintrc.js --fix",
     "flow": "flow",
-//    "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js"
     "test": "mocha --compilers js:babel-core/register --recursive src/**/*.spec.js"
   },
   "repository": {

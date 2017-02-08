@@ -43,6 +43,7 @@ module.exports = {
         'no-plusplus': 0,
         'no-unused-expressions': 2,
         'flowtype/use-flow-type': 2,
+        'flowtype/space-after-type-colon': 0,
         'no-unused-vars': [2, {
             'vars': 'all',
             'args': 'after-used',

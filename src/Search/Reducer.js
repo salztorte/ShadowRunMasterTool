@@ -14,7 +14,7 @@ const actionHandlers = {
     CLEAR_DATA: (state: State) => state.set(searchIndexName, {}),
     SET_DATA: (state: State, { payload }: Actions) => (
         state.set(searchIndexName, payload)
-             .set(searchIndexName, {})
+//             .set(searchIndexName, {})
     ),
 };
 

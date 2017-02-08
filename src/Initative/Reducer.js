@@ -30,14 +30,14 @@ export const State = Record({
 
 export const initState:State = new State();
 
-const sortEntry = (a: Entry, b: Entry) => {
+const sortEntry = (a:Entry, b:Entry) => {
     if (b.iniValue === 0)
         return 0;
     const x = a.pass - b.pass;
     return x === 0 ? b.iniValue - a.iniValue : x;
 };
 
-const setNewEntry:State = (state: State) => {
+const setNewEntry:State = (state:State) => {
     if (state.aktEntry.name.trim().length === 0)
         return state.update(['isError', 'newEntry'], true);
 
@@ -48,7 +48,7 @@ const setNewEntry:State = (state: State) => {
                 .set('aktEntry', new Entry());
 };
 
-const setIni:State = (state: State) => {
+const setIni:State = (state:State) => {
     if (state.aktEntry.iniValue <= 0)
         return state.update(['isError', 'setIni'], true);
 
@@ -69,7 +69,7 @@ const setIni:State = (state: State) => {
                 .update(['isOpen', 'setIni'], false);
 };
 
-const next:State = (state: State) => {
+const next:State = (state:State) => {
     const firstEntry:Entry = state.Entrys[0];
     const changedEntry:Array<Entry> = state.Entrys
                                            .shift()
@@ -80,7 +80,7 @@ const next:State = (state: State) => {
     return state.set('Entrys', changedEntry);
 };
 
-const changeIniVal:State = (state: State, key: number, val) => {
+const changeIniVal:State = (state:State, key:number, val) => {
     const oldEntry = state.Entrys[key];
     if (oldEntry.iniValue === 0)
         return state;
@@ -98,7 +98,7 @@ const changeIniVal:State = (state: State, key: number, val) => {
     return state.set('Entrys', changedEntrys);
 };
 
-const openSetIni:State = (state: State) => {
+const openSetIni:State = (state:State) => {
     if (state.Entrys.length === 0)
         return state;
     return state.update(['isOpen', 'setIni'], true)
@@ -107,25 +107,26 @@ const openSetIni:State = (state: State) => {
 };
 
 const actionHandlers = {
-    [AT.OPEN_NEW_ENTRY]: (state: State): State => state.update(['isOpen', 'newEntry'], true)
+    [AT.OPEN_NEW_ENTRY]: (state:State):State => state.update(['isOpen', 'newEntry'], true)
                                                      .set('aktEntry', new Entry()),
-    [AT.CLOSE_NEW_ENTRY]: (state: State): State => state.update(['isOpen', 'newEntry'], false)
+    [AT.CLOSE_NEW_ENTRY]: (state:State):State => state.update(['isOpen', 'newEntry'], false)
                                                       .set('aktEntry', null),
-    [AT.CHANGE_NEW_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'newEntry'], false)
+
+    [AT.CHANGE_NEW_ENTRY]: (state:State, action:Action):State => state.update(['isError', 'newEntry'], false)
                                                                       .update(['aktEntry', 'name'], action.name),
     [AT.SET_NEW_ENTRY]: setNewEntry,
 
     [AT.OPEN_SET_INI]: openSetIni,
-    [AT.CLOSE_SET_INI]: (state: State): State => state.update(['isOpen', 'setIni'], false)
+    [AT.CLOSE_SET_INI]: (state:State):State => state.update(['isOpen', 'setIni'], false)
                                                     .set('aktEntryIndex', -1)
                                                     .set('aktEntry', null),
-    [AT.CHANGE_ENTRY]: (state: State, action: Action): State => state.update(['isError', 'setIni'], false)
+    [AT.CHANGE_ENTRY]: (state:State, action:Action):State => state.update(['isError', 'setIni'], false)
                                                                   .update(['aktEntry', 'iniValue'], action.value),
     [AT.SET_INI]: setIni,
 
     [AT.NEXT]: next,
-    [AT.INCREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, 1),
-    [AT.DECREASE_INI]: (state: State, action: Action): State => changeIniVal(state, action.key, -1),
+    [AT.INCREASE_INI]: (state:State, action:Action):State => changeIniVal(state, action.key, 1),
+    [AT.DECREASE_INI]: (state:State, action:Action):State => changeIniVal(state, action.key, -1),
 //    [AT.CLOSE_CHANGE_ENTRY]: (state: State) => state.set('aktEntry', -1)
 //                                                    .update(['isOpen', 'setIni'], false),
 //    [AT.NEW_ROUND]: (state: State): State => state.set('aktEntry', 0)

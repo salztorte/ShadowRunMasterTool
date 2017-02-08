@@ -51,7 +51,6 @@ export const actions: Actions = {
         type: ACTION_TYPES.SET_INI,
     }),
 
-
     increaseIni: (key: number): Action => ({
         type: ACTION_TYPES.INCREASE_INI,
         key,
