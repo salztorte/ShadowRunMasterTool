@@ -11,8 +11,9 @@ const changeHandler = (curVal, key) => {
     }
 };
 
-export default (store: any) => {
+export default (store:any) => {
     const state = store.getState();
     changeHandler(state.translation.curLang, 'lang');
     changeHandler(state.dice.defaultCount, 'defaultDice');
 };
+
